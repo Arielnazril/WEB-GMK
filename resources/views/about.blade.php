@@ -32,7 +32,7 @@
                     {{-- Statistik Card --}}
                     <div class="grid grid-cols-2 gap-4 md:gap-6 pt-4">
                         <div class="p-6 bg-white/70 backdrop-blur-sm rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-blue-200 hover:bg-white transition-all duration-500 group">
-                            <div class="text-4xl font-black text-blue-600 mb-1 group-hover:scale-110 transition-transform duration-500">10+</div>
+                            <div class="text-4xl font-black text-blue-600 mb-1 group-hover:scale-110 transition-transform duration-500">12</div>
                             <div class="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-[0.15em]">Tahun Pengalaman</div>
                         </div>
                         <div class="p-6 bg-white/70 backdrop-blur-sm rounded-[32px] shadow-sm border border-slate-100 hover:shadow-xl hover:border-emerald-200 hover:bg-white transition-all duration-500 group">
@@ -68,7 +68,9 @@
     {{-- Visi & Misi Section --}}
     <section class="py-24 relative overflow-hidden">
         <div class="absolute top-0 right-0 p-20 opacity-[0.03] pointer-events-none">
-            <svg width="400" height="400" fill="currentColor" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" stroke="black" stroke-width="1" fill="none" stroke-dasharray="5 5"/></svg>
+            <svg width="400" height="400" fill="currentColor" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="1" fill="none" stroke-dasharray="5 5"/>
+            </svg>
         </div>
 
         <div class="max-w-7xl mx-auto px-6">
@@ -128,9 +130,8 @@
         </div>
     </section>
 
-    {{-- UNIT PENDIDIKAN --}}
+    {{-- Unit Pendidikan --}}
     <section class="py-32 bg-slate-50 relative overflow-hidden">
-        {{-- Dekorasi Latar Belakang --}}
         <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] -z-0"></div>
         <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-emerald-100/40 rounded-full blur-[120px] -z-0"></div>
 
@@ -149,7 +150,7 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
                 @php
                     $units = [
                         [
@@ -187,24 +188,19 @@
 
                 @foreach($units as $u)
                 <div class="group relative bg-white rounded-[60px] p-8 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_50px_120px_-20px_rgba(30,58,138,0.2)] transition-all duration-700 hover:-translate-y-6 flex flex-col min-h-[650px]">
-                    
-                    {{-- Elemen Angka Latar Belakang (Mewah) --}}
                     <span class="absolute top-10 right-10 text-9xl font-black text-slate-50 group-hover:text-slate-100 transition-colors duration-700 select-none -z-0">
                         {{ $u['number'] }}
                     </span>
 
-                    {{-- Image Container --}}
                     <div class="relative z-10 w-full aspect-[4/5] rounded-[45px] overflow-hidden shadow-2xl mb-10">
                         <img src="{{ asset('images/'.$u['img']) }}" alt="{{ $u['title'] }}" 
                              class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                         
-                        {{-- Overlay Gradient On Hover --}}
                         <div class="absolute inset-0 bg-gradient-to-t from-blue-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
                             <span class="text-white font-bold tracking-widest text-xs uppercase">{{ $u['sub'] }} PROGRAM</span>
                         </div>
                     </div>
 
-                    {{-- Content --}}
                     <div class="relative z-10 flex-grow px-2">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="w-12 h-1 bg-gradient-to-r {{ $u['accent'] }} rounded-full"></div>
@@ -220,7 +216,6 @@
                         </p>
                     </div>
 
-                    {{-- Floating Button --}}
                     <div class="relative z-10 mt-auto px-2 pb-2">
                         <a href="{{ $u['link'] }}" 
                            class="flex items-center justify-between w-full group/btn bg-slate-950 text-white p-2 rounded-[30px] hover:bg-blue-700 transition-all duration-500 shadow-xl">
@@ -232,6 +227,132 @@
                     </div>
                 </div>
                 @endforeach
+            </div>
+
+            <section class="relative py-28 bg-gradient-to-b from-white via-slate-50 to-white">
+    <div class="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20">
+
+```
+    {{-- Header --}}
+    <div class="text-center mb-20">
+        <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-4">
+            Guru & Staff Pengajar
+        </h2>
+        <p class="text-slate-500 italic">
+            "Membentuk Generasi Rabbani yang Unggul & Berjiwa Entrepreneur"
+        </p>
+        <div class="w-24 h-[3px] bg-blue-600 mx-auto mt-6 rounded-full"></div>
+    </div>
+
+    {{-- Grid --}}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-14">
+
+        @php
+            $gmk_educators = [
+                ['img' => 'tentang-kami-guru1.jpeg', 'name' => 'Tim Tenaga Pengajar', 'role' => 'Guru Akademik'],
+                ['img' => 'tentang-kami-guru2.jpeg', 'name' => 'Tim Tenaga Pengajar', 'role' => 'Guru Akademik'],
+                ['img' => 'tentang-kami-guru3.jpeg', 'name' => 'Tim Tenaga Pengajar', 'role' => 'Guru Akademik'],
+                ['img' => 'tentang-kami-guru4.jpeg', 'name' => 'Tim Tenaga Pengajar', 'role' => 'Guru Akademik'],
+            ];
+        @endphp
+
+        @foreach($gmk_educators as $educator)
+        <div class="group">
+
+            {{-- CARD --}}
+            <div class="bg-white rounded-[40px] shadow-xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+
+                {{-- IMAGE (FULL VIEW) --}}
+                <div class="w-full h-[320px] md:h-[380px] lg:h-[420px] overflow-hidden">
+                    <img src="{{ asset('images/'.$educator['img']) }}" 
+                         alt="{{ $educator['name'] }}"
+                         class="w-full h-full object-cover object-center transition-transform duration-[1200ms] group-hover:scale-105">
+                </div>
+
+                {{-- CONTENT BAWAH --}}
+                <div class="p-6 md:p-8 flex items-center justify-between">
+
+                    <div>
+                        <span class="text-[11px] font-bold tracking-[0.3em] text-blue-600 uppercase block mb-2">
+                            Global Maju Khatulistiwa
+                        </span>
+
+                        <h3 class="text-xl md:text-2xl font-black text-slate-900 leading-tight">
+                            {{ $educator['name'] }}
+                        </h3>
+
+                        <p class="text-slate-500 font-semibold text-sm mt-2 uppercase tracking-widest">
+                            {{ $educator['role'] }}
+                        </p>
+                    </div>
+
+                    {{-- ICON --}}
+                    <div class="w-14 h-14 rounded-full bg-blue-600 flex items-center justify-center shadow-lg transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        @endforeach
+
+    </div>
+</div>
+```
+
+</section>
+
+
+        </div>
+    </section>
+
+    {{-- Kurikulum Section --}}
+    <section class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-blue-50 rounded-[60px] p-12 md:p-20 relative overflow-hidden border border-blue-100">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl -mr-48 -mt-48"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-black text-blue-950 mb-8 tracking-tight">Kurikulum Berbasis <span class="text-blue-600">Entrepreneurship</span></h2>
+                        <div class="space-y-6">
+                            <div class="flex gap-6">
+                                <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-blue-600 shrink-0">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-blue-950 text-xl mb-2">Project Based Learning</h4>
+                                    <p class="text-slate-600">Siswa belajar melalui praktik langsung menciptakan solusi nyata.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-6">
+                                <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-emerald-500 shrink-0">
+                                    <i class="fas fa-coins"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-blue-950 text-xl mb-2">Financial Literacy</h4>
+                                    <p class="text-slate-600">Membekali pemahaman pengelolaan keuangan sejak dini.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p-8 rounded-[40px] shadow-xl border border-blue-100">
+                        <blockquote class="text-2xl font-medium text-blue-900 italic leading-relaxed">
+                            "Kami tidak hanya mengajar anak untuk menjawab soal, tapi kami melatih mereka untuk berani bertanya dan menciptakan peluang."
+                        </blockquote>
+                        <div class="mt-8 flex items-center gap-4">
+                            <div class="w-12 h-12 bg-blue-600 rounded-full"></div>
+                            <div>
+                                <p class="font-bold text-blue-950">Kepala Sekolah</p>
+                                <p class="text-sm text-slate-500 uppercase tracking-widest">Global Maju Khatulistiwa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -274,25 +395,21 @@
         </div>
     </section>
 
-    {{-- CTA Section - Versi Multi-Admin Premium --}}
+    {{-- CTA Section --}}
     <section class="py-24 px-6 relative overflow-hidden group">
-        {{-- Background Image dengan Overlay & Blur --}}
         <div class="absolute inset-0 z-0">
             <img src="{{ asset('images/gedung-sekolah.png') }}" 
-                 alt="Background Gedung GMK" 
-                 class="w-full h-full object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-[5000ms] brightness-[0.25]">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-950/95 via-blue-900/80 to-emerald-900/40 backdrop-blur-[3px]"></div>
-        </div>
+                alt="Background Gedung GMK" 
+                class="w-full h-full object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-[5000ms] brightness-[0.6] contrast-110">
 
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-emerald-900/20"></div>
+        </div>
         <div class="max-w-7xl mx-auto relative z-10">
             <div class="bg-white/5 backdrop-blur-xl rounded-[60px] md:rounded-[100px] border border-white/10 p-8 md:p-24 shadow-2xl overflow-hidden relative">
-                {{-- Dekorasi Ornamen --}}
                 <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
                 <div class="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -ml-32 -mb-32"></div>
-                <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
-
+                
                 <div class="relative z-10 text-center space-y-12">
-                    {{-- Header Text --}}
                     <div class="space-y-6">
                         <div class="inline-flex items-center gap-3 px-6 py-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full animate-bounce">
                             <span class="text-emerald-300 font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs">Join Our Family</span>
@@ -306,10 +423,7 @@
                         </p>
                     </div>
 
-                    {{-- Action Buttons --}}
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-5xl mx-auto pt-6">
-                        
-                        {{-- Button Utama: Daftar Online --}}
                         <div class="lg:col-span-3 mb-4">
                             <a href="{{ route('tk.pendaftaran') }}" 
                                class="group/main relative inline-flex items-center justify-center gap-4 px-16 py-7 bg-white text-blue-950 rounded-[30px] font-black text-xl shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-white/20 hover:-translate-y-2 transition-all duration-500 overflow-hidden w-full md:w-auto">
@@ -319,7 +433,6 @@
                             </a>
                         </div>
 
-                        {{-- WhatsApp KB/TK --}}
                         <a href="https://wa.me/6289694224226" target="_blank" 
                            class="group/wa p-8 bg-white/5 border border-white/10 rounded-[40px] backdrop-blur-md hover:bg-white/10 hover:border-emerald-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center gap-4">
                             <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center text-3xl group-hover/wa:scale-110 group-hover/wa:bg-emerald-500 group-hover/wa:text-white transition-all duration-500">
@@ -329,10 +442,8 @@
                                 <h4 class="text-white font-bold text-lg">Admin KB / TK</h4>
                                 <p class="text-blue-100/50 text-sm">0896-9422-4226</p>
                             </div>
-                            <span class="mt-2 text-[10px] font-black uppercase tracking-[0.2em] text-emerald-400 opacity-0 group-hover/wa:opacity-100 transition-opacity">Chat Sekarang</span>
                         </a>
 
-                        {{-- WhatsApp SD/SMP --}}
                         <a href="https://wa.me/6282154199008" target="_blank" 
                            class="group/wa p-8 bg-white/5 border border-white/10 rounded-[40px] backdrop-blur-md hover:bg-white/10 hover:border-blue-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center gap-4">
                             <div class="w-16 h-16 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center text-3xl group-hover/wa:scale-110 group-hover/wa:bg-blue-500 group-hover/wa:text-white transition-all duration-500">
@@ -342,12 +453,10 @@
                                 <h4 class="text-white font-bold text-lg">Admin SD / SMP</h4>
                                 <p class="text-blue-100/50 text-sm">0821-5419-9008</p>
                             </div>
-                            <span class="mt-2 text-[10px] font-black uppercase tracking-[0.2em] text-blue-400 opacity-0 group-hover/wa:opacity-100 transition-opacity">Chat Sekarang</span>
                         </a>
 
-                        {{-- Download Brosur --}}
-                        <a href="#" 
-                           class="group/doc p-8 bg-white/5 border border-white/10 rounded-[40px] backdrop-blur-md hover:bg-white/10 hover:border-white/50 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center gap-4">
+                        <a href="{{ asset('pdf/brosur.pdf') }}" target="_blank"
+                        class="group/doc p-8 bg-white/5 border border-white/10 rounded-[40px] backdrop-blur-md hover:bg-white/10 hover:border-white/50 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center gap-4">
                             <div class="w-16 h-16 bg-white/10 text-white rounded-2xl flex items-center justify-center text-3xl group-hover/doc:scale-110 group-hover/doc:bg-white group-hover/doc:text-blue-950 transition-all duration-500">
                                 <i class="fas fa-file-pdf"></i>
                             </div>
@@ -355,9 +464,7 @@
                                 <h4 class="text-white font-bold text-lg">E-Brochure</h4>
                                 <p class="text-blue-100/50 text-sm">Informasi Lengkap</p>
                             </div>
-                            <span class="mt-2 text-[10px] font-black uppercase tracking-[0.2em] text-white/60 opacity-0 group-hover/doc:opacity-100 transition-opacity">Unduh PDF</span>
                         </a>
-
                     </div>
                 </div>
             </div>
@@ -380,9 +487,7 @@
         from { opacity: 0; transform: translateY(40px); }
         to { opacity: 1; transform: translateY(0); }
     }
-    /* Smooth Scroll Behavior */
     html { scroll-behavior: smooth; }
-    /* Custom Selection Color */
     ::selection { background: #1e40af; color: white; }
 </style>
 @endsection

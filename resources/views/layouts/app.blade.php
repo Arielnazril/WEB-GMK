@@ -163,6 +163,8 @@
 
                     <a href="{{ route('news') }}" class="text-[14px] font-bold {{ request()->routeIs('news') ? 'nav-link-active' : 'text-slate-600' }} hover:text-blue-700 transition-colors">Berita</a>
                     
+                    <a href="{{ route('contact') }}" class="text-[14px] font-bold {{ request()->routeIs('contact') ? 'nav-link-active' : 'text-slate-600' }} hover:text-blue-700 transition-all relative py-2">Hubungi Kami</a>
+                    
                     <a href="#" class="btn-shimmer relative bg-blue-700 text-white px-8 py-3.5 rounded-2xl font-bold text-sm shadow-[0_10px_20px_rgba(30,64,175,0.3)] hover:bg-blue-800 transition-all active:scale-95">
                         SPMB 2026
                     </a>
@@ -193,6 +195,9 @@
                 </div>
                 
                 <a href="{{ route('news') }}" class="block p-4 {{ request()->routeIs('news') ? 'bg-blue-50 text-blue-700' : 'bg-slate-50' }} rounded-2xl font-bold">Berita</a>
+                
+                <a href="{{ route('contact') }}" class="block p-4 {{ request()->routeIs('contact') ? 'bg-blue-50 text-blue-700' : 'bg-slate-50' }} rounded-2xl font-bold transition-all">Hubungi Kami</a>
+                
                 <a href="#" class="block text-center bg-blue-700 text-white p-5 rounded-2xl font-extrabold shadow-lg tracking-wider active:scale-95 transition-all">DAFTAR SEKARANG</a>
             </div>
         </div>
@@ -253,6 +258,7 @@
                         <li><a href="{{ route('home') }}" class="hover:text-white hover:translate-x-2 transition-all inline-block">Beranda</a></li>
                         <li><a href="{{ route('about') }}" class="hover:text-white hover:translate-x-2 transition-all inline-block">Tentang Kami</a></li>
                         <li><a href="{{ route('news') }}" class="hover:text-white hover:translate-x-2 transition-all inline-block">Berita & Artikel</a></li>
+                        <li><a href="{{ route('contact') }}" class="hover:text-white hover:translate-x-2 transition-all inline-block">Hubungi Kami</a></li>
                         <li><a href="#" class="text-blue-400 font-bold hover:text-blue-300 transition-all inline-block">Pendaftaran 2026</a></li>
                     </ul>
                 </div>
@@ -369,7 +375,7 @@
             }
         });
 
-        // Perbaikan Back to Top
+        // Back to Top
         backToTop.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
