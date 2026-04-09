@@ -1,70 +1,71 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="relative bg-blue-700 py-24 md:py-32 overflow-hidden">
+{{-- Hero Section --}}
+<div class="relative bg-blue-700 pt-32 pb-48 overflow-hidden">
     <div class="absolute inset-0">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/50 to-transparent"></div>
-        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-transparent opacity-90"></div>
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-sky-400/20 rounded-full blur-2xl -ml-20 -mb-20"></div>
     </div>
     
-    <div class="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
-        <div class="md:w-3/5 text-left">
-            <span class="bg-blue-600/30 text-white px-5 py-2 rounded-xl text-xs font-bold uppercase tracking-widest border border-white/20 backdrop-blur-md">Elementary Education</span>
-            <h1 class="text-5xl md:text-6xl font-black text-white mt-6 mb-8 leading-tight">SD Global Maju</h1>
-            <p class="text-xl text-blue-50 leading-relaxed font-medium">
-                Membangun pondasi literasi, numerasi, dan akhlakul karimah sebagai bekal utama menjadi generasi emas yang unggul.
-            </p>
-        </div>
-        <div class="md:w-1/3">
-            <div class="bg-white/10 backdrop-blur-lg p-8 rounded-[32px] border border-white/20 text-center transform -rotate-2">
-                <i class="fas fa-quote-left text-blue-300 text-3xl mb-4"></i>
-                <p class="text-white font-bold italic text-lg leading-relaxed">"Adab dulu, baru Ilmu. Karakter kuat, masa depan hebat."</p>
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <span class="inline-block px-5 py-2 mb-6 bg-white/20 backdrop-blur-md text-white text-[11px] font-black tracking-[0.3em] uppercase rounded-xl border border-white/30">
+            Elementary Level Methodology
+        </span>
+        <h1 class="text-6xl md:text-8xl font-black text-white mb-6 tracking-tighter uppercase leading-none">
+            {{ $title ?? 'Unit SD' }}
+        </h1>
+        <div class="w-24 h-1.5 bg-sky-400 mx-auto rounded-full mb-8"></div>
+        <p class="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed italic">
+            Global Maju Education — Membangun Pondasi Masa Depan yang Kokoh.
+        </p>
+    </div>
+</div>
+
+{{-- Sub-Navigation --}}
+<div class="max-w-7xl mx-auto px-6 -mt-14 relative z-20">
+    <div class="bg-white rounded-[2.5rem] shadow-2xl shadow-blue-900/10 p-5 border border-slate-100">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-4 px-6 py-3 bg-blue-50 rounded-2xl text-blue-700">
+                <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
+                    <i class="fas fa-graduation-cap text-lg"></i>
+                </div>
+                <span class="font-black text-sm uppercase tracking-widest">Unit SD Global Maju</span>
             </div>
+            
+            <nav class="flex flex-wrap items-center justify-center gap-4 md:gap-10">
+                {{-- Perubahan: Mengubah text-xs menjadi text-sm dan slate-400 menjadi slate-600 agar lebih kontras --}}
+                <a href="{{ route('sd.kurikulum') }}" class="text-sm font-black tracking-widest {{ request()->routeIs('sd.kurikulum') ? 'text-blue-700 border-b-2 border-blue-700' : 'text-slate-600 hover:text-blue-600' }} pb-1 transition-all uppercase">Kurikulum</a>
+                
+                <a href="{{ route('sd.fasilitas') }}" class="text-sm font-black tracking-widest {{ request()->routeIs('sd.fasilitas') ? 'text-blue-700 border-b-2 border-blue-700' : 'text-slate-600 hover:text-blue-600' }} pb-1 transition-all uppercase">Fasilitas</a>
+                
+                <a href="{{ route('sd.ekskul') }}" class="text-sm font-black tracking-widest {{ request()->routeIs('sd.ekskul') ? 'text-blue-700 border-b-2 border-blue-700' : 'text-slate-600 hover:text-blue-600' }} pb-1 transition-all uppercase">Ekstrakurikuler</a>
+                
+                <a href="{{ route('sd.pendaftaran') }}" class="text-sm font-black tracking-widest {{ request()->routeIs('sd.pendaftaran') ? 'text-blue-700 border-b-2 border-blue-700' : 'text-slate-600 hover:text-blue-600' }} pb-1 transition-all uppercase">Pendaftaran</a>
+                
+                {{-- Tombol Daftar Sekarang --}}
+                <a href="{{ route('pendaftaran') }}" class="ml-4 px-8 py-4 bg-blue-600 text-white rounded-2xl text-xs font-black uppercase tracking-[0.2em] hover:bg-blue-700 transition-all shadow-xl shadow-blue-200">
+                    Daftar Sekarang
+                </a>
+            </nav>
         </div>
     </div>
 </div>
 
-<div class="bg-white py-24">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-20">
-            <h2 class="text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">Tiga Pilar Utama Pendidikan SD</h2>
-            <p class="text-slate-500 text-lg leading-relaxed">Kami mengintegrasikan kurikulum nasional dengan nilai-nilai Islam dan keterampilan teknologi masa kini.</p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="group p-10 bg-slate-50 rounded-[40px] hover:bg-white hover:shadow-2xl transition-all duration-500 border border-slate-100 relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                    <i class="fas fa-book text-8xl text-blue-900"></i>
-                </div>
-                <div class="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center text-2xl shadow-xl shadow-blue-200 mb-8">
-                    <i class="fas fa-book-reader"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-slate-800 mb-4">Literasi Unggul</h3>
-                <p class="text-slate-600 leading-relaxed italic">Fokus pada pemahaman bacaan dan logika matematika secara kritis dan kreatif.</p>
-            </div>
+<div class="min-h-screen">
+    @yield('sd_content')
+</div>
 
-            <div class="group p-10 bg-slate-50 rounded-[40px] hover:bg-white hover:shadow-2xl transition-all duration-500 border border-slate-100 relative overflow-hidden">
-                 <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                    <i class="fas fa-mosque text-8xl text-blue-900"></i>
-                </div>
-                <div class="w-16 h-16 bg-blue-700 text-white rounded-2xl flex items-center justify-center text-2xl shadow-xl shadow-blue-200 mb-8">
-                    <i class="fas fa-hand-holding-heart"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-slate-800 mb-4">Bina Karakter</h3>
-                <p class="text-slate-600 leading-relaxed italic">Pembiasaan sholat berjamaah, hafalan juz amma, dan pengembangan adab Islami.</p>
-            </div>
-
-            <div class="group p-10 bg-slate-50 rounded-[40px] hover:bg-white hover:shadow-2xl transition-all duration-500 border border-slate-100 relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-                    <i class="fas fa-code text-8xl text-blue-900"></i>
-                </div>
-                <div class="w-16 h-16 bg-sky-500 text-white rounded-2xl flex items-center justify-center text-2xl shadow-xl shadow-sky-200 mb-8">
-                    <i class="fas fa-laptop-code"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-slate-800 mb-4">Teknologi Dasar</h3>
-                <p class="text-slate-600 leading-relaxed italic">Pengenalan coding dasar dan penggunaan perangkat digital secara bijak.</p>
-            </div>
+<section class="py-24 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+        <div class="bg-blue-900 rounded-[4rem] p-16 relative overflow-hidden shadow-2xl">
+            <i class="fas fa-quote-left text-sky-400 text-5xl mb-8 opacity-30"></i>
+            <h4 class="text-3xl md:text-4xl font-black text-white leading-tight italic mb-8 relative z-10">
+                "Adab dulu, baru Ilmu. Karakter kuat, masa depan hebat."
+            </h4>
+            <div class="w-16 h-1 bg-sky-400 mx-auto rounded-full"></div>
         </div>
     </div>
-</div>
+</section>
 @endsection

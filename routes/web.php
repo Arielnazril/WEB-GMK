@@ -3,25 +3,24 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UnitController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-*/
-
-// Halaman Beranda Utama
+// --- HALAMAN UTAMA ---
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-// Halaman Tentang Kami
 Route::get('/tentang-kami', function () {
     return view('about');
 })->name('about');
 
+Route::get('/hubungi-kami', function () {
+    return view('contact'); 
+})->name('contact');
+
+
 // --- GROUP UNIT PENDIDIKAN ---
 Route::prefix('unit')->group(function () {
-    // Unit TK
+
+    // 1. Unit TK (Menggunakan Controller agar kembali normal)
     Route::prefix('tk')->group(function () {
         Route::get('/', [UnitController::class, 'tk'])->name('unit.tk');
         Route::get('/kurikulum', [UnitController::class, 'tkKurikulum'])->name('tk.kurikulum');
@@ -30,29 +29,42 @@ Route::prefix('unit')->group(function () {
         Route::get('/pendaftaran', [UnitController::class, 'tkPendaftaran'])->name('tk.pendaftaran');
     });
 
-    // Unit SD
-    Route::get('/sd', [UnitController::class, 'sd'])->name('unit.sd');
+    // 2. Unit SD (Memanggil view di layouts/sd/)
+    Route::prefix('sd')->group(function () {
+        Route::get('/', function () {
+            return view('layouts.sd.kurikulum');
+        })->name('unit.sd');
+
+        Route::get('/kurikulum', function () {
+            return view('layouts.sd.kurikulum');
+        })->name('sd.kurikulum');
+        
+        Route::get('/fasilitas', function () {
+            return view('layouts.sd.fasilitas');
+        })->name('sd.fasilitas');
+        
+        Route::get('/ekstrakurikuler', function () {
+            return view('layouts.sd.ekskul');
+        })->name('sd.ekskul');
+        
+        Route::get('/pendaftaran', function () {
+            return view('layouts.sd.pendaftaran');
+        })->name('sd.pendaftaran');
+    });
     
-    // Unit SMP
     Route::get('/smp', [UnitController::class, 'smp'])->name('unit.smp');
 });
 
-// --- HALAMAN BERITA & ARTIKEL ---
+// --- HALAMAN BERITA ---
 Route::get('/berita', function () {
-    return view('news'); // Mengarah ke file resources/views/news.blade.php
+    return view('news'); 
 })->name('news');
 
-// Route Detail Berita (Opsional, untuk pengembangan kedepan)
 Route::get('/berita/{slug}', function ($slug) {
-    return "Detail berita: " . $slug;
+    return view('news-detail', ['slug' => $slug]);
 })->name('news.detail');
 
-// --- HUBUNGI KAMI ---
-Route::get('/hubungi-kami', function () {
-    return view('contact'); 
-})->name('contact');
-
-// --- PENDAFTARAN (SPMB) ---
+// --- PENDAFTARAN UMUM ---
 Route::get('/pendaftaran', function () {
     return view('pendaftaran');
 })->name('pendaftaran');
