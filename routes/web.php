@@ -20,7 +20,7 @@ Route::get('/hubungi-kami', function () {
 // --- GROUP UNIT PENDIDIKAN ---
 Route::prefix('unit')->group(function () {
 
-    // 1. Unit TK (Menggunakan Controller agar kembali normal)
+    // 1. Unit TK
     Route::prefix('tk')->group(function () {
         Route::get('/', [UnitController::class, 'tk'])->name('unit.tk');
         Route::get('/kurikulum', [UnitController::class, 'tkKurikulum'])->name('tk.kurikulum');
@@ -29,7 +29,7 @@ Route::prefix('unit')->group(function () {
         Route::get('/pendaftaran', [UnitController::class, 'tkPendaftaran'])->name('tk.pendaftaran');
     });
 
-    // 2. Unit SD (Memanggil view di layouts/sd/)
+    // 2. Unit SD
     Route::prefix('sd')->group(function () {
         Route::get('/', function () {
             return view('layouts.sd.kurikulum');
@@ -52,7 +52,28 @@ Route::prefix('unit')->group(function () {
         })->name('sd.pendaftaran');
     });
     
-    Route::get('/smp', [UnitController::class, 'smp'])->name('unit.smp');
+    // 3. Unit SMP (Disesuaikan dengan folder resources/views/layouts/smp/)
+    Route::prefix('smp')->group(function () {
+        // Halaman Beranda SMP
+        Route::get('/', [UnitController::class, 'smp'])->name('unit.smp');
+
+        // Perbaikan: Mengarah ke layouts.smp karena file Anda ada di dalam folder layouts
+        Route::get('/kurikulum', function () {
+            return view('layouts.smp.kurikulum');
+        })->name('smp.kurikulum');
+
+        Route::get('/fasilitas', function () {
+            return view('layouts.smp.fasilitas');
+        })->name('smp.fasilitas');
+
+        Route::get('/ekskul', function () {
+            return view('layouts.smp.ekskul');
+        })->name('smp.ekskul');
+
+        Route::get('/pendaftaran', function () {
+            return view('layouts.smp.pendaftaran');
+        })->name('smp.pendaftaran');
+    });
 });
 
 // --- HALAMAN BERITA ---

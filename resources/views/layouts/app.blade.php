@@ -27,58 +27,74 @@
             transition: opacity 0.8s ease-in-out, visibility 0.8s;
         }
 
-        /* Glassmorphism Premium */
+        /* Glassmorphism Premium Peningkatan */
         .nav-scrolled {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        /* Modern Link Underline Effect */
+        /* Modern Link Underline Effect - Lebih Halus */
         .nav-link {
             position: relative;
-            transition: color 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: 0;
             left: 50%;
             width: 0;
-            height: 2px;
-            background: #1d4ed8;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 2.5px;
+            background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             transform: translateX(-50%);
-            border-radius: 2px;
+            border-radius: 10px;
         }
         .nav-link:hover::after, .nav-link-active::after {
             width: 100%;
+        }
+
+        /* Dropdown Animation - Floating Effect */
+        .dropdown-animate {
+            transform: translateY(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .group:hover .dropdown-animate {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
         }
 
         /* Button Shimmer Effect */
         .btn-shimmer {
             position: relative;
             overflow: hidden;
+            transition: all 0.3s ease;
         }
         .btn-shimmer::before {
             content: '';
             position: absolute;
             top: 0; left: -100%;
             width: 50%; height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
             transform: skewX(-25deg);
-            transition: 0.75s;
+            transition: 0.8s;
         }
         .btn-shimmer:hover::before {
             left: 125%;
+        }
+        .btn-shimmer:hover {
+            box-shadow: 0 15px 30px -10px rgba(30, 64, 175, 0.5);
+            transform: translateY(-2px);
         }
 
         #backToTop {
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         #backToTop.show {
             opacity: 1;
@@ -108,78 +124,79 @@
             <div id="nav-container" class="flex justify-between items-center h-24 md:h-28 transition-all duration-500"> 
                 
                 <a href="{{ route('home') }}" class="flex items-center group">
-                    <img src="{{ asset('images/logo-gmk.png') }}" alt="Logo" id="nav-logo" class="w-16 h-16 md:w-20 md:h-20 object-contain transition-all duration-500 group-hover:scale-110">
+                    <div class="relative">
+                        <img src="{{ asset('images/logo-gmk.png') }}" alt="Logo" id="nav-logo" class="w-16 h-16 md:w-20 md:h-20 object-contain transition-all duration-500 group-hover:rotate-[5deg]">
+                    </div>
                     
-                    <div class="h-10 w-[1.5px] bg-slate-300 ml-4 hidden sm:block"></div>
+                    <div class="h-10 w-[1px] bg-slate-200/60 ml-4 hidden sm:block"></div>
 
                     <div class="ml-4 hidden sm:block">
-                        <span class="block text-blue-900 font-extrabold text-lg leading-none tracking-tight">GLOBAL MAJU</span>
-                        <span class="text-[10px] text-blue-600 font-bold tracking-[0.2em] uppercase">Khatulistiwa</span>
+                        <span class="block text-blue-950 font-black text-xl leading-none tracking-tight group-hover:text-blue-700 transition-colors">GLOBAL MAJU</span>
+                        <span class="text-[9px] text-blue-600 font-extrabold tracking-[0.3em] uppercase opacity-80">Khatulistiwa</span>
                     </div>
                 </a>
 
-                <div class="hidden lg:flex space-x-8 items-center">
-                    <a href="{{ route('home') }}" class="text-[14px] font-bold {{ request()->routeIs('home') ? 'nav-link-active' : 'text-slate-600' }} hover:text-blue-700 transition-all relative py-2">Beranda</a>
-                    <a href="{{ route('about') }}" class="text-[14px] font-bold {{ request()->routeIs('about') ? 'nav-link-active' : 'text-slate-600' }} hover:text-blue-700 transition-all relative py-2">Tentang Kami</a>
+                <div class="hidden lg:flex space-x-10 items-center">
+                    <a href="{{ route('home') }}" class="nav-link text-[13px] font-bold {{ request()->routeIs('home') ? 'nav-link-active text-blue-700' : 'text-slate-600' }} hover:text-blue-700 py-2">Beranda</a>
+                    <a href="{{ route('about') }}" class="nav-link text-[13px] font-bold {{ request()->routeIs('about') ? 'nav-link-active text-blue-700' : 'text-slate-600' }} hover:text-blue-700 py-2">Tentang Kami</a>
                     
                     <div class="group relative py-8">
-                        <button class="text-[14px] font-bold {{ request()->routeIs('unit.*') ? 'text-blue-700' : 'text-slate-600' }} group-hover:text-blue-700 flex items-center gap-2 outline-none">
+                        <button class="text-[13px] font-bold {{ request()->routeIs('unit.*') ? 'text-blue-700' : 'text-slate-600' }} group-hover:text-blue-700 flex items-center gap-2 outline-none transition-colors">
                             Unit Pendidikan 
-                            <i class="fas fa-chevron-down text-[10px] transition-transform duration-300 group-hover:rotate-180"></i>
+                            <i class="fas fa-chevron-down text-[9px] transition-transform duration-500 group-hover:rotate-180"></i>
                         </button>
                         
-                        <div class="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 bg-white top-[85%] left-1/2 -translate-x-1/2 w-80 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-slate-50 overflow-hidden p-4 transition-all duration-300 z-[110]">
-                            <div class="grid gap-2">
-                                <a href="{{ route('unit.tk') }}" class="flex items-center gap-4 px-5 py-4 {{ request()->routeIs('unit.tk') ? 'bg-yellow-50' : 'hover:bg-slate-50' }} rounded-3xl transition-all">
-                                    <span class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center">
-                                        <i class="fas fa-shapes text-lg"></i>
+                        <div class="dropdown-animate absolute invisible opacity-0 bg-white top-[80%] left-1/2 -translate-x-1/2 w-80 rounded-[2.5rem] shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)] border border-slate-100/50 overflow-hidden p-3 z-[110]">
+                            <div class="grid gap-1">
+                                <a href="{{ route('unit.tk') }}" class="flex items-center gap-4 px-4 py-4 {{ request()->routeIs('unit.tk') ? 'bg-yellow-50/50' : 'hover:bg-slate-50' }} rounded-3xl transition-all group/item">
+                                    <span class="w-11 h-11 bg-yellow-100/80 text-yellow-600 rounded-2xl flex items-center justify-center group-hover/item:scale-110 transition-transform">
+                                        <i class="fas fa-shapes text-base"></i>
                                     </span>
                                     <div>
-                                        <p class="text-slate-800 font-bold text-sm">TK Global Maju</p>
-                                        <p class="text-[10px] text-slate-400 font-medium">Fun Learning & Character</p>
+                                        <p class="text-slate-800 font-extrabold text-[13px]">TK Global Maju</p>
+                                        <p class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Fun Learning</p>
                                     </div>
                                 </a>
-                                <a href="{{ route('unit.sd') }}" class="flex items-center gap-4 px-5 py-4 {{ request()->routeIs('unit.sd') ? 'bg-blue-50' : 'hover:bg-slate-50' }} rounded-3xl transition-all">
-                                    <span class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center">
-                                        <i class="fas fa-book-open text-lg"></i>
+                                <a href="{{ route('unit.sd') }}" class="flex items-center gap-4 px-4 py-4 {{ request()->routeIs('unit.sd') ? 'bg-blue-50/50' : 'hover:bg-slate-50' }} rounded-3xl transition-all group/item">
+                                    <span class="w-11 h-11 bg-blue-100/80 text-blue-600 rounded-2xl flex items-center justify-center group-hover/item:scale-110 transition-transform">
+                                        <i class="fas fa-book-open text-base"></i>
                                     </span>
                                     <div>
-                                        <p class="text-slate-800 font-bold text-sm">SD Global Maju</p>
-                                        <p class="text-[10px] text-slate-400 font-medium">Academic & Spiritual Base</p>
+                                        <p class="text-slate-800 font-extrabold text-[13px]">SD Global Maju</p>
+                                        <p class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Academic Base</p>
                                     </div>
                                 </a>
-                                <a href="{{ route('unit.smp') }}" class="flex items-center gap-4 px-5 py-4 {{ request()->routeIs('unit.smp') ? 'bg-emerald-50' : 'hover:bg-slate-50' }} rounded-3xl transition-all">
-                                    <span class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center">
-                                        <i class="fas fa-graduation-cap text-lg"></i>
+                                <a href="{{ route('unit.smp') }}" class="flex items-center gap-4 px-4 py-4 {{ request()->routeIs('unit.smp') ? 'bg-emerald-50/50' : 'hover:bg-slate-50' }} rounded-3xl transition-all group/item">
+                                    <span class="w-11 h-11 bg-emerald-100/80 text-emerald-600 rounded-2xl flex items-center justify-center group-hover/item:scale-110 transition-transform">
+                                        <i class="fas fa-graduation-cap text-base"></i>
                                     </span>
                                     <div>
-                                        <p class="text-slate-800 font-bold text-sm">SMP Global Maju</p>
-                                        <p class="text-[10px] text-slate-400 font-medium">Leadership & Critical Thinking</p>
+                                        <p class="text-slate-800 font-extrabold text-[13px]">SMP Global Maju</p>
+                                        <p class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Leadership</p>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <a href="{{ route('news') }}" class="text-[14px] font-bold {{ request()->routeIs('news') ? 'nav-link-active' : 'text-slate-600' }} hover:text-blue-700 transition-colors">Berita</a>
+                    <a href="{{ route('news') }}" class="nav-link text-[13px] font-bold {{ request()->routeIs('news') ? 'nav-link-active text-blue-700' : 'text-slate-600' }} hover:text-blue-700 py-2">Berita</a>
+                    <a href="{{ route('contact') }}" class="nav-link text-[13px] font-bold {{ request()->routeIs('contact') ? 'nav-link-active text-blue-700' : 'text-slate-600' }} hover:text-blue-700 py-2">Hubungi Kami</a>
                     
-                    <a href="{{ route('contact') }}" class="text-[14px] font-bold {{ request()->routeIs('contact') ? 'nav-link-active' : 'text-slate-600' }} hover:text-blue-700 transition-all relative py-2">Hubungi Kami</a>
-                    
-                    <a href="#" class="btn-shimmer relative bg-blue-700 text-white px-8 py-3.5 rounded-2xl font-bold text-sm shadow-[0_10px_20px_rgba(30,64,175,0.3)] hover:bg-blue-800 transition-all active:scale-95">
+                    <a href="#" class="btn-shimmer bg-blue-700 text-white px-7 py-3 rounded-2xl font-extrabold text-[12px] tracking-wider uppercase shadow-lg shadow-blue-900/20 active:scale-95">
                         SPMB 2026
                     </a>
                 </div>
 
                 <div class="lg:hidden">
-                    <button id="mobile-menu-button" class="w-12 h-12 flex items-center justify-center rounded-2xl bg-white text-blue-900 border border-slate-200 shadow-sm active:scale-90 transition-all">
-                        <i class="fas fa-bars-staggered text-xl" id="menu-icon"></i>
+                    <button id="mobile-menu-button" class="w-11 h-11 flex items-center justify-center rounded-xl bg-slate-50 text-blue-950 border border-slate-200/60 shadow-sm active:scale-90 transition-all hover:bg-white hover:border-blue-200">
+                        <i class="fas fa-bars-staggered text-lg" id="menu-icon"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div id="mobile-menu" class="lg:hidden hidden bg-white/95 backdrop-blur-xl border-t border-slate-100 shadow-2xl rounded-b-[2.5rem]">
-            <div class="p-6 space-y-3">
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-slate-100 shadow-2xl rounded-b-[2.5rem] overflow-hidden">
+            <div class="p-6 space-y-2">
                 <a href="{{ route('home') }}" class="block p-4 {{ request()->routeIs('home') ? 'bg-blue-50 text-blue-700' : 'bg-slate-50' }} rounded-2xl font-bold transition-all">Beranda</a>
                 <a href="{{ route('about') }}" class="block p-4 {{ request()->routeIs('about') ? 'bg-blue-50 text-blue-700' : 'bg-slate-50' }} rounded-2xl font-bold transition-all">Tentang Kami</a>
                 
@@ -195,10 +212,9 @@
                 </div>
                 
                 <a href="{{ route('news') }}" class="block p-4 {{ request()->routeIs('news') ? 'bg-blue-50 text-blue-700' : 'bg-slate-50' }} rounded-2xl font-bold">Berita</a>
-                
                 <a href="{{ route('contact') }}" class="block p-4 {{ request()->routeIs('contact') ? 'bg-blue-50 text-blue-700' : 'bg-slate-50' }} rounded-2xl font-bold transition-all">Hubungi Kami</a>
                 
-                <a href="#" class="block text-center bg-blue-700 text-white p-5 rounded-2xl font-extrabold shadow-lg tracking-wider active:scale-95 transition-all">DAFTAR SEKARANG</a>
+                <a href="#" class="block text-center bg-blue-700 text-white p-5 mt-4 rounded-2xl font-black shadow-lg shadow-blue-900/20 tracking-widest active:scale-95 transition-all">DAFTAR SEKARANG</a>
             </div>
         </div>
     </nav>
@@ -207,21 +223,18 @@
         @yield('content')
     </main>
 
-    <button id="backToTop" class="fixed bottom-8 right-8 z-[90] w-14 h-14 bg-blue-700 text-white rounded-2xl shadow-2xl flex items-center justify-center hover:bg-blue-800 hover:-translate-y-2 transition-all active:scale-90">
+    <button id="backToTop" class="fixed bottom-8 right-8 z-[90] w-14 h-14 bg-blue-700 text-white rounded-2xl shadow-2xl flex items-center justify-center hover:bg-blue-800 hover:-translate-y-2 transition-all active:scale-90 shadow-blue-900/30">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    {{-- --- FOOTER SECTION --- --}}
+    {{-- FOOTER TETAP SAMA SEPERTI KODE ASLI --}}
     <footer class="bg-slate-950 pt-24 pb-12 text-white relative overflow-hidden">
-        {{-- Dekorasi Background --}}
         <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-600 via-emerald-500 to-yellow-400"></div>
         <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]"></div>
         <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-600/10 rounded-full blur-[120px]"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
-                
-                {{-- Brand Info --}}
                 <div class="lg:col-span-4 space-y-8">
                     <div class="flex items-center gap-4">
                         <img src="{{ asset('images/logo-gmk.png') }}" alt="Logo GMK" class="w-20 h-20 object-contain drop-shadow-2xl">
@@ -238,18 +251,15 @@
                         <a href="https://www.instagram.com/globalmajukhatulistiwa" target="_blank" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-gradient-to-tr hover:from-purple-600 hover:to-pink-500 border border-white/10 transition-all duration-300 group shadow-lg">
                             <i class="fab fa-instagram text-xl group-hover:scale-110"></i>
                         </a>
-                        
                         <a href="https://www.facebook.com/p/Sekolah-Global-Maju-Khatulistiwa-GMK-100057668282912/" target="_blank" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-blue-600 border border-white/10 transition-all duration-300 group shadow-lg">
                             <i class="fab fa-facebook-f text-xl group-hover:scale-110"></i>
                         </a>
-
                         <a href="https://www.youtube.com/@sekolahglobalmajukhatulistiwa" target="_blank" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-red-600 border border-white/10 transition-all duration-300 group shadow-lg">
                             <i class="fab fa-youtube text-xl group-hover:scale-110"></i>
                         </a>
                     </div>
                 </div>
 
-                {{-- Links --}}
                 <div class="lg:col-span-2">
                     <h4 class="font-bold text-white mb-10 text-sm uppercase tracking-[0.2em] flex items-center gap-3">
                         <span class="w-8 h-[2px] bg-blue-500 rounded-full"></span> Navigasi
@@ -263,14 +273,11 @@
                     </ul>
                 </div>
 
-                {{-- Contact Info (WhatsApp Terpisah) --}}
                 <div class="lg:col-span-6">
                     <h4 class="font-bold text-white mb-10 text-sm uppercase tracking-[0.2em] flex items-center gap-3">
                         <span class="w-8 h-[2px] bg-emerald-500 rounded-full"></span> Hubungi Kami
                     </h4>
-                    
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {{-- WhatsApp KB/TK --}}
                         <div class="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/[0.08] transition-all group">
                             <div class="flex items-start gap-4">
                                 <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all">
@@ -278,15 +285,10 @@
                                 </div>
                                 <div>
                                     <p class="text-[10px] font-bold text-emerald-500 uppercase tracking-widest mb-1">Admin KB / TK</p>
-                                    <a href="https://wa.me/6289694224226" target="_blank" class="text-white font-bold text-lg hover:text-emerald-400 transition-colors">
-                                        0896 9422 4226
-                                    </a>
-                                    <p class="text-slate-500 text-xs mt-2 font-medium">Pendaftaran Unit TK & PAUD</p>
+                                    <a href="https://wa.me/6289694224226" target="_blank" class="text-white font-bold text-lg hover:text-emerald-400 transition-colors">0896 9422 4226</a>
                                 </div>
                             </div>
                         </div>
-
-                        {{-- WhatsApp SD/SMP --}}
                         <div class="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/[0.08] transition-all group">
                             <div class="flex items-start gap-4">
                                 <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all">
@@ -294,31 +296,14 @@
                                 </div>
                                 <div>
                                     <p class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-1">Admin SD / SMP</p>
-                                    <a href="https://wa.me/6282154199008" target="_blank" class="text-white font-bold text-lg hover:text-blue-400 transition-colors">
-                                        0821 5419 9008
-                                    </a>
-                                    <p class="text-slate-500 text-xs mt-2 font-medium">Pendaftaran Unit SD & SMP</p>
+                                    <a href="https://wa.me/6282154199008" target="_blank" class="text-white font-bold text-lg hover:text-blue-400 transition-colors">0821 5419 9008</a>
                                 </div>
-                            </div>
-                        </div>
-
-                        {{-- Lokasi --}}
-                        <div class="md:col-span-2 bg-white/5 border border-white/10 p-6 rounded-[2rem] flex items-center gap-6">
-                            <div class="w-12 h-12 bg-red-500/20 text-red-400 rounded-2xl flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-map-marker-alt text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-bold text-red-400 uppercase tracking-widest mb-1">Lokasi Kampus</p>
-                                <p class="text-white font-bold text-sm leading-relaxed">
-                                    Jl. Aloevera No. 88, Kota Pontianak, Kalimantan Barat
-                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {{-- Bottom Footer --}}
             <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
                 <p class="text-slate-500 text-[13px] font-semibold">
                     © 2026 <span class="text-slate-400">Global Maju Khatulistiwa</span>. All rights reserved.
@@ -352,7 +337,6 @@
             }, 1000);
         });
 
-        // Navbar Scroll Logic
         const mainNav = document.getElementById('main-nav');
         const navContainer = document.getElementById('nav-container');
         const navLogo = document.getElementById('nav-logo');
@@ -375,15 +359,10 @@
             }
         });
 
-        // Back to Top
         backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Mobile Menu Toggle
         const menuBtn = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
