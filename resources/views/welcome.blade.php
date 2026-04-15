@@ -69,7 +69,7 @@
         </div>
         <div class="text-center p-2">
             <h3 class="text-3xl md:text-5xl font-black text-blue-950 mb-1">100%</h3>
-            <p class="text-slate-400 text-[8px] md:text-[10px] font-black uppercase tracking-widest">Kurikulum IT</p>
+            <p class="text-slate-400 text-[8px] md:text-[10px] font-black uppercase tracking-widest">Kurikulum</p>
         </div>
     </div>
 </section>
@@ -85,24 +85,29 @@
                 <h2 class="text-3xl md:text-6xl font-black text-blue-950 leading-tight">Membentuk Karakter Unggul di Era Digital</h2>
             </div>
             <p class="text-slate-500 font-medium max-w-sm text-base md:text-lg leading-relaxed">
-                Kami percaya setiap anak unik. Dengan pendekatan personal dan nilai islami, kami menyiapkan mereka menjadi pemimpin masa depan.
+                "Kami percaya setiap anak unik. Dengan pendekatan personal dan penguatan karakter, kami menyiapkan mereka menjadi pemimpin masa depan yang berintegritas."
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <div class="group bg-white p-8 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] border border-slate-100 hover:border-blue-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
+                {{-- Ikon diganti dari mosque (masjid) menjadi user-check (karakter/integritas) --}}
                 <div class="w-16 h-16 md:w-20 md:h-20 bg-blue-50 text-blue-600 rounded-2xl md:rounded-[2rem] flex items-center justify-center text-2xl md:text-3xl mb-6 md:mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                    <i class="fas fa-mosque"></i>
+                    <i class="fas fa-user-check"></i>
                 </div>
-                <h4 class="text-xl md:text-2xl font-black text-blue-950 mb-4 md:mb-5">Pendidikan Rabbani</h4>
-                <p class="text-slate-500 text-sm md:text-base leading-relaxed font-medium">Integrasi nilai-nilai Al-Qur'an dalam setiap aspek pembelajaran.</p>
+                
+                {{-- Judul diganti dari Pendidikan Rabbani menjadi Karakter Unggul atau Etika Global --}}
+                <h4 class="text-xl md:text-2xl font-black text-blue-950 mb-4 md:mb-5">Karakter Unggul</h4>
+                
+                {{-- Deskripsi sudah menggunakan versi etika/karakter luhur yang kita bahas sebelumnya --}}
+                <p class="text-slate-500 text-sm md:text-base leading-relaxed font-medium">Integrasi nilai-nilai etika dan moralitas luhur dalam setiap aspek pembelajaran.</p>
             </div>
             <div class="group bg-white p-8 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] border border-slate-100 hover:border-emerald-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
                 <div class="w-16 h-16 md:w-20 md:h-20 bg-emerald-50 text-emerald-600 rounded-2xl md:rounded-[2rem] flex items-center justify-center text-2xl md:text-3xl mb-6 md:mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
-                    <i class="fas fa-laptop-code"></i>
+                    <i class="fas fa-lightbulb"></i>
                 </div>
-                <h4 class="text-xl md:text-2xl font-black text-blue-950 mb-4 md:mb-5">Digital Ready</h4>
-                <p class="text-slate-500 text-sm md:text-base leading-relaxed font-medium">Fasilitas lab komputer modern dan pembelajaran berbasis IT.</p>
+                <h4 class="text-xl md:text-2xl font-black text-blue-950 mb-4 md:mb-5">Inovasi Kreatif</h4>
+                <p class="text-slate-500 text-sm md:text-base leading-relaxed font-medium">Mengasah daya cipta dan kemampuan pemecahan masalah melalui proyek pembelajaran yang eksploratif.</p>
             </div>
             <div class="group bg-white p-8 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] border border-slate-100 hover:border-orange-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
                 <div class="w-16 h-16 md:w-20 md:h-20 bg-orange-50 text-orange-600 rounded-2xl md:rounded-[2rem] flex items-center justify-center text-2xl md:text-3xl mb-6 md:mb-8 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500">
@@ -124,15 +129,16 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-            {{-- TK --}}
+            {{-- TK / PAUD --}}
             <div class="relative group">
                 <div class="relative bg-white border border-slate-100 p-6 md:p-8 rounded-[2.5rem] md:rounded-[3.5rem] shadow-lg hover:shadow-xl transition-all">
                     <div class="overflow-hidden rounded-3xl md:rounded-[2.5rem] mb-6 md:mb-8 h-48 md:h-64">
                         <img src="{{ asset('images/tentangkami-tk.PNG') }}" alt="TK Unit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <span class="px-4 py-1.5 bg-orange-100 text-orange-600 text-[10px] font-black uppercase rounded-full tracking-widest">Taman Kanak-Kanak</span>
-                    <h3 class="text-xl md:text-2xl font-black text-blue-950 mt-4 mb-3">Kindergarten</h3>
-                    <a href="{{ route('unit.tk') }}" class="flex items-center justify-center w-full py-4 bg-slate-50 text-blue-950 font-black rounded-2xl hover:bg-orange-500 hover:text-white transition-all">Lihat Detail</a>
+                    <span class="px-4 py-1.5 bg-orange-100 text-orange-600 text-[10px] font-black uppercase rounded-full tracking-widest">PAUD & TK</span>
+                    <h3 class="text-xl md:text-2xl font-black text-blue-950 mt-4 mb-2">Early Years</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed mb-6 font-medium">Pendidikan Anak Usia Dini yang mencakup jenjang **Kelompok Bermain (KB/Playgroup)** dan **Taman Kanak-Kanak (TK)** dengan metode eksplorasi yang menyenangkan.</p>
+                    <a href="{{ route('unit.tk') }}" class="flex items-center justify-center w-full py-4 bg-slate-50 text-blue-950 font-black rounded-2xl hover:bg-yellow-400 hover:text-white transition-all">Lihat Detail</a>
                 </div>
             </div>
 
@@ -143,7 +149,8 @@
                         <img src="{{ asset('images/tentangkami-sd.PNG') }}" alt="SD Unit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
                     <span class="px-4 py-1.5 bg-blue-100 text-blue-600 text-[10px] font-black uppercase rounded-full tracking-widest">Sekolah Dasar</span>
-                    <h3 class="text-xl md:text-2xl font-black text-blue-950 mt-4 mb-3">Elementary School</h3>
+                    <h3 class="text-xl md:text-2xl font-black text-blue-950 mt-4 mb-2">Elementary School</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed mb-6 font-medium">Jenjang **Sekolah Dasar (SD)** yang fokus pada penguatan fondasi literasi, numerasi, serta pembentukan karakter dan kemandirian siswa sejak dini.</p>
                     <a href="{{ route('unit.sd') }}" class="flex items-center justify-center w-full py-4 bg-slate-50 text-blue-950 font-black rounded-2xl hover:bg-blue-600 hover:text-white transition-all">Lihat Detail</a>
                 </div>
             </div>
@@ -154,8 +161,9 @@
                     <div class="overflow-hidden rounded-3xl md:rounded-[2.5rem] mb-6 md:mb-8 h-48 md:h-64">
                         <img src="{{ asset('images/tentangkami-smp.PNG') }}" alt="SMP Unit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <span class="px-4 py-1.5 bg-emerald-100 text-emerald-600 text-[10px] font-black uppercase rounded-full tracking-widest">Sekolah Menengah</span>
-                    <h3 class="text-xl md:text-2xl font-black text-blue-950 mt-4 mb-3">Junior High School</h3>
+                    <span class="px-4 py-1.5 bg-emerald-100 text-emerald-600 text-[10px] font-black uppercase rounded-full tracking-widest">Sekolah Menengah Pertama</span>
+                    <h3 class="text-xl md:text-2xl font-black text-blue-950 mt-4 mb-2">Junior High School</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed mb-6 font-medium">Jenjang **Sekolah Menengah Pertama (SMP)** yang mempersiapkan remaja menjadi pemimpin masa depan melalui riset, inovasi, dan wawasan global.</p>
                     <a href="{{ route('unit.smp') }}" class="flex items-center justify-center w-full py-4 bg-slate-50 text-blue-950 font-black rounded-2xl hover:bg-emerald-600 hover:text-white transition-all">Lihat Detail</a>
                 </div>
             </div>

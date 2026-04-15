@@ -101,7 +101,7 @@
                     <div class="md:w-3/5 p-10 flex flex-col justify-center">
                         <span class="text-emerald-500 font-bold text-xs uppercase tracking-widest mb-2">Spiritual</span>
                         <h3 class="text-2xl font-black text-slate-900 mb-4">TAHFIDZ CLUB</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Pendalaman hafalan Al-Qur'an Juz 30 & 29 dengan metode murojaah yang menyenangkan bagi anak.</p>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Asah logika dan kreativitas anak melalui permainan edukatif serta eksperimen sains sederhana yang seru.</p>
                         <div class="flex gap-2">
                             <span class="px-3 py-1 bg-white text-slate-400 rounded-full text-[10px] font-bold border border-slate-200 uppercase">Intensif</span>
                         </div>

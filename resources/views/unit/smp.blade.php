@@ -19,9 +19,7 @@
                 SMP Global Maju <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Khatulistiwa</span>
             </h1>
-            <p class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mb-10 md:mb-12">
-                Tempat lahirnya para pemimpin masa depan yang inovatif, berintegritas, dan memiliki wawasan global yang berakar pada nilai Al-Quran.
-            </p>
+            <p class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mb-10 md:mb-12">Tempat lahirnya para pemimpin masa depan yang inovatif, berintegritas, dan memiliki wawasan global dengan landasan etika serta moral yang kuat.</p>
 
             <div class="flex flex-col sm:flex-row gap-4 mb-16 md:mb-20">
                 <a href="{{ url('unit/smp/kurikulum') }}" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-xl shadow-emerald-900/40 hover:-translate-y-1 text-center">Program Unggulan</a>
@@ -30,62 +28,82 @@
         </div>
 
         <div class="relative group mt-8">
-    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-[24px] md:rounded-[32px] blur opacity-20"></div>
-    
-    <div class="relative bg-slate-800/90 backdrop-blur-xl p-5 md:px-8 md:py-6 rounded-[24px] md:rounded-[32px] border border-white/10 shadow-2xl">
-        <div class="flex items-center gap-2 mb-6 md:hidden">
-            <div class="w-1 h-4 bg-emerald-500 rounded-full"></div>
-            <p class="text-emerald-400 text-[10px] font-bold uppercase tracking-widest">Klik menu di bawah untuk detail</p>
-        </div>
-
-        <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
-            <div class="hidden md:flex items-center gap-4 border-r border-white/10 pr-8">
-                <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center border border-emerald-500/30">
-                    <i class="fas fa-th-large text-lg"></i>
+            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-[24px] md:rounded-[32px] blur opacity-20 transition duration-1000 group-hover:opacity-40"></div>
+            
+            <div class="relative bg-slate-800/90 backdrop-blur-xl p-4 md:px-8 md:py-6 rounded-[24px] md:rounded-[32px] border border-white/10 shadow-2xl">
+                
+                <div class="flex items-center justify-between mb-4 md:hidden px-2">
+                    <div class="flex items-center gap-2">
+                        <div class="w-1 h-4 bg-emerald-500 rounded-full"></div>
+                        <p class="text-emerald-400 text-[10px] font-black uppercase tracking-widest">Menu Navigasi</p>
+                    </div>
+                    <span class="text-slate-500 text-[9px] italic flex items-center gap-1 animate-pulse">Geser <i class="fas fa-arrow-right"></i></span>
                 </div>
-                <div>
-                    <p class="text-[10px] text-emerald-500 font-black uppercase tracking-widest leading-none mb-1">Informasi</p>
-                    <p class="text-white font-bold text-base tracking-tight">Menu Utama</p>
+
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+                    <div class="hidden md:flex items-center gap-4 border-r border-white/10 pr-8">
+                        <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center border border-emerald-500/30">
+                            <i class="fas fa-th-large text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-emerald-500 font-black uppercase tracking-widest leading-none mb-1">Eksplorasi</p>
+                            <p class="text-white font-bold text-base tracking-tight">Menu SMP</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row overflow-x-auto md:overflow-visible items-center gap-3 md:gap-6 lg:gap-8 w-full lg:w-auto no-scrollbar pb-2 md:pb-0">
+                        @php
+                            $navItems = [
+                                ['url' => 'unit/smp/kurikulum', 'label' => 'Kurikulum', 'icon' => 'fa-book-open'],
+                                ['url' => 'unit/smp/fasilitas', 'label' => 'Fasilitas', 'icon' => 'fa-school'],
+                                ['url' => 'unit/smp/ekskul', 'label' => 'Ekskul', 'icon' => 'fa-users'],
+                                ['url' => 'unit/smp/pendaftaran', 'label' => 'Pendaftaran', 'icon' => 'fa-edit'],
+                            ];
+                        @endphp
+
+                        @foreach($navItems as $item)
+                        @php $isActive = request()->is($item['url']); @endphp
+                        <a href="{{ url($item['url']) }}" 
+                           class="group/item flex-shrink-0 flex items-center gap-4 md:flex-col md:items-start p-3 md:p-4 rounded-2xl border transition-all duration-300 relative overflow-hidden min-w-[145px] md:min-w-0
+                           {{ $isActive ? 'bg-emerald-500/20 border-emerald-500/50 shadow-lg shadow-emerald-500/10' : 'bg-white/5 border-white/5 hover:bg-white/10 hover:border-white/10' }}">
+                            
+                            <i class="fas {{ $item['icon'] }} absolute -right-2 -bottom-2 text-3xl transition-all duration-500
+                               {{ $isActive ? 'text-emerald-500/40 rotate-12 scale-110' : 'text-white/5 group-hover/item:text-emerald-500/20 group-hover/item:rotate-12' }}"></i>
+                            
+                            <div class="w-8 h-8 md:hidden rounded-lg flex items-center justify-center text-xs
+                                {{ $isActive ? 'bg-emerald-500 text-slate-900' : 'bg-white/10 text-slate-400' }}">
+                                <i class="fas {{ $item['icon'] }}"></i>
+                            </div>
+
+                            <div class="relative z-10">
+                                <span class="hidden md:block text-[9px] font-black uppercase tracking-tighter mb-1 transition-colors
+                                    {{ $isActive ? 'text-emerald-400' : 'text-slate-500 group-hover/item:text-emerald-400' }}">
+                                    Lihat Detail
+                                </span>
+                                <span class="text-white font-bold text-sm md:text-base whitespace-nowrap flex items-center gap-2">
+                                    {{ $item['label'] }}
+                                    <i class="fas fa-chevron-right text-[10px] hidden md:block transition-all 
+                                       {{ $isActive ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0' }}"></i>
+                                </span>
+                            </div>
+                            
+                            <div class="absolute bottom-0 left-0 h-1 bg-emerald-500 transition-all duration-500 
+                                {{ $isActive ? 'w-full' : 'w-0 group-hover/item:w-full' }}"></div>
+                        </a>
+                        @endforeach
+                    </div>
+
+                    <div class="w-full lg:w-auto pt-2 md:pt-0">
+                        <a href="{{ url('unit/smp/pendaftaran') }}" class="relative overflow-hidden group/btn bg-emerald-500 hover:bg-emerald-400 text-slate-900 px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-lg shadow-emerald-500/20 active:scale-95 text-center block w-full">
+                            <span class="relative z-10 flex items-center justify-center gap-2">
+                                Daftar Sekarang
+                                <i class="fas fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                            </span>
+                        </a>
+                    </div>
                 </div>
             </div>
-
-            <div class="grid grid-cols-2 md:flex md:flex-row items-center gap-3 md:gap-8 lg:gap-10 w-full lg:w-auto">
-                @php
-                    $navItems = [
-                        ['url' => 'unit/smp/kurikulum', 'label' => 'Kurikulum', 'icon' => 'fa-book-open'],
-                        ['url' => 'unit/smp/fasilitas', 'label' => 'Fasilitas', 'icon' => 'fa-school'],
-                        ['url' => 'unit/smp/ekskul', 'label' => 'Ekskul', 'icon' => 'fa-users'],
-                        ['url' => 'unit/smp/pendaftaran', 'label' => 'Pendaftaran', 'icon' => 'fa-edit'],
-                    ];
-                @endphp
-
-                @foreach($navItems as $item)
-                <a href="{{ url($item['url']) }}" 
-                   class="group/item flex flex-col p-4 rounded-2xl border border-white/5 bg-white/5 hover:bg-emerald-500/10 hover:border-emerald-500/50 transition-all duration-300 relative overflow-hidden">
-                    <i class="fas {{ $item['icon'] }} absolute -right-2 -bottom-2 text-white/5 text-3xl group-hover/item:text-emerald-500/20 transition-all"></i>
-                    
-                    <span class="text-slate-500 group-hover/item:text-emerald-400 text-[9px] font-black uppercase tracking-tighter mb-1">Lihat Detail</span>
-                    <span class="text-white font-bold text-sm md:text-base flex items-center gap-2">
-                        {{ $item['label'] }}
-                        <i class="fas fa-chevron-right text-[10px] opacity-0 group-hover/item:opacity-100 transition-all -translate-x-2 group-hover/item:translate-x-0"></i>
-                    </span>
-                    
-                    <span class="absolute bottom-0 left-0 h-1 bg-emerald-500 transition-all duration-500 {{ request()->is($item['url']) ? 'w-full' : 'w-0 group-hover/item:w-full' }}"></span>
-                </a>
-                @endforeach
-            </div>
-
-            <div class="w-full lg:w-auto pt-2 md:pt-0">
-                <a href="{{ url('unit/smp/pendaftaran') }}" class="relative overflow-hidden group/btn bg-emerald-500 hover:bg-emerald-400 text-slate-900 px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-lg shadow-emerald-500/20 active:scale-95 text-center block w-full">
-                    <span class="relative z-10 flex items-center justify-center gap-2">
-                        Daftar Sekarang
-                        <i class="fas fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
-                    </span>
-                </a>
-            </div>
         </div>
-    </div>
-</div>
     </div>
 </div>
 
@@ -109,7 +127,7 @@
                         <i class="fas fa-quran"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-800 mb-3">Tahfidz & Tartil</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Program intensif menghafal Al-Quran dengan metode yang memudahkan siswa menjaga hafalannya secara mutqin.</p>
+                    <p class="text-slate-500 text-sm leading-relaxed">Program intensif pengembangan literasi dan kemampuan komunikasi untuk membangun kepercayaan diri siswa di depan publik secara fasih.</p>
                 </div>
 
                 <div class="bg-white p-8 rounded-[32px] md:rounded-[40px] border border-slate-100 shadow-sm hover:shadow-xl transition-all group duration-500">
@@ -137,4 +155,15 @@
         </div>
     </div>
 </div>
+
+<style>
+    /* CSS untuk menghilangkan scrollbar yang berantakan tapi tetap bisa digeser */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
 @endsection

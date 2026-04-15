@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+{{-- Header Section --}}
 <div class="bg-[#FFFF00] pt-16 md:pt-24 pb-10 md:pb-12 border-b border-black/5">
     <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
         <span class="inline-block bg-black/5 text-black px-4 py-1.5 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-4 md:mb-6">
@@ -17,7 +18,8 @@
     </div>
 </div>
 
-<div class="bg-[#FFFF00] border-y border-black/10 sticky top-0 z-[100] shadow-md transition-all duration-300 overflow-x-auto">
+{{-- Unit Navbar - Sticky dengan Z-Index yang disesuaikan agar tidak bentrok --}}
+<div class="bg-[#FFFF00] border-y border-black/10 sticky top-0 z-[40] shadow-md transition-all duration-300 overflow-x-auto">
     <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between min-w-max md:min-w-0">
         <div class="flex items-center gap-2 md:gap-3 mr-8 md:mr-0">
             <div class="w-8 h-8 md:w-10 md:h-10 bg-black rounded-lg md:rounded-xl flex items-center justify-center shadow-lg shadow-black/20">
@@ -41,6 +43,7 @@
     </div>
 </div>
 
+{{-- Hero Section with Image --}}
 <div class="relative bg-white py-16 md:py-24 overflow-hidden">
     <div class="absolute top-0 right-0 w-full md:w-1/2 h-full bg-slate-50 md:-skew-x-12 md:translate-x-20 z-0"></div>
     
@@ -77,9 +80,11 @@
                     <div class="absolute -inset-4 bg-yellow-400/20 rounded-[40px] md:rounded-[60px] rotate-3 transition-transform group-hover:rotate-6"></div>
                     <div class="relative bg-white p-4 md:p-6 rounded-[35px] md:rounded-[50px] shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
                         <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-[30px] md:rounded-[40px] aspect-[4/3] flex flex-col items-center justify-center border-2 md:border-4 border-dashed border-yellow-200 overflow-hidden relative">
-                            <i class="fas fa-star text-yellow-400 text-6xl md:text-8xl transition-transform duration-700 group-hover:scale-110"></i>
-                            <div class="absolute bottom-6 md:bottom-8 text-center px-4">
-                                <p class="font-black text-slate-800 text-[8px] md:text-[10px] uppercase tracking-[0.3em]">Develop Your Interest</p>
+                            {{-- Image tk1.PNG dimasukkan di sini --}}
+                            <img src="{{ asset('images/tk1.PNG') }}" alt="Kegiatan TK" class="w-full h-full object-cover transition-transform duration-900 group-hover:scale-110">
+                            
+                            <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent pt-12 pb-5 md:pb-8 text-center px-4">
+                                <p class="font-black text-white text-[8px] md:text-[10px] uppercase tracking-[0.3em]">Develop Your Interest</p>
                             </div>
                         </div>
                     </div>
@@ -89,6 +94,7 @@
     </div>
 </div>
 
+{{-- List Ekskul Section --}}
 <div class="bg-slate-50 py-20 md:py-32">
     <div class="max-w-7xl mx-auto px-6 text-center">
         <h3 class="text-3xl md:text-4xl font-black text-slate-900 mb-12 md:mb-16 uppercase tracking-tighter">Pilihan Ekstrakurikuler</h3>
@@ -116,6 +122,7 @@
     </div>
 </div>
 
+{{-- Highlights Section --}}
 <div class="py-20 md:py-32 max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
         <div class="p-8 md:p-12 bg-emerald-50 rounded-[40px] md:rounded-[60px] border border-emerald-100 group hover:shadow-xl transition-all duration-500">

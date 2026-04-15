@@ -15,7 +15,9 @@ Route::get('/tentang-kami', function () {
 Route::get('/hubungi-kami', function () {
     return view('contact'); 
 })->name('contact');
-
+Route::get('/spmb-2026', function () {
+    return view('spmb'); 
+})->name('spmb');
 
 // --- GROUP UNIT PENDIDIKAN ---
 Route::prefix('unit')->group(function () {

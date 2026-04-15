@@ -10,7 +10,6 @@
 <div class="relative z-10 pt-20"> {{-- Menambahkan pt-20 agar seluruh konten turun dari navbar --}}
 
     {{-- Content Wrapper: Bagian putih (Mekanisme) --}}
-    {{-- Ubah -mt-32 menjadi -mt-10 agar card putih turun lebih jauh ke bawah --}}
     <div class="max-w-6xl mx-auto px-6 -mt-10 pb-32 relative z-20">
         
         {{-- 1. Mekanisme Pendaftaran --}}
@@ -56,7 +55,7 @@
         </div>
 
         {{-- 2. Syarat & Waktu --}}
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             <div class="bg-slate-900 rounded-[3.5rem] p-12 text-white relative group overflow-hidden">
                 <i class="fas fa-address-card absolute -right-10 -bottom-10 text-[15rem] text-white opacity-5"></i>
                 <h3 class="text-2xl font-black uppercase tracking-tight mb-8 flex items-center gap-4">
@@ -97,7 +96,40 @@
             </div>
         </div>
 
-        {{-- 3. Footer CTA --}}
+        {{-- 3. Form Minat SD --}}
+        <div class="bg-white rounded-[4rem] shadow-2xl shadow-blue-900/10 border border-slate-50 p-10 md:p-16 mb-16">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <span class="px-4 py-1.5 bg-blue-50 text-blue-600 rounded-full text-[10px] font-black uppercase tracking-[0.2em]">Form Peminatan</span>
+                    <h2 class="text-3xl font-black text-slate-800 uppercase italic tracking-tighter mt-4">Daftar Minat Sekarang</h2>
+                    <p class="text-slate-400 text-sm mt-2">Lengkapi data untuk mendapatkan informasi jadwal tes dan e-brosur.</p>
+                </div>
+
+                <form onsubmit="event.preventDefault(); kirimKeWA_SD();" class="grid grid-cols-1 gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-3">
+                            <label class="text-[11px] font-black uppercase tracking-widest text-slate-400 ml-2">Nama Calon Siswa</label>
+                            <div class="relative group">
+                                <input type="text" id="nama_siswa_sd" required placeholder="Nama lengkap" class="w-full px-8 py-5 rounded-3xl bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <label class="text-[11px] font-black uppercase tracking-widest text-slate-400 ml-2">Asal TK / PAUD</label>
+                            <input type="text" id="asal_tk_sd" required placeholder="Nama sekolah asal" class="w-full px-8 py-5 rounded-3xl bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <label class="text-[11px] font-black uppercase tracking-widest text-slate-400 ml-2">WhatsApp Orang Tua</label>
+                        <input type="tel" id="wa_ortu_sd" required placeholder="0812-xxxx-xxxx" class="w-full px-8 py-5 rounded-3xl bg-slate-50 border-2 border-transparent focus:border-blue-500 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-slate-900 text-white font-black py-6 rounded-3xl shadow-xl shadow-blue-500/20 transition-all uppercase tracking-[0.2em] text-xs">
+                        Kirim Via WhatsApp <i class="fab fa-whatsapp ml-2 text-lg"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        {{-- 4. Footer CTA --}}
         <div class="mt-16 bg-blue-600 rounded-[3rem] p-12 text-center text-white relative overflow-hidden shadow-2xl">
             <div class="relative z-10">
                 <h3 class="text-3xl font-black uppercase tracking-tighter mb-4">Butuh Bantuan?</h3>
@@ -109,4 +141,27 @@
         </div>
     </div>
 </div>
+
+<script>
+    function kirimKeWA_SD() {
+        const nama = document.getElementById('nama_siswa_sd').value;
+        const tk = document.getElementById('asal_tk_sd').value;
+        const wa = document.getElementById('wa_ortu_sd').value;
+        const nomorTujuan = "6282154199008"; // Sesuaikan dengan nomor admin SD
+
+        const pesan = `*— FORMULIR MINAT PENDAFTARAN SD —*%0A%0A` +
+              `Yth. Panitia Penerimaan Siswa Baru,%0A` +
+              `Salam hangat, saya orang tua/wali dari calon siswa yang ingin mengajukan permohonan informasi pendaftaran. Berikut adalah detail data kami:%0A%0A` +
+              `✨ *Identitas Calon Siswa* ✨%0A` +
+              `━━━━━━━━━━━━━━━━━━━━%0A` +
+              `👤 *Nama Lengkap:* ${nama}%0A` +
+              `🏫 *Asal Sekolah (TK/PAUD):* ${tk}%0A` +
+              `📱 *Kontak Orang Tua:* ${wa}%0A` +
+              `━━━━━━━━━━━━━━━━━━━━%0A%0A` +
+              `Besar harapan kami untuk mendapatkan panduan mengenai *prosedur pendaftaran*, *rincian biaya pendidikan*, serta *jadwal observasi/tes* terdekat.%0A%0A` +
+              `Mohon bantuannya untuk mengirimkan e-brosur jika tersedia. Terima kasih banyak atas perhatian dan bantuannya! 🙏✨`;
+
+        window.open(`https://wa.me/${nomorTujuan}?text=${pesan}`, '_blank');
+    }
+</script>
 @endsection

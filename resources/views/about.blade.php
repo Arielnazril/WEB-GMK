@@ -87,6 +87,7 @@
                     <div class="absolute -top-16 -right-16 p-8 opacity-[0.07] group-hover:opacity-20 group-hover:scale-110 transition-all duration-700">
                         <i class="fas fa-eye text-[240px]"></i>
                     </div>
+                    
                     <div class="relative z-10">
                         <h3 class="text-2xl font-bold mb-10 flex items-center gap-5">
                             <span class="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-700 rounded-2xl flex items-center justify-center shadow-2xl transform group-hover:rotate-[15deg] transition-transform duration-500">
@@ -95,7 +96,7 @@
                             <span class="tracking-tight text-3xl">Visi Kami</span>
                         </h3>
                         <p class="text-blue-50 text-2xl md:text-3xl leading-relaxed font-light italic">
-                            "Menjadi lembaga pendidikan unggulan yang melahirkan generasi cerdas, mandiri, dan berakhlak Rabbani berlandaskan nilai-nilai Islami."
+                            "Menjadi lembaga pendidikan unggulan yang melahirkan generasi berkarakter luhur, cerdas, mandiri, dan berintegritas tinggi untuk menghadapi tantangan masa depan."
                         </p>
                     </div>
                 </div>
@@ -111,9 +112,9 @@
                     <ul class="space-y-8">
                         @php
                             $misi = [
-                                "Menyelenggarakan pendidikan Islam terpadu yang menyeimbangkan antara ilmu pengetahuan umum dan agama.",
-                                "Membangun lingkungan belajar yang inovatif, kreatif, dan menyenangkan bagi anak didik.",
-                                "Membina karakter jujur, disiplin, dan bertanggung jawab sejak dini."
+                                "Menyelenggarakan sistem pendidikan terpadu yang menyeimbangkan antara penguatan akademik dan pembentukan karakter luhur.",
+                                "Membangun lingkungan belajar yang inovatif, kreatif, dan adaptif bagi seluruh peserta didik tanpa memandang latar belakang.",
+                                "Membina etika, kemandirian, dan tanggung jawab sosial guna mencetak generasi yang berintegritas dan siap menghadapi masa depan."
                             ];
                         @endphp
                         @foreach($misi as $index => $item)
@@ -121,7 +122,9 @@
                             <span class="flex-none w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-sm font-black text-blue-600 border border-slate-100 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all duration-300">
                                 0{{ $index + 1 }}
                             </span>
-                            <p class="text-slate-600 font-medium text-lg leading-relaxed group-hover:text-blue-950 transition-colors">{{ $item }}</p>
+                            <p class="text-slate-600 font-medium text-lg leading-relaxed group-hover:text-blue-950 transition-colors">
+                                {{ $item }}
+                            </p>
                         </li>
                         @endforeach
                     </ul>
@@ -132,114 +135,116 @@
 
     {{-- Unit Pendidikan --}}
     <section class="py-32 bg-slate-50 relative overflow-hidden">
-        <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] -z-0"></div>
-        <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-emerald-100/40 rounded-full blur-[120px] -z-0"></div>
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-[120px] -z-0"></div>
+    <div class="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-emerald-100/40 rounded-full blur-[120px] -z-0"></div>
 
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-24 space-y-6">
-                <div class="inline-flex items-center gap-3 px-5 py-2 bg-white shadow-sm border border-slate-100 rounded-full">
-                    <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-                    <span class="text-emerald-700 font-bold uppercase tracking-[0.4em] text-[10px]">Educational Excellence</span>
-                </div>
-                <h2 class="text-5xl md:text-7xl font-black text-blue-950 tracking-tighter leading-none">
-                    Unit Pendidikan <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-emerald-500">Unggulan GMK</span>
-                </h2>
-                <p class="text-slate-500 max-w-2xl mx-auto text-lg md:text-xl font-medium">
-                    Kurikulum terintegrasi yang dirancang khusus untuk membentuk pemimpin masa depan yang inovatif.
-                </p>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-24 space-y-6">
+            <div class="inline-flex items-center gap-3 px-5 py-2 bg-white shadow-sm border border-slate-100 rounded-full">
+                <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                <span class="text-emerald-700 font-bold uppercase tracking-[0.4em] text-[10px]">Educational Excellence</span>
             </div>
+            <h2 class="text-5xl md:text-7xl font-black text-blue-950 tracking-tighter leading-none">
+                Unit Pendidikan <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-emerald-500">Unggulan GMK</span>
+            </h2>
+            <p class="text-slate-500 max-w-2xl mx-auto text-lg md:text-xl font-medium">
+                Membangun fondasi masa depan melalui sistem pendidikan terpadu yang adaptif terhadap tantangan era digital.
+            </p>
+        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
-                @php
-                    $units = [
-                        [
-                            'number' => '01',
-                            'title' => 'Unit TK', 
-                            'sub' => 'KINDERGARTEN', 
-                            'img' => 'tentangkami-tk.PNG', 
-                            'accent' => 'from-yellow-400 to-orange-500',
-                            'text_accent' => 'text-orange-600',
-                            'desc' => 'Eksplorasi kreativitas dan pembentukan karakter dasar melalui metode Play-Based Learning yang Islami.', 
-                            'link' => '/tk'
-                        ],
-                        [
-                            'number' => '02',
-                            'title' => 'Unit SD', 
-                            'sub' => 'ELEMENTARY', 
-                            'img' => 'tentangkami-sd.PNG', 
-                            'accent' => 'from-blue-600 to-indigo-700',
-                            'text_accent' => 'text-blue-600',
-                            'desc' => 'Pondasi akademis kokoh dengan integrasi kurikulum Entrepreneurship untuk mengasah kemandirian.', 
-                            'link' => '/sd'
-                        ],
-                        [
-                            'number' => '03',
-                            'title' => 'Unit SMP', 
-                            'sub' => 'JUNIOR HIGH', 
-                            'img' => 'tentangkami-smp.PNG', 
-                            'accent' => 'from-emerald-500 to-teal-700',
-                            'text_accent' => 'text-emerald-600',
-                            'desc' => 'Pengembangan kepemimpinan strategis dan penguasaan teknologi berbasis akhlak Rabbani.', 
-                            'link' => '/smp'
-                        ]
-                    ];
-                @endphp
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+            @php
+                $units = [
+                    [
+                        'number' => '01',
+                        'title' => 'PAUD & TK', 
+                        'sub' => 'Early Years', 
+                        'img' => 'tentangkami-tk.PNG', 
+                        // Mengganti gradien menjadi nuansa kuning
+                        'accent' => 'from-yellow-400 to-yellow-500',
+                        // Menyesuaikan warna teks agar tetap kontras di atas kuning
+                        'text_accent' => 'text-yellow-700',
+                        'desc' => 'Fokus pada pengembangan motorik, sosial, dan kreativitas dini melalui metode pembelajaran berbasis eksplorasi yang menyenangkan.', 
+                        'link' => '/paud-tk'
+                    ],
+                    [
+                        'number' => '02',
+                        'title' => 'Sekolah Dasar', 
+                        'sub' => 'Elementary', 
+                        'img' => 'tentangkami-sd.PNG', 
+                        'accent' => 'from-blue-600 to-indigo-700',
+                        'text_accent' => 'text-blue-600',
+                        'desc' => 'Penguatan literasi dan numerasi dasar dengan integrasi kurikulum inovatif untuk mengasah kemandirian serta logika berpikir siswa.', 
+                        'link' => '/sd'
+                    ],
+                    [
+                        'number' => '03',
+                        'title' => 'Sekolah Menengah Pertama', 
+                        'sub' => 'Junior High', 
+                        'img' => 'tentangkami-smp.PNG', 
+                        'accent' => 'from-emerald-500 to-teal-700',
+                        'text_accent' => 'text-emerald-600',
+                        'desc' => 'Pengembangan kepemimpinan strategis dan penguasaan teknologi mutakhir untuk mempersiapkan siswa menjadi inovator masa depan.', 
+                        'link' => '/smp'
+                    ]
+                ];
+            @endphp
 
-                @foreach($units as $u)
-                <div class="group relative bg-white rounded-[60px] p-8 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_50px_120px_-20px_rgba(30,58,138,0.2)] transition-all duration-700 hover:-translate-y-6 flex flex-col min-h-[650px]">
-                    <span class="absolute top-10 right-10 text-9xl font-black text-slate-50 group-hover:text-slate-100 transition-colors duration-700 select-none -z-0">
-                        {{ $u['number'] }}
-                    </span>
+            @foreach($units as $u)
+            <div class="group relative bg-white rounded-[60px] p-8 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_50px_120px_-20px_rgba(30,58,138,0.2)] transition-all duration-700 hover:-translate-y-6 flex flex-col min-h-[650px]">
+                <span class="absolute top-10 right-10 text-9xl font-black text-slate-50 group-hover:text-slate-100 transition-colors duration-700 select-none -z-0">
+                    {{ $u['number'] }}
+                </span>
 
-                    <div class="relative z-10 w-full aspect-[4/5] rounded-[45px] overflow-hidden shadow-2xl mb-10">
-                        <img src="{{ asset('images/'.$u['img']) }}" alt="{{ $u['title'] }}" 
-                             class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                        
-                        <div class="absolute inset-0 bg-gradient-to-t from-blue-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
-                            <span class="text-white font-bold tracking-widest text-xs uppercase">{{ $u['sub'] }} PROGRAM</span>
-                        </div>
-                    </div>
-
-                    <div class="relative z-10 flex-grow px-2">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-12 h-1 bg-gradient-to-r {{ $u['accent'] }} rounded-full"></div>
-                            <span class="font-bold {{ $u['text_accent'] }} tracking-[0.2em] text-[11px] uppercase">{{ $u['sub'] }}</span>
-                        </div>
-
-                        <h3 class="text-4xl font-black text-blue-950 mb-6 tracking-tighter leading-tight group-hover:translate-x-2 transition-transform duration-500">
-                            {{ $u['title'] }}
-                        </h3>
-
-                        <p class="text-slate-500 font-medium text-lg leading-relaxed mb-10">
-                            {{ $u['desc'] }}
-                        </p>
-                    </div>
-
-                    <div class="relative z-10 mt-auto px-2 pb-2">
-                        <a href="{{ $u['link'] }}" 
-                           class="flex items-center justify-between w-full group/btn bg-slate-950 text-white p-2 rounded-[30px] hover:bg-blue-700 transition-all duration-500 shadow-xl">
-                            <span class="ml-6 font-extrabold tracking-wide text-sm">PELAJARI PROGRAM</span>
-                            <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-blue-700 transition-all duration-500">
-                                <i class="fas fa-arrow-right text-lg"></i>
-                            </div>
-                        </a>
+                <div class="relative z-10 w-full aspect-[4/5] rounded-[45px] overflow-hidden shadow-2xl mb-10">
+                    <img src="{{ asset('images/'.$u['img']) }}" alt="{{ $u['title'] }}" 
+                         class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                    
+                    <div class="absolute inset-0 bg-gradient-to-t from-blue-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                        <span class="text-white font-bold tracking-widest text-xs uppercase">{{ $u['sub'] }} PROGRAM</span>
                     </div>
                 </div>
-                @endforeach
-            </div>
 
-            <section class="relative py-28 bg-gradient-to-b from-white via-slate-50 to-white">
+                <div class="relative z-10 flex-grow px-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-1 bg-gradient-to-r {{ $u['accent'] }} rounded-full"></div>
+                        <span class="font-bold {{ $u['text_accent'] }} tracking-[0.2em] text-[11px] uppercase">{{ $u['sub'] }}</span>
+                    </div>
+
+                    <h3 class="text-3xl md:text-4xl font-black text-blue-950 mb-6 tracking-tighter leading-tight group-hover:translate-x-2 transition-transform duration-500">
+                        {{ $u['title'] }}
+                    </h3>
+
+                    <p class="text-slate-500 font-medium text-lg leading-relaxed mb-10">
+                        {{ $u['desc'] }}
+                    </p>
+                </div>
+
+                <div class="relative z-10 mt-auto px-2 pb-2">
+                    <a href="{{ $u['link'] }}" 
+                       class="flex items-center justify-between w-full group/btn bg-slate-950 text-white p-2 rounded-[30px] hover:bg-blue-700 transition-all duration-500 shadow-xl">
+                        <span class="ml-6 font-extrabold tracking-wide text-sm">PELAJARI PROGRAM</span>
+                        <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-blue-700 transition-all duration-500">
+                            <i class="fas fa-arrow-right text-lg"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
     <div class="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20">
 
-```
+
     {{-- Header --}}
     <div class="text-center mb-20">
         <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-4">
             Guru & Staff Pengajar
         </h2>
         <p class="text-slate-500 italic">
-            "Membentuk Generasi Rabbani yang Unggul & Berjiwa Entrepreneur"
+            "Mewujudkan Generasi Berintegritas, Unggul, dan Berjiwa Entrepreneur"
         </p>
         <div class="w-24 h-[3px] bg-blue-600 mx-auto mt-6 rounded-full"></div>
     </div>
@@ -311,51 +316,65 @@
     </section>
 
     {{-- Kurikulum Section --}}
-    <section class="py-24 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-blue-50 rounded-[60px] p-12 md:p-20 relative overflow-hidden border border-blue-100">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl -mr-48 -mt-48"></div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-                    <div>
-                        <h2 class="text-4xl md:text-5xl font-black text-blue-950 mb-8 tracking-tight">Kurikulum Berbasis <span class="text-blue-600">Entrepreneurship</span></h2>
-                        <div class="space-y-6">
-                            <div class="flex gap-6">
-                                <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-blue-600 shrink-0">
-                                    <i class="fas fa-rocket"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-blue-950 text-xl mb-2">Project Based Learning</h4>
-                                    <p class="text-slate-600">Siswa belajar melalui praktik langsung menciptakan solusi nyata.</p>
-                                </div>
+    <section class="py-16 md:py-24 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+        <div class="bg-blue-50 rounded-[40px] md:rounded-[60px] p-8 md:p-16 lg:p-20 relative overflow-hidden border border-blue-100">
+            <div class="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-blue-200/30 rounded-full blur-3xl -mr-32 -mt-32"></div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center relative z-10">
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-black text-blue-950 mb-6 md:mb-8 tracking-tight leading-tight">
+                        Kurikulum Berbasis <span class="text-blue-600">Entrepreneurship</span>
+                    </h2>
+                    
+                    <div class="space-y-6 md:space-y-8">
+                        <div class="flex flex-col sm:flex-row gap-4 md:gap-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-blue-600 shrink-0">
+                                <i class="fas fa-rocket text-lg md:text-xl"></i>
                             </div>
-                            <div class="flex gap-6">
-                                <div class="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center text-emerald-500 shrink-0">
-                                    <i class="fas fa-coins"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-blue-950 text-xl mb-2">Financial Literacy</h4>
-                                    <p class="text-slate-600">Membekali pemahaman pengelolaan keuangan sejak dini.</p>
-                                </div>
+                            <div>
+                                <h4 class="font-bold text-blue-950 text-lg md:text-xl mb-1 md:mb-2">Project Based Learning</h4>
+                                <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                                    Dari **eksplorasi kreatif PAUD** hingga **riset inovatif SMP**, siswa belajar melalui praktik langsung untuk memecahkan tantangan nyata di lingkungan mereka.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-4 md:gap-6">
+                            <div class="w-12 h-12 md:w-14 md:h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-emerald-500 shrink-0">
+                                <i class="fas fa-coins text-lg md:text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-950 text-lg md:text-xl mb-1 md:mb-2">Financial Literacy</h4>
+                                <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                                    Mengenalkan konsep nilai dan pengelolaan sumber daya sejak dini guna membangun kemandirian serta tanggung jawab finansial yang bijak.
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white p-8 rounded-[40px] shadow-xl border border-blue-100">
-                        <blockquote class="text-2xl font-medium text-blue-900 italic leading-relaxed">
-                            "Kami tidak hanya mengajar anak untuk menjawab soal, tapi kami melatih mereka untuk berani bertanya dan menciptakan peluang."
-                        </blockquote>
-                        <div class="mt-8 flex items-center gap-4">
-                            <div class="w-12 h-12 bg-blue-600 rounded-full"></div>
-                            <div>
-                                <p class="font-bold text-blue-950">Kepala Sekolah</p>
-                                <p class="text-sm text-slate-500 uppercase tracking-widest">Global Maju Khatulistiwa</p>
-                            </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-10 rounded-[30px] md:rounded-[45px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-blue-100">
+                    <i class="fas fa-quote-left text-3xl md:text-4xl text-blue-100 mb-4 md:mb-6"></i>
+                    <blockquote class="text-lg md:text-2xl font-medium text-blue-900 italic leading-relaxed mb-6 md:mb-8">
+                        "Kami tidak hanya mengajar anak untuk menjawab soal, tapi kami melatih mereka untuk berani bertanya, berinovasi, dan menciptakan peluang masa depan."
+                    </blockquote>
+                    
+                    <div class="flex items-center gap-4 md:gap-5 pt-6 border-t border-slate-100">
+                        <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-blue-600 to-indigo-600 text-white rounded-full flex items-center justify-center shadow-lg">
+                            <i class="fas fa-user-tie text-xl md:text-2xl"></i>
+                        </div>
+                        
+                        <div>
+                            <p class="font-bold text-blue-950 text-base md:text-lg leading-tight">Ketua Yayasan Sekolah</p>
+                            <p class="text-[9px] md:text-[11px] text-slate-500 uppercase tracking-[0.2em] font-bold">Global Maju Khatulistiwa</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     {{-- Nilai Dasar Section --}}
     <section class="py-24 bg-white border-y border-slate-100 relative">
@@ -372,7 +391,7 @@
                         $values = [
                             ['icon' => 'heart', 'color' => 'blue', 'title' => 'Mendidik Dengan Hati', 'desc' => 'Kasih sayang adalah kunci utama dalam membimbing setiap keunikan siswa.'],
                             ['icon' => 'lightbulb', 'color' => 'emerald', 'title' => 'Inovatif', 'desc' => 'Mengadopsi metode pembelajaran modern yang relevan dengan tantangan zaman.'],
-                            ['icon' => 'mosque', 'color' => 'orange', 'title' => 'Karakter Islami', 'desc' => "Menjadikan Al-Qur'an dan Sunnah sebagai panduan utama pembentukan akhlak."]
+                            ['icon' => 'star', 'color' => 'orange', 'title' => 'Budaya Positif', 'desc' => 'Membentuk kebiasaan disiplin dan tata krama yang baik dalam interaksi sosial sehari-hari.']
                         ];
                     @endphp
                     @foreach($values as $v)
