@@ -32,30 +32,27 @@
             </p>
         </div>
 
-        <div class="relative group mt-8" data-aos="fade-up" data-aos-delay="200">
-            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-400 rounded-[24px] md:rounded-[32px] blur opacity-25 group-hover:opacity-50 transition-all duration-1000"></div>
+        {{-- NAVIGASI UNIT (MENGIKUTI HALAMAN SEBELUMNYA) --}}
+        <nav class="relative group mt-8" data-aos="fade-up" data-aos-delay="200">
+            <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-[24px] md:rounded-[32px] blur opacity-20"></div>
             
-            <div class="relative bg-slate-800/80 backdrop-blur-2xl p-4 md:px-8 md:py-6 rounded-[24px] md:rounded-[32px] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                
+            <div class="relative bg-slate-800/90 backdrop-blur-xl p-4 md:px-8 md:py-5 rounded-[24px] md:rounded-[32px] border border-white/10 shadow-2xl">
                 <div class="flex items-center justify-between mb-4 md:hidden px-2">
                     <div class="flex items-center gap-2">
-                        <div class="w-1.5 h-5 bg-emerald-500 rounded-full"></div>
+                        <div class="w-1 h-4 bg-emerald-500 rounded-full"></div>
                         <p class="text-emerald-400 text-[10px] font-black uppercase tracking-widest">Menu Unit</p>
                     </div>
                     <span class="text-slate-500 text-[9px] italic flex items-center gap-1 animate-pulse font-bold uppercase tracking-tighter">Geser <i class="fas fa-arrow-right"></i></span>
                 </div>
 
                 <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
-                    <div class="hidden lg:flex items-center gap-5 border-r border-white/10 pr-10">
-                        <div class="relative">
-                            <div class="absolute inset-0 bg-emerald-500 blur-lg opacity-20 animate-pulse"></div>
-                            <div class="relative w-12 h-12 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 text-emerald-400 rounded-2xl flex items-center justify-center border border-emerald-500/40 transform group-hover:rotate-12 transition-transform">
-                                <i class="fas fa-layer-group text-lg"></i>
-                            </div>
+                    <div class="hidden lg:flex items-center gap-4 border-r border-white/10 pr-8">
+                        <div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center border border-emerald-500/30">
+                            <i class="fas fa-layer-group text-sm"></i>
                         </div>
                         <div>
-                            <p class="text-[10px] text-emerald-400 font-black uppercase tracking-[0.2em] leading-none mb-1.5">Eksplorasi</p>
-                            <p class="text-white font-black text-base tracking-tight italic uppercase">Navigasi SMP</p>
+                            <p class="text-[10px] text-emerald-400 font-black uppercase tracking-widest leading-none mb-1">Eksplorasi</p>
+                            <p class="text-white font-bold text-sm tracking-tight">Navigasi SMP</p>
                         </div>
                     </div>
 
@@ -71,29 +68,29 @@
 
                         @foreach($menus as $menu)
                         @php $isActive = request()->is($menu['url']); @endphp
-                        <a href="{{ url($menu['url']) }}" class="flex flex-col flex-shrink-0 group/item relative py-2">
-                            <span class="text-[10px] font-black uppercase tracking-[0.2em] transition-all mb-1
-                                {{ $isActive ? 'text-emerald-400' : 'text-slate-500 group-hover/item:text-emerald-400 group-hover/item:translate-x-1' }}">
+                        <a href="{{ url($menu['url']) }}" class="flex flex-col flex-shrink-0 group/item relative">
+                            <span class="text-[10px] font-black uppercase tracking-widest transition-colors mb-0.5
+                                {{ $isActive ? 'text-emerald-400' : 'text-slate-500 group-hover/item:text-emerald-400' }}">
                                 {{ $menu['num'] }}
                             </span>
-                            <span class="font-black text-[13px] md:text-sm uppercase italic tracking-wider whitespace-nowrap transition-colors
-                                {{ $isActive ? 'text-white' : 'text-slate-400 group-hover/item:text-white' }}">
+                            <span class="font-bold text-sm whitespace-nowrap transition-colors
+                                {{ $isActive ? 'text-white' : 'text-slate-300 group-hover/item:text-white' }}">
                                 {{ $menu['label'] }}
                             </span>
-                            <span class="absolute -bottom-1 left-0 h-[3px] bg-gradient-to-r from-emerald-500 to-teal-400 transition-all duration-500 rounded-full
-                                {{ $isActive ? 'w-full shadow-[0_0_15px_rgba(16,185,129,0.5)]' : 'w-0 group-hover/item:w-full' }}"></span>
+                            <span class="absolute -bottom-2 left-0 h-0.5 bg-emerald-500 transition-all duration-300
+                                {{ $isActive ? 'w-full' : 'w-0 group-hover/item:w-full' }}"></span>
                         </a>
                         @endforeach
                     </div>
 
-                    <div class="w-full md:w-auto">
-                        <div class="relative group/btn-nav overflow-hidden bg-emerald-500/10 border border-emerald-500/40 text-emerald-400 px-10 py-4 rounded-2xl font-black text-[11px] uppercase tracking-[0.2em] text-center block w-full transition-all hover:bg-emerald-500 hover:text-slate-900 shadow-lg shadow-emerald-500/5 active:scale-95">
+                    <div class="w-full lg:w-auto">
+                        <div class="bg-emerald-500 text-slate-900 px-8 py-3.5 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-lg shadow-emerald-500/20 text-center block w-full cursor-default">
                             Pendaftaran Dibuka
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
     </div>
 </div>
 
@@ -112,7 +109,6 @@
                 <p class="text-slate-500 max-w-lg mx-auto font-medium text-sm md:text-base">Lengkapi data di bawah ini untuk mendapatkan e-brosur informasi lengkap biaya & jadwal tes seleksi.</p>
             </div>
             
-            {{-- Form diubah agar memanggil JavaScript saat submit --}}
             <form onsubmit="event.preventDefault(); kirimKeWA();" class="space-y-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div class="space-y-4">
@@ -179,7 +175,7 @@
         100% { left: 125%; }
     }
     .animate-shine {
-        animation: shine 0.8s italic;
+        animation: shine 0.8s ease;
     }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -215,9 +211,8 @@
         const nama = document.getElementById('nama_siswa').value;
         const sekolah = document.getElementById('asal_sekolah').value;
         const waOrtu = document.getElementById('whatsapp_ortu').value;
-        const nomorTujuan = "6282154199008"; // Nomor tujuan Anda
+        const nomorTujuan = "6282154199008"; 
 
-        // Pesan yang lebih menarik dan profesional
         const pesan = `*— PENDAFTARAN CALON SISWA BARU —*%0A` +
                       `Halo Admin Admisi, saya ingin menanyakan informasi lebih lanjut mengenai pendaftaran siswa baru. Berikut adalah data singkat saya:%0A%0A` +
                       `🟢 *Nama Lengkap:* ${nama}%0A` +

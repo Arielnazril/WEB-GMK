@@ -350,10 +350,10 @@
                         <div class="h-12 w-[1.5px] bg-white/20 ml-1"></div>
                         
                         <div class="ml-1">
-                            <h3 class="font-black text-2xl md:text-3xl tracking-tight leading-none text-white">
+                            <h3 class="font-black text-lg md:text-xl tracking-tight leading-none text-white">
                                 GLOBAL MAJU
                             </h3>
-                            <p class="text-[10px] md:text-[11px] text-blue-400 font-bold tracking-[0.3em] mt-2 uppercase opacity-90">
+                            <p class="text-[8px] md:text-[9px] text-blue-400 font-bold tracking-[0.3em] mt-1.5 uppercase opacity-90">
                                 Khatulistiwa
                             </p>
                         </div>
@@ -398,7 +398,7 @@
                                     <i class="fab fa-whatsapp text-2xl"></i>
                                 </div>
                                 <div>
-                                    <p class="text-[10px] font-bold text-emerald-500 uppercase tracking-widest mb-1">Admin KB / TK</p>
+                                    <p class="text-[10px] font-bold text-emerald-500 uppercase tracking-widest mb-1">Admin PAUD / TK</p>
                                     <a href="https://wa.me/6289694224226" target="_blank" class="text-white font-bold text-lg hover:text-emerald-400 transition-colors">0896 9422 4226</a>
                                 </div>
                             </div>

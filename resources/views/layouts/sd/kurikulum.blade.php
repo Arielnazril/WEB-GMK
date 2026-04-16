@@ -18,17 +18,13 @@
                     Membentuk Generasi <span class="text-blue-600">Berakhlak</span> & <span class="text-sky-500">Cerdas Digital</span>.
                 </h2>
                 <p class="text-slate-600 text-lg leading-relaxed">
-                    Di SD Global Maju Khatulistiwa, kami tidak hanya mengikuti standar nasional. kami menyempurnakannya dengan pendekatan nilai keislaman yang kuat dan kesiapan menghadapi era teknologi.
+                    "Di SD Global Maju Khatulistiwa, kami tidak hanya mengikuti standar nasional; kami menyempurnakannya dengan pendekatan pembentukan karakter yang kuat dan kesiapan menghadapi tantangan di era teknologi."
                 </p>
 
                 <div class="flex flex-wrap gap-4">
                     <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 flex-1 min-w-[200px]">
                         <div class="text-blue-600 font-black text-2xl mb-1">100%</div>
                         <div class="text-slate-500 text-xs uppercase font-bold tracking-tighter">Kurikulum Merdeka</div>
-                    </div>
-                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-100 flex-1 min-w-[200px]">
-                        <div class="text-blue-600 font-black text-2xl mb-1">Daily</div>
-                        <div class="text-slate-500 text-xs uppercase font-bold tracking-tighter">Tahfidz & Adab</div>
                     </div>
                 </div>
             </div>
@@ -247,28 +243,28 @@
                 {{-- Pilar 2 --}}
                 <div class="group p-10 bg-slate-50 rounded-[3rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
                     <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                        <i class="fas fa-heart"></i>
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h3 class="text-2xl font-black text-slate-800 mb-4">Adab & Tahfidz</h3>
-                    <p class="text-slate-600 leading-relaxed font-medium mb-6">Menanamkan nilai kedisiplinan sejak dini melalui pembiasaan perilaku positif harian dan pengembangan integritas karakter siswa.</p>
+                    <h3 class="text-2xl font-black text-slate-800 mb-4">Etika & Karakter</h3>
+                    <p class="text-slate-600 leading-relaxed font-medium mb-6">Menanamkan nilai kesantunan dan tanggung jawab sejak dini melalui pembiasaan perilaku positif dan pengembangan integritas diri.</p>
                     <ul class="space-y-3 text-sm font-bold text-slate-500">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Hafalan Juz Amma</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Pembiasaan Shalat</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Sopan Santun & Etiket</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Kemandirian Harian</li>
                     </ul>
                 </div>
 
                 {{-- Pilar 3 --}}
                 <div class="group p-10 bg-slate-50 rounded-[3rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
                     <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:bg-sky-600 group-hover:text-white transition-colors">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3 class="text-2xl font-black text-slate-800 mb-4">Future Skills</h3>
+                    <h3 class="text-2xl font-black text-slate-800 mb-4">Critical Thinking</h3>
                     <p class="text-slate-600 leading-relaxed font-medium mb-6">
-                        Mengenalkan dunia digital secara bijak, termasuk dasar-dasar coding dan algoritma untuk mengasah logika siswa.
+                        Mengasah kemampuan berpikir logis dan kreatif dalam memecahkan masalah sederhana serta menumbuhkan rasa ingin tahu yang tinggi.
                     </p>
                     <ul class="space-y-3 text-sm font-bold text-slate-500">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Dasar Coding</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Digital Safety</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Problem Solving Dasar</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Literasi Informasi</li>
                     </ul>
                 </div>
             </div>
@@ -290,8 +286,8 @@
                         <img src="{{ asset('images/kurikulum-sd2.PNG') }}" alt="Kurikulum SD 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                     </div>
                     <div class="p-10">
-                        <h4 class="text-2xl font-black text-slate-800 mb-4 uppercase tracking-tight">Integrasi Teknologi & Spiritual</h4>
-                        <p class="text-slate-500 text-base leading-relaxed font-medium">Pemaparan sistematis mengenai penggabungan kecakapan digital modern dengan pembentukan karakter mulia berbasis nilai-nilai keislaman.</p>
+                        <h4 class="text-2xl font-black text-slate-800 mb-4 uppercase tracking-tight">Kesiapan Global & Karakter</h4>
+                        <p class="text-slate-500 text-base leading-relaxed font-medium">Pemaparan sistematis mengenai penggabungan kecakapan digital modern dengan pembentukan etika dan karakter luhur untuk menghadapi tantangan masa depan.</p>
                     </div>
                 </div>
             </div>
@@ -304,11 +300,11 @@
             <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-4xl font-black mb-6">Satu Hari di Global Maju</h2>
-                    <p class="text-blue-100 mb-8 opacity-80">Kami mendesain waktu belajar yang seimbang antara akademik, kreativitas, dan spiritualitas.</p>
+                    <p class="text-blue-100 mb-8 opacity-80">Kami mendesain waktu belajar yang seimbang antara akademik, kreativitas, dan pengembangan karakter.</p>
                     <div class="space-y-4">
                         <div class="flex items-center gap-4 bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/10">
                             <span class="font-black text-sky-400">07:00</span>
-                            <span class="font-medium text-sm tracking-wide uppercase">Morning Circle & Tahfidz</span>
+                            <span class="font-medium text-sm tracking-wide uppercase">Morning Circle & Character Building</span>
                         </div>
                         <div class="flex items-center gap-4 bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/10">
                             <span class="font-black text-sky-400">09:00</span>
@@ -316,7 +312,7 @@
                         </div>
                         <div class="flex items-center gap-4 bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/10">
                             <span class="font-black text-sky-400">12:30</span>
-                            <span class="font-medium text-sm tracking-wide uppercase">Dzuhur & Lunch Together</span>
+                            <span class="font-medium text-sm tracking-wide uppercase">Lunch & Personal Grooming</span>
                         </div>
                     </div>
                 </div>

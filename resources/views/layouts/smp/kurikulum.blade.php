@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- HERO SECTION (Original - Tetap Sesuai Struktur Anda) --}}
+{{-- HERO SECTION --}}
 <div class="relative bg-slate-900 pt-24 pb-20 md:pt-32 md:pb-40 overflow-hidden">
     <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#10b981 0.5px, transparent 0.5px); background-size: 24px 24px;"></div>
     <div class="absolute -top-24 -right-24 w-64 h-64 md:w-96 md:h-96 bg-emerald-500/10 blur-[80px] md:blur-[120px] rounded-full"></div>
@@ -21,7 +21,7 @@
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Unggulan SMP</span>
             </h1>
             <p class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mb-10 md:mb-12">
-                Menyiapkan generasi tangguh melalui integrasi Kurikulum Merdeka, pendalaman adab Islami, dan penguasaan teknologi mutakhir.
+                Menyiapkan generasi tangguh melalui integrasi Kurikulum Merdeka, pembentukan karakter luhur, dan penguasaan teknologi mutakhir.
             </p>
         </div>
 
@@ -54,8 +54,8 @@
                             $menus = [
                                 ['url' => 'unit/smp/kurikulum', 'num' => '01', 'label' => 'Kurikulum'],
                                 ['url' => 'unit/smp/fasilitas', 'num' => '02', 'label' => 'Fasilitas'],
-                                ['url' => 'unit/smp/ekskul', 'num' => '03', 'label' => 'Pengembangan Diri'],
-                                ['url' => 'unit/smp/pendaftaran', 'num' => '04', 'label' => 'Info Pendaftaran'],
+                                ['url' => 'unit/smp/ekskul', 'num' => '03', 'label' => 'Ekstrakurikuler'],
+                                ['url' => 'unit/smp/pendaftaran', 'num' => '04', 'label' => 'Pendaftaran'],
                             ];
                         @endphp
 
@@ -78,7 +78,7 @@
 
                     <div class="w-full md:w-auto">
                         <a href="{{ url('unit/smp/pendaftaran') }}" class="bg-emerald-500 hover:bg-emerald-400 text-slate-900 px-8 py-3.5 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-lg shadow-emerald-500/20 active:scale-95 text-center block w-full">
-                            Daftar SMP Sekarang
+                            Daftar Sekarang
                         </a>
                     </div>
                 </div>
@@ -99,8 +99,8 @@
             
             <div class="bg-white p-10 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-xl transition-all group duration-500">
                 <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl mb-6 font-black group-hover:bg-blue-500 group-hover:text-white transition-all duration-500">02</div>
-                <h3 class="text-2xl font-bold text-slate-800 mb-4">Tahfidz & Tartil</h3>
-                <p class="text-slate-500 leading-relaxed">Program penguatan hafalan Juz 30, 29, dan 1 dengan makhroj yang benar sebagai fondasi spiritual remaja Muslim.</p>
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Etika & Karakter</h3>
+                <p class="text-slate-500 leading-relaxed">Program penguatan nilai moral, kedisiplinan, dan integritas sebagai fondasi spiritual dan mental remaja yang inklusif.</p>
             </div>
             
             <div class="bg-white p-10 rounded-[40px] border border-slate-100 shadow-sm hover:shadow-xl transition-all group duration-500">
@@ -112,7 +112,7 @@
     </div>
 </div>
 
-{{-- SECTION TAMBAHAN 1: PENJELASAN MENDALAM (MATCHING SMP) --}}
+{{-- SECTION TAMBAHAN 1: PENJELASAN MENDALAM --}}
 <div class="bg-white py-24 px-6 overflow-hidden">
     <div class="max-w-7xl mx-auto">
         <div class="flex flex-col lg:flex-row items-center gap-16">
@@ -136,11 +136,11 @@
                         </div>
                         <div class="flex gap-4">
                             <div class="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center text-white shadow-lg shadow-emerald-200">
-                                <i class="fas fa-mosque text-xs"></i>
+                                <i class="fas fa-users text-xs"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-slate-800">Islamic Leadership</h4>
-                                <p class="text-sm text-slate-500">Latihan kepemimpinan berbasis sirah nabawiyah.</p>
+                                <h4 class="font-bold text-slate-800">Collaborative Leadership</h4>
+                                <p class="text-sm text-slate-500">Latihan kepemimpinan dan kerjasama tim.</p>
                             </div>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
     </div>
 </div>
 
-{{-- SECTION TAMBAHAN 2: METODE BELAJAR (MATCHING SMP) --}}
+{{-- SECTION TAMBAHAN 2: METODE BELAJAR --}}
 <div class="bg-slate-900 py-24 px-6 relative overflow-hidden">
     <div class="max-w-7xl mx-auto relative z-10">
         <div class="text-center mb-16">

@@ -136,7 +136,7 @@
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <div>
-                        <h4 class="font-bold text-emerald-400 text-[9px] uppercase tracking-widest">Admin KB / TK</h4>
+                        <h4 class="font-bold text-emerald-400 text-[9px] uppercase tracking-widest">Admin PAUD / TK</h4>
                         <p class="text-xl font-black tracking-tight">0896 9422 4226</p>
                         <p class="text-slate-400 text-[10px] font-medium uppercase tracking-tight">Unit TK & PAUD</p>
                     </div>

@@ -109,71 +109,39 @@
     </section>
 
     {{-- News Grid --}}
-    <section class="px-6 py-20">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                <template x-for="(item, index) in paginatedNews" :key="index">
-                    <article class="group bg-white rounded-[3rem] border border-slate-100 shadow-xl shadow-slate-200/40 overflow-hidden hover:-translate-y-4 transition-all duration-700 hover:shadow-2xl hover:shadow-blue-200/50">
-                        <div class="relative h-72 overflow-hidden">
-                            <img :src="item.img" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110">
-                            {{-- Unit Badge --}}
-                            <div class="absolute top-6 left-6 flex flex-col gap-2">
-                                <span class="w-fit px-5 py-2 bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-black uppercase tracking-widest rounded-full shadow-sm" x-text="item.unit"></span>
-                                <span class="w-fit px-5 py-2 bg-blue-700/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-sm" x-text="item.cat"></span>
-                            </div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<section class="px-6 py-20">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <template x-for="(item, index) in paginatedNews" :key="index">
+                {{-- Link dibungkus ke seluruh card agar tetap interaktif --}}
+                <a href="#" class="group bg-white rounded-[3rem] border border-slate-100 shadow-xl shadow-slate-200/40 overflow-hidden hover:-translate-y-4 transition-all duration-700 hover:shadow-2xl hover:shadow-blue-200/50">
+                    <div class="relative h-72 overflow-hidden">
+                        <img :src="item.img" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110">
+                        
+                        {{-- Unit Badge --}}
+                        <div class="absolute top-6 left-6 flex flex-col gap-2">
+                            <span class="w-fit px-5 py-2 bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-black uppercase tracking-widest rounded-full shadow-sm" x-text="item.unit"></span>
+                            <span class="w-fit px-5 py-2 bg-blue-700/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest rounded-full shadow-sm" x-text="item.cat"></span>
                         </div>
-                        <div class="p-10">
-                            <div class="flex items-center gap-3 mb-5 text-slate-400 text-[11px] font-bold uppercase tracking-[0.2em]">
-                                <i class="far fa-calendar-alt text-blue-500"></i>
-                                <span x-text="item.date"></span>
-                                <span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
-                                <span class="text-blue-600">Edukasi GMK</span>
-                            </div>
-                            <h3 class="text-2xl font-black text-slate-900 mb-6 group-hover:text-blue-700 transition-colors leading-tight h-16 line-clamp-2" x-text="item.title"></h3>
-                            <div class="flex items-center justify-between">
-                                <a href="#" class="flex items-center gap-3 text-blue-700 font-black text-xs uppercase tracking-widest group/btn">
-                                    Detail Artikel 
-                                    <span class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center group-hover/btn:bg-blue-700 group-hover/btn:text-white transition-all">
-                                        <i class="fas fa-arrow-right text-[10px]"></i>
-                                    </span>
-                                </a>
-                            </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    
+                    <div class="p-10">
+                        <div class="flex items-center gap-3 mb-5 text-slate-400 text-[11px] font-bold uppercase tracking-[0.2em]">
+                            <i class="far fa-calendar-alt text-blue-500"></i>
+                            <span x-text="item.date"></span>
+                            <span class="w-1.5 h-1.5 bg-slate-200 rounded-full"></span>
+                            <span class="text-blue-600">Edukasi GMK</span>
                         </div>
-                    </article>
-                </template>
-            </div>
-
-            {{-- Empty State --}}
-            <div x-show="filteredNews.length === 0" class="py-32 text-center bg-slate-50/50 rounded-[4rem] border-2 border-dashed border-slate-100">
-                <div class="w-24 h-24 bg-white shadow-xl rounded-full flex items-center justify-center mx-auto mb-8 animate-bounce">
-                    <i class="fas fa-search text-4xl text-blue-200"></i>
-                </div>
-                <h3 class="text-2xl font-black text-slate-800">Maaf, Artikel Tidak Ditemukan</h3>
-                <p class="text-slate-500 mt-3 max-w-sm mx-auto font-medium">Kami tidak menemukan konten untuk kategori tersebut. Coba cari dengan kata kunci lain.</p>
-                <button @click="activeTab = 'Semua Berita'; activeUnit = 'Semua Unit'; search = ''" class="mt-8 px-8 py-3 bg-blue-700 text-white rounded-xl font-bold text-sm shadow-lg shadow-blue-200">Reset Filter</button>
-            </div>
-
-            {{-- Pagination --}}
-            <div class="mt-24 flex justify-center items-center gap-4" x-show="totalPages > 1">
-                <button @click="currentPage > 1 ? (currentPage--, window.scrollTo({top: 500, behavior: 'smooth'})) : ''" :disabled="currentPage === 1"
-                    class="w-14 h-14 flex items-center justify-center rounded-2xl border border-slate-200 text-slate-400 hover:bg-blue-700 hover:text-white hover:border-blue-700 transition-all disabled:opacity-30 active:scale-90 shadow-sm">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="flex items-center gap-2">
-                    <template x-for="page in totalPages" :key="page">
-                        <button @click="currentPage = page; window.scrollTo({top: 500, behavior: 'smooth'})"
-                            :class="currentPage === page ? 'bg-blue-700 text-white shadow-xl shadow-blue-200 scale-110' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'"
-                            class="w-14 h-14 flex items-center justify-center rounded-2xl font-black transition-all active:scale-95" x-text="page"></button>
-                    </template>
-                </div>
-                <button @click="currentPage < totalPages ? (currentPage++, window.scrollTo({top: 500, behavior: 'smooth'})) : ''" :disabled="currentPage === totalPages"
-                    class="w-14 h-14 flex items-center justify-center rounded-2xl border border-slate-200 text-slate-400 hover:bg-blue-700 hover:text-white hover:border-blue-700 transition-all disabled:opacity-30 active:scale-90 shadow-sm">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
+                        {{-- Judul tetap menonjol, margin-bottom disesuaikan karena button dihapus --}}
+                        <h3 class="text-2xl font-black text-slate-900 group-hover:text-blue-700 transition-colors leading-tight line-clamp-2" x-text="item.title"></h3>
+                    </div>
+                </a>
+            </template>
         </div>
-    </section>
+        
+        </div>
+</section>
 
     {{-- Parent Resources --}}
     <section class="px-6 py-28 bg-gradient-to-b from-slate-50 to-white">

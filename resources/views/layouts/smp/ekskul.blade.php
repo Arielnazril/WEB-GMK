@@ -33,64 +33,64 @@
             </div>
 
             {{-- NAVIGATION BAR --}}
-            <nav class="relative group mt-8">
-                <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-[24px] md:rounded-[32px] blur opacity-20"></div>
-                
-                <div class="relative bg-slate-800/90 backdrop-blur-xl p-4 md:px-8 md:py-5 rounded-[24px] md:rounded-[32px] border border-white/10 shadow-2xl">
-                    <div class="flex items-center justify-between mb-4 md:hidden px-2">
-                        <div class="flex items-center gap-2">
-                            <div class="w-1 h-4 bg-emerald-500 rounded-full"></div>
-                            <p class="text-emerald-400 text-[10px] font-black uppercase tracking-widest">Menu Unit</p>
-                        </div>
-                        <span class="text-slate-500 text-[9px] italic flex items-center gap-1 animate-pulse">Geser <i class="fas fa-arrow-right"></i></span>
-                    </div>
-
-                    <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
-                        <div class="hidden lg:flex items-center gap-4 border-r border-white/10 pr-8">
-                            <div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center border border-emerald-500/30">
-                                <i class="fas fa-layer-group text-sm"></i>
+                <nav class="relative group mt-8">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-[24px] md:rounded-[32px] blur opacity-20"></div>
+                    
+                    <div class="relative bg-slate-800/90 backdrop-blur-xl p-4 md:px-8 md:py-5 rounded-[24px] md:rounded-[32px] border border-white/10 shadow-2xl">
+                        <div class="flex items-center justify-between mb-4 md:hidden px-2">
+                            <div class="flex items-center gap-2">
+                                <div class="w-1 h-4 bg-emerald-500 rounded-full"></div>
+                                <p class="text-emerald-400 text-[10px] font-black uppercase tracking-widest">Menu Unit</p>
                             </div>
-                            <div>
-                                <p class="text-[10px] text-emerald-400 font-black uppercase tracking-widest leading-none mb-1">Eksplorasi</p>
-                                <p class="text-white font-bold text-sm tracking-tight">Navigasi SMP</p>
-                            </div>
+                            <span class="text-slate-500 text-[9px] italic flex items-center gap-1 animate-pulse">Geser <i class="fas fa-arrow-right"></i></span>
                         </div>
 
-                        <div class="flex flex-row overflow-x-auto md:overflow-visible items-center gap-6 lg:gap-10 w-full lg:w-auto no-scrollbar pb-2 md:pb-0">
-                            @php
-                                $menus = [
-                                    ['url' => 'unit/smp/kurikulum', 'num' => '01', 'label' => 'Kurikulum'],
-                                    ['url' => 'unit/smp/fasilitas', 'num' => '02', 'label' => 'Fasilitas'],
-                                    ['url' => 'unit/smp/ekskul', 'num' => '03', 'label' => 'Ekstrakurikuler'],
-                                    ['url' => 'unit/smp/pendaftaran', 'num' => '04', 'label' => 'Pendaftaran'],
-                                ];
-                            @endphp
+                        <div class="flex flex-col lg:flex-row items-center justify-between gap-6">
+                            <div class="hidden lg:flex items-center gap-4 border-r border-white/10 pr-8">
+                                <div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center border border-emerald-500/30">
+                                    <i class="fas fa-layer-group text-sm"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] text-emerald-400 font-black uppercase tracking-widest leading-none mb-1">Eksplorasi</p>
+                                    <p class="text-white font-bold text-sm tracking-tight">Navigasi SMP</p>
+                                </div>
+                            </div>
 
-                            @foreach($menus as $menu)
-                                @php $isActive = request()->is($menu['url']); @endphp
-                                <a href="{{ url($menu['url']) }}" class="flex flex-col flex-shrink-0 group/item relative">
-                                    <span class="text-[10px] font-black uppercase tracking-widest transition-colors mb-0.5
-                                        {{ $isActive ? 'text-emerald-400' : 'text-slate-500 group-hover/item:text-emerald-400' }}">
-                                        {{ $menu['num'] }}
-                                    </span>
-                                    <span class="font-bold text-sm whitespace-nowrap transition-colors
-                                        {{ $isActive ? 'text-white' : 'text-slate-300 group-hover/item:text-white' }}">
-                                        {{ $menu['label'] }}
-                                    </span>
-                                    <span class="absolute -bottom-2 left-0 h-0.5 bg-emerald-500 transition-all duration-300
-                                        {{ $isActive ? 'w-full' : 'w-0 group-hover/item:w-full' }}"></span>
+                            <div class="flex flex-row overflow-x-auto md:overflow-visible items-center gap-6 lg:gap-10 w-full lg:w-auto no-scrollbar pb-2 md:pb-0">
+                                @php
+                                    $menus = [
+                                        ['url' => 'unit/smp/kurikulum', 'num' => '01', 'label' => 'Kurikulum'],
+                                        ['url' => 'unit/smp/fasilitas', 'num' => '02', 'label' => 'Fasilitas'],
+                                        ['url' => 'unit/smp/ekskul', 'num' => '03', 'label' => 'Ekstrakurikuler'],
+                                        ['url' => 'unit/smp/pendaftaran', 'num' => '04', 'label' => 'Pendaftaran'],
+                                    ];
+                                @endphp
+
+                                @foreach($menus as $menu)
+                                    @php $isActive = request()->is($menu['url']); @endphp
+                                    <a href="{{ url($menu['url']) }}" class="flex flex-col flex-shrink-0 group/item relative">
+                                        <span class="text-[10px] font-black uppercase tracking-widest transition-colors mb-0.5
+                                            {{ $isActive ? 'text-emerald-400' : 'text-slate-500 group-hover/item:text-emerald-400' }}">
+                                            {{ $menu['num'] }}
+                                        </span>
+                                        <span class="font-bold text-sm whitespace-nowrap transition-colors
+                                            {{ $isActive ? 'text-white' : 'text-slate-300 group-hover/item:text-white' }}">
+                                            {{ $menu['label'] }}
+                                        </span>
+                                        <span class="absolute -bottom-2 left-0 h-0.5 bg-emerald-500 transition-all duration-300
+                                            {{ $isActive ? 'w-full' : 'w-0 group-hover/item:w-full' }}"></span>
+                                    </a>
+                                @endforeach
+                            </div>
+
+                            <div class="w-full lg:w-auto">
+                                <a href="{{ url('unit/smp/pendaftaran') }}" class="bg-emerald-500 hover:bg-emerald-400 text-slate-900 px-8 py-3.5 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-lg shadow-emerald-500/20 active:scale-95 text-center block w-full">
+                                    Daftar Sekarang
                                 </a>
-                            @endforeach
-                        </div>
-
-                        <div class="w-full lg:w-auto">
-                            <a href="{{ url('unit/smp/pendaftaran') }}" class="bg-emerald-500 hover:bg-emerald-400 text-slate-900 px-8 py-3.5 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-lg shadow-emerald-500/20 active:scale-95 text-center block w-full">
-                                Daftar Sekarang
-                            </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
         </div>
     </section>
 

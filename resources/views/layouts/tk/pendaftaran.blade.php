@@ -60,7 +60,7 @@
                 </div>
                 
                 <p class="text-slate-600 text-base md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 font-medium">
-                    Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran 2026/2027 telah dibuka. Berikan fondasi pendidikan terbaik untuk masa depan buah hati Anda.
+                    Penerimaan Peserta Didik Baru (SPMB) Tahun Ajaran 2026/2027 telah dibuka. Berikan fondasi pendidikan terbaik untuk masa depan buah hati Anda.
                 </p>
 
                 <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
@@ -105,22 +105,44 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             @php
                 $steps = [
-                    ['no' => '01', 'title' => 'Pendaftaran Online', 'desc' => 'Isi data secara on-line untuk penjadwalan observasi dan wawancara.'],
-                    ['no' => '02', 'title' => 'Observasi & Wawancara', 'desc' => 'Pelaksanaan observasi minat anak dan sesi wawancara orang tua.'],
-                    ['no' => '03', 'title' => 'Status Penerimaan', 'desc' => 'Hasil observasi dan wawancara menentukan status diterima atau tidak.'],
-                    ['no' => '04', 'title' => 'Administrasi', 'desc' => 'Melengkapi administrasi keuangan serta dokumen pendukung lainnya.'],
+                    [
+                        'no' => '01', 
+                        'title' => 'Pendaftaran Online', 
+                        'desc' => 'Isi data secara on-line untuk jadwal observasi dan wawancara.'
+                    ],
+                    [
+                        'no' => '02', 
+                        'title' => 'Observasi & Wawancara', 
+                        'desc' => 'Pelaksanaan sesi observasi dan wawancara bersama calon siswa dan orang tua.'
+                    ],
+                    [
+                        'no' => '03', 
+                        'title' => 'Status Penerimaan', 
+                        'desc' => 'Hasil observasi dan wawancara menentukan status diterima atau tidak diterima.'
+                    ],
+                    [
+                        'no' => '04', 
+                        'title' => 'Administrasi', 
+                        'desc' => 'Melengkapi administrasi keuangan dan dokumen pendukung lainnya.'
+                    ],
                 ];
             @endphp
 
             @foreach($steps as $step)
-            <div class="group bg-white p-8 md:p-10 rounded-[35px] md:rounded-[50px] shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-500 relative overflow-hidden">
-                <span class="absolute top-4 right-6 text-4xl md:text-5xl font-black text-slate-50 group-hover:text-yellow-50 transition-colors">{{ $step['no'] }}</span>
+            <div class="group bg-white p-8 md:p-10 rounded-[35px] md:rounded-[50px] shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative overflow-hidden">
+                {{-- Background Number Decor --}}
+                <span class="absolute -top-2 -right-2 text-7xl md:text-8xl font-black text-slate-50 group-hover:text-yellow-400/10 transition-colors pointer-events-none">{{ $step['no'] }}</span>
+                
                 <div class="relative z-10 text-left">
-                    <div class="w-10 h-10 md:w-12 md:h-12 bg-yellow-400 rounded-xl md:rounded-2xl flex items-center justify-center text-black shadow-lg shadow-yellow-100 mb-6 md:mb-8 font-black text-sm">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-yellow-400 rounded-2xl flex items-center justify-center text-black shadow-lg shadow-yellow-200 mb-8 font-black text-lg transition-transform group-hover:rotate-12">
                         {{ $step['no'] }}
                     </div>
-                    <h4 class="font-black text-slate-800 text-lg md:text-xl mb-2 md:mb-3 uppercase tracking-tight">{{ $step['title'] }}</h4>
-                    <p class="text-slate-500 text-[11px] md:text-[13px] font-medium leading-relaxed uppercase tracking-wider">{{ $step['desc'] }}</p>
+                    <h4 class="font-black text-slate-900 text-lg md:text-xl mb-4 uppercase tracking-tight leading-tight">
+                        {{ $step['title'] }}
+                    </h4>
+                    <p class="text-slate-500 text-[12px] md:text-[13px] font-semibold leading-relaxed tracking-wide">
+                        {{ $step['desc'] }}
+                    </p>
                 </div>
             </div>
             @endforeach

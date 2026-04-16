@@ -19,11 +19,10 @@
                 SMP Global Maju <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-600">Khatulistiwa</span>
             </h1>
-            <p class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mb-10 md:mb-12">Tempat lahirnya para pemimpin masa depan yang inovatif, berintegritas, dan memiliki wawasan global dengan landasan etika serta moral yang kuat.</p>
+            <p class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mb-10 md:mb-12">Tempat lahirnya para pemimpin masa depan yang inovatif, berintegritas, dan menjunjung tinggi nilai keberagaman dalam lingkungan pendidikan yang inklusif.</p>
 
             <div class="flex flex-col sm:flex-row gap-4 mb-16 md:mb-20">
-                <a href="{{ url('unit/smp/kurikulum') }}" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-xl shadow-emerald-900/40 hover:-translate-y-1 text-center">Program Unggulan</a>
-                <a href="#" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-2xl font-bold transition-all border border-slate-700 hover:-translate-y-1 text-center">Download Katalog</a>
+                <a href="{{ url('unit/smp/ekskul') }}" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-xl shadow-emerald-900/40 hover:-translate-y-1 text-center">Program Unggulan</a>
             </div>
         </div>
 
@@ -107,16 +106,16 @@
     </div>
 </div>
 
-<div class="bg-slate-50 py-16 md:py-24">
+<div class="bg-white py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-6">
         <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start lg:items-center">
             <div class="w-full lg:w-1/3">
                 <div class="inline-block bg-emerald-100 text-emerald-600 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-4">Core Values</div>
                 <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 uppercase leading-tight">Mempersiapkan Tantangan <br><span class="text-emerald-600">Abad 21</span></h2>
-                <p class="text-slate-500 leading-relaxed mb-8">Kurikulum kami dirancang untuk melatih berpikir kritis (Critical Thinking) dan kepercayaan diri (Public Speaking) sejak dini.</p>
+                <p class="text-slate-500 leading-relaxed mb-8">Kurikulum kami dirancang untuk melatih berpikir kritis, kemampuan riset, dan kepercayaan diri siswa dalam skala internasional.</p>
                 
-                <div class="relative p-8 bg-white rounded-[32px] border border-emerald-100 shadow-sm overflow-hidden">
-                    <i class="fas fa-quote-right absolute -right-4 -bottom-4 text-emerald-50 text-7xl md:text-8xl"></i>
+                <div class="relative p-8 bg-slate-50 rounded-[32px] border border-emerald-100 shadow-sm overflow-hidden">
+                    <i class="fas fa-globe-asia absolute -right-4 -bottom-4 text-emerald-100/50 text-7xl md:text-8xl"></i>
                     <p class="relative z-10 text-emerald-600 text-xl md:text-2xl font-black italic leading-tight uppercase">"Be Innovative, <br>Be Excellent"</p>
                 </div>
             </div>
@@ -124,33 +123,33 @@
             <div class="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="bg-white p-8 rounded-[32px] md:rounded-[40px] border border-slate-100 shadow-sm hover:shadow-xl transition-all group duration-500">
                     <div class="w-14 h-14 md:w-16 md:h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-xl md:text-2xl mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
-                        <i class="fas fa-quran"></i>
+                        <i class="fas fa-lightbulb"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-3">Tahfidz & Tartil</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Program intensif pengembangan literasi dan kemampuan komunikasi untuk membangun kepercayaan diri siswa di depan publik secara fasih.</p>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Literasi & Riset</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Mengembangkan budaya membaca dan kemampuan menganalisis data untuk membentuk pemikiran logis dan objektif bagi setiap siswa.</p>
                 </div>
 
                 <div class="bg-white p-8 rounded-[32px] md:rounded-[40px] border border-slate-100 shadow-sm hover:shadow-xl transition-all group duration-500">
                     <div class="w-14 h-14 md:w-16 md:h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl md:text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                        <i class="fas fa-microphone-alt"></i>
+                        <i class="fas fa-comments"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-3">Public Speaking</h3>
-                    <p class="text-slate-500 text-sm leading-relaxed">Melatih kepercayaan diri berpidato dan presentasi dalam dua bahasa (Indonesia & Inggris) di depan umum.</p>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Communication Skills</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Melatih kemampuan diplomasi, negosiasi, dan presentasi efektif menggunakan bahasa global untuk membangun jejaring internasional.</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="bg-slate-50 pb-20 md:pb-24 px-6">
+<div class="bg-white pb-20 md:pb-24 px-6">
     <div class="max-w-5xl mx-auto bg-emerald-600 rounded-[32px] md:rounded-[48px] p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
         <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
         <div class="relative z-10">
-            <h2 class="text-2xl md:text-5xl font-black text-white mb-6 uppercase tracking-wider leading-tight">Butuh Bantuan Lebih Lanjut?</h2>
-            <p class="text-emerald-100 mb-8 md:mb-10 font-medium text-base md:text-lg max-w-xl mx-auto">Tanyakan apa saja seputar kurikulum, pendaftaran, atau fasilitas kami langsung kepada tim admin.</p>
+            <h2 class="text-2xl md:text-5xl font-black text-white mb-6 uppercase tracking-wider leading-tight">Mulai Perjalanan Global Anda</h2>
+            <p class="text-emerald-100 mb-8 md:mb-10 font-medium text-base md:text-lg max-w-xl mx-auto">Kami mengundang putra-putri terbaik untuk bergabung dalam komunitas belajar yang beragam dan penuh prestasi.</p>
             <a href="https://wa.me/628123456789" target="_blank" class="inline-flex items-center justify-center gap-4 bg-white text-emerald-700 w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 rounded-2xl md:rounded-3xl font-black uppercase tracking-widest hover:bg-emerald-50 transition-all shadow-xl active:scale-95">
                 <i class="fab fa-whatsapp text-2xl"></i>
-                <span>Chat Admin</span>
+                <span>Hubungi Kami</span>
             </a>
         </div>
     </div>

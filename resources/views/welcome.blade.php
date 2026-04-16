@@ -96,7 +96,7 @@
                     <i class="fas fa-user-check"></i>
                 </div>
                 
-                {{-- Judul diganti dari Pendidikan Rabbani menjadi Karakter Unggul atau Etika Global --}}
+                {{-- Karakter Unggul atau Etika Global --}}
                 <h4 class="text-xl md:text-2xl font-black text-blue-950 mb-4 md:mb-5">Karakter Unggul</h4>
                 
                 {{-- Deskripsi sudah menggunakan versi etika/karakter luhur yang kita bahas sebelumnya --}}

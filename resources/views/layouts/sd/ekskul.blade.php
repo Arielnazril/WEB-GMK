@@ -93,17 +93,17 @@
                     </div>
                 </div>
 
-                {{-- Tahfidz Club --}}
+                {{-- Etika & Nilai Club --}}
                 <div class="group flex flex-col md:flex-row bg-slate-50 rounded-[3rem] overflow-hidden hover:bg-white hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-slate-100">
                     <div class="md:w-2/5 relative h-64 md:h-auto overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
                     <div class="md:w-3/5 p-10 flex flex-col justify-center">
-                        <span class="text-emerald-500 font-bold text-xs uppercase tracking-widest mb-2">Spiritual</span>
-                        <h3 class="text-2xl font-black text-slate-900 mb-4">TAHFIDZ CLUB</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Asah logika dan kreativitas anak melalui permainan edukatif serta eksperimen sains sederhana yang seru.</p>
+                        <span class="text-emerald-500 font-bold text-xs uppercase tracking-widest mb-2">Pendidikan Karakter</span>
+                        <h3 class="text-2xl font-black text-slate-900 mb-4">ETIKA & NILAI CLUB</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-6">Membentuk landasan spiritual dan moral yang kuat melalui pengenalan nilai-nilai universal, toleransi, dan refleksi diri yang positif bagi setiap siswa.</p>
                         <div class="flex gap-2">
-                            <span class="px-3 py-1 bg-white text-slate-400 rounded-full text-[10px] font-bold border border-slate-200 uppercase">Intensif</span>
+                            <span class="px-3 py-1 bg-white text-slate-400 rounded-full text-[10px] font-bold border border-slate-200 uppercase">Universal</span>
                         </div>
                     </div>
                 </div>
@@ -242,10 +242,7 @@
                     </p>
                     <div class="flex flex-wrap gap-5">
                         <a href="#" class="px-10 py-5 bg-blue-600 text-white rounded-2xl text-xs font-black uppercase tracking-widest hover:bg-blue-500 hover:-translate-y-1 transition-all shadow-xl shadow-blue-900/40">
-                            Download Jadwal <i class="fas fa-download ml-2"></i>
-                        </a>
-                        <a href="#" class="px-10 py-5 bg-transparent text-white border border-slate-700 rounded-2xl text-xs font-black uppercase tracking-widest hover:bg-white/5 transition-all">
-                            Hubungi Wali Kelas
+                            Daftar Sekarang <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
@@ -263,11 +260,13 @@
                             </div>
                         </div>
                         <p class="text-slate-300 text-sm italic font-medium leading-relaxed">
-                            "Kami sangat bangga melihat perkembangan bakat putra kami di Ekskul Coding sekolah ini."
+                            "Kami sangat bahagia melihat perkembangan kreativitas dan rasa percaya diri putra kami setelah bergabung di sekolah ini."
                         </p>
                         <div class="mt-6 flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-slate-700 border border-slate-600"></div>
-                            <span class="text-white font-bold text-[10px] uppercase">Wali Murid - Kelas 4A</span>
+                            <div class="w-8 h-8 rounded-full bg-slate-700 border border-slate-600 flex items-center justify-center text-white text-xs">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <span class="text-white font-bold text-[10px] uppercase">Kepala Sekolah</span>
                         </div>
                     </div>
                 </div>

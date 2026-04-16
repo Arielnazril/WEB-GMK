@@ -164,7 +164,7 @@
                         ['icon' => 'fa-door-open', 'title' => 'Ruang Tematik', 'color' => 'emerald', 'desc' => 'Kelas AC Sentra'],
                         ['icon' => 'fa-laugh-beam', 'title' => 'Playground', 'color' => 'blue', 'desc' => 'Area Ketangkasan'],
                         ['icon' => 'fa-video', 'title' => 'CCTV 24 Jam', 'color' => 'purple', 'desc' => 'Sistem Keamanan'],
-                        ['icon' => 'fa-mosque', 'title' => 'Musholla', 'color' => 'orange', 'desc' => 'Latihan Ibadah'],
+                        ['icon' => 'fa-palette', 'title' => 'Pojok Karya', 'color' => 'orange', 'desc' => 'Eksplorasi Kreativitas'],
                         ['icon' => 'fa-book-open', 'title' => 'Pustaka', 'color' => 'pink', 'desc' => 'Buku Edukatif'],
                         ['icon' => 'fa-first-aid', 'title' => 'UKS', 'color' => 'yellow', 'desc' => 'Layanan Sehat'],
                     ];

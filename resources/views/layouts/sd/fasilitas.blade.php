@@ -72,7 +72,7 @@
                         <i class="fas fa-book-reader"></i>
                     </div>
                     <h3 class="text-xl font-black mb-2 uppercase">LITERASI UNGGUL</h3>
-                    <p class="text-sm font-medium opacity-80 leading-relaxed">Ribuan koleksi buku untuk memicu kreativitas siswa.</p>
+                    <p class="text-sm font-medium opacity-80 leading-relaxed">koleksi buku untuk memicu kreativitas siswa.</p>
                 </div>
             </div>
 
@@ -81,7 +81,7 @@
                 <img src="{{ asset('images/fasilitas-sd3.jpeg') }}" alt="Lab Komputer" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                 <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/90 via-transparent to-transparent"></div>
                 <div class="absolute bottom-0 left-0 p-10 text-white">
-                    <h3 class="text-xl font-black mb-2 uppercase">IT LAB CENTER</h3>
+                    <h3 class="text-xl font-black mb-2 uppercase">CLASS CENTER</h3>
                     <p class="text-sm font-medium opacity-80">Pengenalan dunia digital sejak dini dengan fasilitas mutakhir.</p>
                 </div>
             </div>
@@ -140,11 +140,11 @@
                 </div>
                 <div class="flex gap-6">
                     <div class="shrink-0 w-14 h-14 bg-white shadow-lg rounded-2xl flex items-center justify-center text-emerald-600 text-2xl">
-                        <i class="fas fa-mosque"></i>
+                        <i class="fas fa-book-reader"></i>
                     </div>
                     <div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-2">Mushalla Representatif</h4>
-                        <p class="text-slate-500 text-sm leading-relaxed">Area ibadah yang luas dan bersih untuk pembinaan karakter spiritual harian.</p>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Pojok Baca & Relaksasi</h4>
+                        <p class="text-slate-500 text-sm leading-relaxed">Area yang nyaman dan tenang untuk mendukung minat baca serta pembiasaan karakter positif harian.</p>
                     </div>
                 </div>
                 <div class="flex gap-6">

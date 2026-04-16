@@ -121,7 +121,7 @@
     <div class="max-w-7xl mx-auto">
         <div class="text-center mb-12 md:mb-16">
             <h2 class="text-slate-900 text-3xl md:text-5xl font-black tracking-tight mb-4 leading-tight">Layanan Penunjang <span class="text-emerald-500">Kapasitas SMP</span></h2>
-            <p class="text-slate-500 max-w-2xl mx-auto text-sm md:text-base">Dirancang untuk memenuhi kebutuhan perkembangan remaja baik secara akademik, sosial, maupun spiritual.</p>
+            <p class="text-slate-500 max-w-2xl mx-auto text-sm md:text-base">Dirancang untuk memenuhi kebutuhan perkembangan remaja baik secara akademik, sosial, maupun karakter.</p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
@@ -129,12 +129,12 @@
                 $extras = [
                     ['icon' => 'fa-laptop-code', 'name' => 'Computer Lab', 'desc' => 'High-Spec PC'],
                     ['icon' => 'fa-guitar', 'name' => 'Music Studio', 'desc' => 'Alat Musik Lengkap'],
-                    ['icon' => 'fa-mosque', 'name' => 'Masjid Hijau', 'desc' => 'Pusat Spiritual'],
+                    ['icon' => 'fa-landmark', 'name' => 'Multi-Faith Hall', 'desc' => 'Pusat Pengembangan Karakter'],
                     ['icon' => 'fa-volleyball-ball', 'name' => 'Sport Hall', 'desc' => 'Area Indoor'],
                     ['icon' => 'fa-book', 'name' => 'SMP Library', 'desc' => 'E-Book Access'],
                     ['icon' => 'fa-flask', 'name' => 'Robotics Room', 'desc' => 'IoT Innovation'],
                     ['icon' => 'fa-wifi', 'name' => 'Gigabit Wi-Fi', 'desc' => 'High Speed'],
-                    ['icon' => 'fa-user-shield', 'name' => 'Student Care', 'desc' => 'Konseling'],
+                    ['icon' => 'fa-user-shield', 'name' => 'Student Care', 'desc' => 'Konseling & Edukasi'],
                 ];
             @endphp
             @foreach($extras as $item)
@@ -150,7 +150,7 @@
     </div>
 </div>
 
-{{-- PHOTO GALLERY GRID (FIXED RESPONSIVE) --}}
+{{-- PHOTO GALLERY GRID --}}
 <div class="bg-slate-50 py-16 md:py-24 px-6">
     <div class="max-w-7xl mx-auto">
         <div class="mb-12">
@@ -161,16 +161,14 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {{-- Foto Utama: 2 kolom 2 baris di desktop --}}
             <div class="md:col-span-2 md:row-span-2 aspect-square md:aspect-auto md:min-h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg group relative">
-                <img src="https://images.unsplash.com/photo-1523050335382-c5fed70776d5?q=80&w=2070" class="w-full h-full object-cover group-hover:scale-105 duration-500" alt="Gedung SMP">
+                <img src="{{ asset('images/gedung-sekolah.png') }}" class="w-full h-full object-cover group-hover:scale-105 duration-500" alt="Gedung SMP">
                 <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent duration-300"></div>
                 <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-white p-2">
-                    <p class="font-bold text-base md:text-lg uppercase tracking-wider">Gedung Utama SMP</p>
+                    <p class="font-bold text-base md:text-lg uppercase tracking-wider"></p>
                 </div>
             </div>
 
-            {{-- Foto 2 & 3 --}}
             <div class="aspect-[4/3] md:aspect-auto rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg group relative border-4 border-white">
                 <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=2069" class="w-full h-full object-cover group-hover:scale-105 duration-500" alt="Diskusi Siswa">
             </div>
@@ -179,7 +177,6 @@
                 <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070" class="w-full h-full object-cover group-hover:scale-105 duration-500" alt="Fasilitas Literasi">
             </div>
 
-            {{-- Foto 4: Full lebar di desktop --}}
             <div class="md:col-span-2 aspect-[16/9] md:aspect-auto rounded-[24px] md:rounded-[32px] overflow-hidden shadow-lg group relative">
                 <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070" class="w-full h-full object-cover group-hover:scale-105 duration-500" alt="Area Sosial">
                 <div class="absolute bottom-4 left-4 md:bottom-6 md:left-6 text-white">
@@ -190,7 +187,7 @@
     </div>
 </div>
 
-{{-- TECHNICAL SPECS (FIXED RESPONSIVE) --}}
+{{-- TECHNICAL SPECS --}}
 <div class="bg-white py-16 md:py-24 px-6 overflow-hidden">
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -219,7 +216,6 @@
                 </div>
             </div>
             
-            {{-- Statistik Box: Fixed Wrap on Mobile --}}
             <div class="relative grid grid-cols-2 gap-3 md:gap-4">
                 <div class="space-y-3 md:space-y-4 pt-8 md:pt-12">
                     <div class="bg-slate-900 p-6 md:p-8 rounded-[32px] md:rounded-[40px] text-center">
@@ -246,7 +242,7 @@
     </div>
 </div>
 
-{{-- MODERN CANTEEN (FIXED RESPONSIVE) --}}
+{{-- MODERN CANTEEN --}}
 <div class="bg-slate-900 py-20 md:py-32 px-6">
     <div class="max-w-7xl mx-auto">
         <div class="relative rounded-[40px] md:rounded-[64px] overflow-hidden bg-emerald-600 min-h-[400px] md:min-h-[500px] flex items-center p-8 md:p-20 group">

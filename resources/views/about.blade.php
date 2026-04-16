@@ -458,7 +458,7 @@
                                 <i class="fab fa-whatsapp"></i>
                             </div>
                             <div>
-                                <h4 class="text-white font-bold text-lg">Admin KB / TK</h4>
+                                <h4 class="text-white font-bold text-lg">Admin PAUD / TK</h4>
                                 <p class="text-blue-100/50 text-sm">0896-9422-4226</p>
                             </div>
                         </a>

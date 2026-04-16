@@ -45,7 +45,7 @@
                 <a href="{{ route('sd.pendaftaran') }}" class="text-sm font-black tracking-widest {{ request()->routeIs('sd.pendaftaran') ? 'text-blue-700 border-b-2 border-blue-700' : 'text-slate-600 hover:text-blue-600' }} pb-1 transition-all uppercase">Pendaftaran</a>
                 
                 {{-- Tombol Daftar Sekarang --}}
-                <a href="{{ route('pendaftaran') }}" class="ml-4 px-8 py-4 bg-blue-600 text-white rounded-2xl text-xs font-black uppercase tracking-[0.2em] hover:bg-blue-700 transition-all shadow-xl shadow-blue-200">
+                <a href="{{ route('sd.pendaftaran') }}" class="ml-4 px-8 py-4 bg-blue-600 text-white rounded-2xl text-xs font-black uppercase tracking-[0.2em] hover:bg-blue-700 transition-all shadow-xl shadow-blue-200">
                     Daftar Sekarang
                 </a>
             </nav>

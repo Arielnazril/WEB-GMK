@@ -105,7 +105,7 @@
                     ['icon' => 'fa-palette', 'title' => 'Seni Lukis', 'color' => 'pink', 'desc' => 'Imajinasi & Warna'],
                     ['icon' => 'fa-swimmer', 'title' => 'Berenang', 'color' => 'sky', 'desc' => 'Fisik & Berani'],
                     ['icon' => 'fa-music', 'title' => 'Angklung', 'color' => 'purple', 'desc' => 'Harmoni & Tim'],
-                    ['icon' => 'fa-quran', 'title' => 'Tahfidz Cilik', 'color' => 'emerald', 'desc' => 'Hafalan Harian'],
+                    ['icon' => 'fa-language', 'title' => 'English Fun', 'color' => 'blue', 'desc' => 'Kosa Kata Dasar'],
                 ];
             @endphp
 

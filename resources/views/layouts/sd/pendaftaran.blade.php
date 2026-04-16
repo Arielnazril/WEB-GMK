@@ -13,46 +13,54 @@
     <div class="max-w-6xl mx-auto px-6 -mt-10 pb-32 relative z-20">
         
         {{-- 1. Mekanisme Pendaftaran --}}
-        <div class="bg-white rounded-[4rem] shadow-2xl shadow-blue-900/20 border border-slate-100 p-10 md:p-16 mb-16">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-black text-slate-800 uppercase tracking-tight">Mekanisme Pendaftaran</h2>
-                <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mt-2">Langkah mudah bergabung bersama kami</p>
+<div class="bg-white rounded-[4rem] shadow-2xl shadow-blue-900/20 border border-slate-100 p-10 md:p-16 mb-16">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl font-black text-slate-800 uppercase tracking-tight">Mekanisme Pendaftaran</h2>
+        <p class="text-slate-400 text-xs font-bold uppercase tracking-widest mt-2">Langkah mudah bergabung bersama kami</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        {{-- Langkah 01 --}}
+        <div class="text-center group">
+            <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-[2rem] flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 relative">
+                <span class="absolute -top-2 -right-2 bg-yellow-400 text-black text-[10px] font-black w-6 h-6 rounded-full flex items-center justify-center shadow-md">1</span>
+                <i class="fas fa-laptop-house text-2xl"></i>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-[2rem] flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                        <i class="fas fa-file-alt text-2xl"></i>
-                    </div>
-                    <h4 class="font-black text-slate-800 uppercase tracking-tighter text-sm mb-2">1. Ambil Formulir</h4>
-                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed">Datang langsung ke kantor administrasi sekolah pada jam kerja.</p>
-                </div>
-
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-[2rem] flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                        <i class="fas fa-clipboard-check text-2xl"></i>
-                    </div>
-                    <h4 class="font-black text-slate-800 uppercase tracking-tighter text-sm mb-2">2. Lengkapi Data</h4>
-                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed">Isi data dan lengkapi berkas persyaratan yang diminta.</p>
-                </div>
-
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-[2rem] flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                        <i class="fas fa-comments text-2xl"></i>
-                    </div>
-                    <h4 class="font-black text-slate-800 uppercase tracking-tighter text-sm mb-2">3. Wawancara</h4>
-                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed">Pertemuan tatap muka antara pihak sekolah, siswa, dan orang tua.</p>
-                </div>
-
-                <div class="text-center group">
-                    <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-[2rem] flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                        <i class="fas fa-user-check text-2xl"></i>
-                    </div>
-                    <h4 class="font-black text-slate-800 uppercase tracking-tighter text-sm mb-2">4. Daftar Ulang</h4>
-                    <p class="text-[11px] text-slate-500 font-medium leading-relaxed">Penyelesaian administrasi dan pengambilan atribut sekolah.</p>
-                </div>
-            </div>
+            <h4 class="font-black text-slate-800 uppercase tracking-tighter text-sm mb-2 leading-tight">Pendaftaran Online</h4>
+            <p class="text-[11px] text-slate-500 font-medium leading-relaxed">Isi data secara on-line untuk jadwal observasi dan wawancara.</p>
         </div>
+
+        {{-- Langkah 02 --}}
+        <div class="text-center group">
+            <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-[2rem] flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 relative">
+                <span class="absolute -top-2 -right-2 bg-yellow-400 text-black text-[10px] font-black w-6 h-6 rounded-full flex items-center justify-center shadow-md">2</span>
+                <i class="fas fa-user-friends text-2xl"></i>
+            </div>
+            <h4 class="font-black text-slate-800 uppercase tracking-tighter text-sm mb-2 leading-tight">Observasi & Wawancara</h4>
+            <p class="text-[11px] text-slate-500 font-medium leading-relaxed">Sesi pertemuan untuk mengenal potensi anak dan diskusi kurikulum.</p>
+        </div>
+
+        {{-- Langkah 03 --}}
+        <div class="text-center group">
+            <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-[2rem] flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 relative">
+                <span class="absolute -top-2 -right-2 bg-yellow-400 text-black text-[10px] font-black w-6 h-6 rounded-full flex items-center justify-center shadow-md">3</span>
+                <i class="fas fa-file-signature text-2xl"></i>
+            </div>
+            <h4 class="font-black text-slate-800 uppercase tracking-tighter text-sm mb-2 leading-tight">Status Penerimaan</h4>
+            <p class="text-[11px] text-slate-500 font-medium leading-relaxed">Hasil observasi dan wawancara menentukan status diterima atau tidak diterima.</p>
+        </div>
+
+        {{-- Langkah 04 --}}
+        <div class="text-center group">
+            <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-[2rem] flex items-center justify-center mx-auto mb-6 shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 relative">
+                <span class="absolute -top-2 -right-2 bg-yellow-400 text-black text-[10px] font-black w-6 h-6 rounded-full flex items-center justify-center shadow-md">4</span>
+                <i class="fas fa-wallet text-2xl"></i>
+            </div>
+            <h4 class="font-black text-slate-800 uppercase tracking-tighter text-sm mb-2 leading-tight">Administrasi & Dokumen</h4>
+            <p class="text-[11px] text-slate-500 font-medium leading-relaxed">Melengkapi administrasi keuangan dan penyerahan dokumen fisik.</p>
+        </div>
+    </div>
+</div>
 
         {{-- 2. Syarat & Waktu --}}
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
