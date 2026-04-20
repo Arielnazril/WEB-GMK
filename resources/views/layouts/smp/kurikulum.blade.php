@@ -198,9 +198,50 @@
             <div class="p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition-all text-center">
                 <i class="fas {{ $method['icon'] }} text-emerald-400 text-3xl mb-6"></i>
                 <h4 class="text-white font-bold mb-2">{{ $method['title'] }}</h4>
-                <p class="text-slate-400 text-xs leading-relaxed">{{ $method['desc'] }}</p>
+                <div class="text-slate-400 text-xs leading-relaxed">{{ $method['desc'] }}</div>
             </div>
             @endforeach
+        </div>
+    </div>
+</div>
+
+{{-- NEW SECTION: CARD FORM PDF SMP --}}
+<div class="bg-white py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="group relative bg-slate-900 rounded-[3.5rem] p-8 md:p-12 overflow-hidden shadow-2xl transition-all duration-500">
+            {{-- Background Accent Decorative --}}
+            <div class="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-[100px] -mr-40 -mt-40 transition-transform group-hover:scale-110"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-teal-500/5 rounded-full blur-[80px] -ml-32 -mb-32"></div>
+
+            <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+                    <div class="relative flex-shrink-0">
+                        <div class="w-24 h-24 bg-emerald-500 text-slate-900 rounded-[2.5rem] flex items-center justify-center text-4xl shadow-xl shadow-emerald-500/20 group-hover:rotate-12 transition-all duration-500">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-white text-emerald-600 rounded-full flex items-center justify-center text-xs border-4 border-slate-900 shadow-lg">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">
+                            <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
+                            <span class="text-emerald-400 text-[10px] font-black uppercase tracking-widest">Official Document</span>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-black text-white tracking-tight">Formulir Pendaftaran <span class="text-emerald-400 italic text-2xl md:text-3xl font-medium ml-1">SMP</span></h3>
+                        <p class="text-slate-400 font-medium max-w-md leading-relaxed">Lihat dan pelajari struktur pendaftaran resmi untuk jenjang Sekolah Menengah Pertama Global Maju Khatulistiwa.</p>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 w-full lg:w-auto">
+                    <a href="{{ asset('pdf/form-smp.pdf') }}" target="_blank" class="flex items-center justify-center gap-4 bg-white hover:bg-emerald-500 text-slate-900 hover:text-white px-10 py-5 rounded-[2rem] font-black text-lg transition-all duration-300 shadow-xl group/btn transform hover:-translate-y-1 active:scale-95">
+                        Lihat Dokumen
+                        <i class="fas fa-external-link-alt text-sm opacity-50 group-hover/btn:opacity-100 transition-opacity"></i>
+                    </a>
+                    <p class="text-center lg:text-right mt-4 text-[10px] text-slate-500 font-bold uppercase tracking-widest italic opacity-60">*File format: PDF (Ready for Print)</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -210,11 +251,8 @@
     <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-slate-900 text-3xl md:text-5xl font-black mb-8 leading-tight">Bersiap Melangkah ke Jenjang Menengah yang Lebih Baik?</h2>
         <div class="flex flex-col md:flex-row items-center justify-center gap-4">
-            <a href="#" class="px-10 py-4 bg-slate-900 text-white rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-slate-800 transition-all w-full md:w-auto">
+            <a href="{{ route('smp.pendaftaran') }}" class="px-10 py-4 bg-slate-900 text-white rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-slate-800 transition-all w-full md:w-auto text-center inline-block">
                 Konsultasi Pendaftaran SMP
-            </a>
-            <a href="#" class="px-10 py-4 bg-white text-emerald-600 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-slate-50 transition-all w-full md:w-auto">
-                Download Kurikulum SMP
             </a>
         </div>
     </div>

@@ -33,7 +33,7 @@
                 <div class="w-8 h-8 bg-slate-900 rounded-lg flex items-center justify-center flex-shrink-0">
                     <i class="fas fa-child text-yellow-400 text-xs"></i>
                 </div>
-                <span class="text-[10px] md:text-[11px] font-black uppercase tracking-[0.1em] text-slate-900 whitespace-nowrap">Unit TK Global Maju</span>
+                <span class="text-[10px] md:text-[11px] font-black uppercase tracking-[0.1em] text-slate-900 whitespace-nowrap">Unit PAUD (KB & TK)</span>
             </div>
             
             {{-- Menu Links --}}

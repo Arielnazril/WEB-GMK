@@ -266,12 +266,18 @@
     <div class="max-w-3xl mx-auto relative z-10">
         <h2 class="text-white text-3xl md:text-5xl font-black mb-6 leading-tight">Bergabunglah di <span class="text-emerald-500">SMP GMK</span></h2>
         <p class="text-slate-400 text-sm md:text-lg mb-10">Nikmati fasilitas modern dan kurikulum yang memberdayakan potensi terbaik anak Anda.</p>
+        
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#" class="bg-emerald-500 hover:bg-emerald-400 text-slate-900 px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all w-full sm:w-auto shadow-xl">
-                Hubungi Konsultan
+            {{-- Button Hubungi Konsultan (WhatsApp) --}}
+            <a href="https://wa.me/6289694224226" target="_blank" class="inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-slate-900 px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all w-full sm:w-auto shadow-xl group">
+                <i class="fab fa-whatsapp text-lg group-hover:rotate-12 transition-transform"></i>
+                <span>Hubungi Admin</span>
             </a>
-            <a href="#" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all w-full sm:w-auto">
-                E-Brosur Fasilitas
+
+            {{-- Button E-Brosur (PDF) --}}
+            <a href="{{ asset('pdf/brosur.pdf') }}" target="_blank" class="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all w-full sm:w-auto group">
+                <i class="fas fa-file-pdf text-lg group-hover:scale-110 transition-transform"></i>
+                <span>E-Brosur</span>
             </a>
         </div>
     </div>

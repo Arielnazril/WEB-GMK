@@ -25,7 +25,7 @@
             <div class="w-8 h-8 md:w-10 md:h-10 bg-black rounded-lg md:rounded-xl flex items-center justify-center shadow-lg shadow-black/20">
                 <i class="fas fa-graduation-cap text-[#FFFF00] text-xs md:text-sm"></i>
             </div>
-            <span class="text-[11px] md:text-[13px] font-black uppercase tracking-[0.1em] text-black whitespace-nowrap">Unit TK Global Maju</span>
+            <span class="text-[11px] md:text-[13px] font-black uppercase tracking-[0.1em] text-black whitespace-nowrap">Unit PAUD (KB & TK)</span>
         </div>
 
         <div class="flex items-center gap-4 md:gap-8">
@@ -169,7 +169,7 @@
                 </div>
 
                 <div class="pt-4">
-                    <a href="#" class="inline-flex items-center gap-3 font-black text-slate-900 uppercase tracking-widest text-xs group">
+                    <a href="{{ route('tk.fasilitas') }}" class="inline-flex items-center gap-3 font-black text-slate-900 uppercase tracking-widest text-xs group">
                         Selengkapnya tentang kami
                         <span class="h-8 w-8 rounded-full bg-slate-900 text-white flex items-center justify-center transition-transform group-hover:translate-x-2">
                             <i class="fas fa-arrow-right text-[10px]"></i>
@@ -211,25 +211,37 @@
     </div>
 </div>
 
-{{-- Sentra Section --}}
-<div class="py-20 md:py-32 max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
-        <div class="p-8 md:p-12 bg-yellow-50 rounded-[40px] md:rounded-[60px] border border-yellow-100 group hover:shadow-xl transition-all duration-500">
-            <div class="w-12 h-12 md:w-16 md:h-16 bg-yellow-400 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg mb-6 md:mb-8">
-                <i class="fas fa-pray text-2xl md:text-3xl"></i>
-            </div>
-            <h3 class="text-2xl md:text-3xl font-black text-slate-900 uppercase tracking-tighter mb-4">Sentra Imtaq</h3>
-            <p class="text-slate-600 text-sm md:text-lg leading-relaxed mb-6 md:mb-8 font-medium">"Penanaman kedisiplinan, pengenalan doa harian, pembiasaan perilaku baik, dan pengembangan karakter unggul yang diterapkan dalam kegiatan sehari-hari."</p>
-            <span class="inline-block px-4 py-2 bg-white rounded-full text-[8px] md:text-[10px] font-black text-yellow-600 uppercase tracking-widest shadow-sm">Character Building</span>
-        </div>
+{{-- SECTION DOWNLOAD FORMULIR --}}
+<div class="bg-white py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="relative group">
+            <div class="absolute -inset-2 bg-gradient-to-r from-yellow-400 to-black rounded-[3rem] blur opacity-10 group-hover:opacity-20 transition duration-500"></div>
+            <div class="relative bg-slate-50 border border-slate-100 rounded-[3rem] p-8 md:p-16 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10">
+                
+                {{-- Dekorasi Belakang --}}
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-yellow-400/10 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-black/5 rounded-full blur-3xl"></div>
 
-        <div class="p-8 md:p-12 bg-blue-50 rounded-[40px] md:rounded-[60px] border border-blue-100 group hover:shadow-xl transition-all duration-500">
-            <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-500 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg mb-6 md:mb-8">
-                <i class="fas fa-pencil-ruler text-2xl md:text-3xl"></i>
+                <div class="text-center md:text-left relative z-10">
+                    <span class="inline-block bg-yellow-400 text-black px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-4">Registration Files</span>
+                    <h2 class="text-3xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter leading-none mb-4">
+                        Formulir Unit <br> <span class="text-yellow-500">PAUD (KB & TK)</span>
+                    </h2>
+                    <p class="text-slate-500 text-sm md:text-base font-medium max-w-sm">Silahkan unduh formulir pendaftaran resmi untuk melengkapi berkas administrasi calon siswa.</p>
+                </div>
+
+                <div class="relative z-10 w-full md:w-auto">
+                    <a href="{{ asset('pdf/form-paud&tk.pdf') }}" target="_blank" class="flex flex-col items-center group/btn">
+                        <div class="w-20 h-20 md:w-24 md:h-24 bg-black rounded-[2rem] flex items-center justify-center mb-4 shadow-2xl group-hover/btn:scale-110 group-hover/btn:rotate-6 transition-all duration-500">
+                            <i class="fas fa-file-pdf text-[#FFFF00] text-3xl md:text-4xl"></i>
+                        </div>
+                        <div class="bg-black text-white px-8 py-3 rounded-full text-[10px] md:text-xs font-black uppercase tracking-[0.2em] shadow-xl group-hover/btn:bg-yellow-400 group-hover/btn:text-black transition-colors">
+                            Lihat PDF
+                        </div>
+                    </a>
+                </div>
+
             </div>
-            <h3 class="text-2xl md:text-3xl font-black text-slate-900 uppercase tracking-tighter mb-4">Sentra Persiapan</h3>
-            <p class="text-slate-600 text-sm md:text-lg leading-relaxed mb-6 md:mb-8 font-medium">Pengembangan kemampuan literasi dasar, numerasi, dan kematangan kognitif untuk transisi ke sekolah dasar.</p>
-            <span class="inline-block px-4 py-2 bg-white rounded-full text-[8px] md:text-[10px] font-black text-blue-600 uppercase tracking-widest shadow-sm">Basic Literacy</span>
         </div>
     </div>
 </div>

@@ -298,137 +298,272 @@
     <main class="min-h-screen pt-24 md:pt-32">
         @yield('content')
         
-        <section class="max-w-7xl mx-auto px-6 py-12">
-            <div class="bg-white rounded-[3rem] p-8 md:p-12 shadow-xl border border-slate-100">
-                <h1 class="text-3xl md:text-5xl font-black text-blue-950 mb-6">Selamat Datang di <span class="text-blue-600">GMK</span></h1>
-                <p class="text-slate-600 text-lg leading-relaxed max-w-2xl">
-                    "Berkomitmen menghadirkan ekosistem pendidikan terbaik di Kota Pontianak untuk membentuk generasi yang berkarakter luhur, cerdas, dan siap menghadapi tantangan global."
-                </p>
-                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="p-8 bg-blue-50 rounded-[2rem] border border-blue-100">
-                        <i class="fas fa-rocket text-3xl text-blue-600 mb-4"></i>
-                        <h3 class="font-bold text-xl mb-2">Visi Modern</h3>
-                        <p class="text-slate-500 text-sm">Pendidikan yang relevan dengan perkembangan teknologi masa kini.</p>
-                    </div>
-                    <div class="p-8 bg-emerald-50 rounded-[2rem] border border-emerald-100">
-                        {{-- Ikon diganti menjadi shield-alt untuk melambangkan kekuatan karakter/integritas --}}
-                        <i class="fas fa-shield-alt text-3xl text-emerald-600 mb-4"></i>
-                        
-                        {{-- Judul diganti menjadi Integritas Diri atau Etika Luhur --}}
-                        <h3 class="font-bold text-xl mb-2">Integritas Diri</h3>
-                        
-                        {{-- Deskripsi diganti menjadi nilai moral universal --}}
-                        <p class="text-slate-500 text-sm">Membentuk pribadi yang jujur dan bertanggung jawab dengan landasan etika moral yang tinggi.</p>
-                    </div>
-                    <div class="p-8 bg-yellow-50 rounded-[2rem] border border-yellow-100">
-                        <i class="fas fa-star text-3xl text-yellow-600 mb-4"></i>
-                        <h3 class="font-bold text-xl mb-2">Prestasi Global</h3>
-                        <p class="text-slate-500 text-sm">Mempersiapkan siswa untuk bersaing di kancah internasional.</p>
-                    </div>
+<section class="max-w-7xl mx-auto px-6 py-12">
+    <div class="bg-white rounded-[3rem] p-8 md:p-12 shadow-xl border border-slate-100">
+        
+        {{-- Judul Dinamis --}}
+<h1 class="text-3xl md:text-5xl font-black text-blue-950 mb-6 uppercase tracking-tighter">
+    @if(request()->is('unit/tk*'))
+    {{-- Menggunakan Kuning yang lebih deep agar kontras --}}
+    Selamat Datang di <span style="color: #EAB308;" class="font-black">PAUD Global Maju Khatulistiwa</span>
+    @elseif(request()->is('unit/sd*'))
+        {{-- Warna Biru Khas SD (#2563eb / Blue-600) --}}
+        Selamat Datang di <span class="text-blue-600">SD Global Maju Khatulistiwa</span>
+    @elseif(request()->is('unit/smp*'))
+        {{-- Warna Hijau Khas SMP (#10b981 / Emerald-500) --}}
+        Selamat Datang di <span class="text-emerald-500">SMP Global Maju Khatulistiwa</span>
+    @else
+        Selamat Datang di <span class="text-blue-600">GMK</span>
+    @endif
+</h1>
+
+        {{-- Deskripsi Dinamis --}}
+        <p class="text-slate-600 text-lg leading-relaxed max-w-4xl">
+            @if(request()->is('unit/tk*'))
+                "Selamat datang di PAUD Global Maju Khatulistiwa, tempat menanamkan benih kreativitas dan jiwa kewirausahaan sejak dini. Bersama kami, anak-anak tumbuh menjadi pembelajar mandiri yang ceria, inovatif, dan berkarakter kuat melalui metode pembelajaran berbasis entrepreneurship."
+            @elseif(request()->is('unit/sd*'))
+                "Selamat datang di SD Global Maju Khatulistiwa. Fokus kami adalah membangun fondasi karakter dan akademik yang kuat, serta mengasah bakat minat anak melalui lingkungan belajar yang menyenangkan dan disiplin."
+            @elseif(request()->is('unit/smp*'))
+                "Selamat datang di SMP Global Maju Khatulistiwa. Kami menyiapkan generasi remaja yang kritis, berwawasan global, dan mahir teknologi, dengan tetap menjunjung tinggi nilai-nilai integritas diri dan etika luhur."
+            @else
+                <!-- "Berkomitmen menghadirkan ekosistem pendidikan terbaik di Kota Pontianak untuk membentuk generasi yang berkarakter luhur, cerdas, dan siap menghadapi tantangan global." -->
+            @endif
+        </p>
+
+        {{-- SECTION: VISI, MISI, & TUJUAN --}}
+<div class="mt-16 space-y-12">
+    {{-- VISI CARD - Headline --}}
+    <div class="relative group" data-aos="fade-up">
+        <div class="absolute -inset-1 bg-gradient-to-r from-blue-700 to-cyan-500 rounded-[2rem] blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
+        <div class="relative p-8 md:p-12 bg-white rounded-[2rem] border border-slate-100 shadow-xl overflow-hidden">
+            <div class="absolute top-0 right-0 p-10 opacity-[0.03] pointer-events-none">
+                <i class="fas fa-lightbulb text-9xl -rotate-12 text-blue-900"></i>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-20 h-20 bg-blue-50 text-blue-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-inner border border-blue-100">
+                    <i class="fas fa-eye text-3xl"></i>
+                </div>
+                <div class="text-center md:text-left">
+                    <span class="text-[10px] font-black uppercase tracking-[0.3em] text-blue-600 mb-2 block">Our Vision</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tighter italic uppercase">Visi Sekolah</h2>
+                    <p class="text-slate-600 text-lg md:text-xl leading-relaxed font-medium italic">
+                        "Peserta didik yang memiliki semangat tinggi belajar dan tumbuh kembang sebagai insan yang cerdas ceria, mandiri, kreatif, berkarakter dan berwawasan global menuju persiapan generasi <span class="text-blue-700 font-bold">Indonesia Emas 2045</span>."
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+
+    {{-- MISI & TUJUAN GRID --}}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {{-- MISI CARD --}}
+        <div class="bg-white rounded-[2.5rem] border border-slate-100 shadow-xl p-8 md:p-10 relative overflow-hidden" data-aos="fade-right">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-600/20">
+                    <i class="fas fa-rocket text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900 uppercase tracking-tighter">Misi Kami</h3>
+            </div>
+            
+            <div class="space-y-4 max-h-[500px] overflow-y-auto pr-4 custom-scrollbar">
+                @php
+                    $misi = [
+                        'Menyelenggarakan layanan pengembangan holistik integratif.',
+                        'Mengembangkan semangat belajar peserta didik dengan menghargai perbedaan dalam belajar (differentiated learning).',
+                        'Memfasilitasi kegiatan belajar yang aktif, inovatif, kreatif, efektif, dan menyenangkan sesuai tahap perkembangan.',
+                        'Membangun pembiasaan perilaku mandiri yang bermanfaat bagi kehidupan nyata.',
+                        'Mengembangkan dan menghargai kreativitas peserta didik.',
+                        'Mengembangkan karakter dalam proses pembelajaran.',
+                        'Mengembangkan profil pelajar Pancasila.',
+                        'Mengembangkan kemampuan insan global melalui bahasa, teknologi, dan jiwa kepemimpinan.'
+                    ];
+                    $iconsMisi = ['fa-child', 'fa-users', 'fa-lightbulb', 'fa-walking', 'fa-paint-brush', 'fa-heart', 'fa-flag', 'fa-globe-americas'];
+                @endphp
+
+                @foreach($misi as $index => $item)
+                <div class="flex gap-4 p-4 rounded-2xl hover:bg-blue-50/50 transition-colors border border-transparent hover:border-blue-100 group">
+                    <div class="text-blue-600 font-black text-sm mt-1 group-hover:scale-110 transition-transform">
+                        <i class="fas {{ $iconsMisi[$index] }} w-5"></i>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed font-semibold">{{ $item }}</p>
+                </div>
+                @endforeach
+            </div>
+        </div>
+
+        {{-- TUJUAN CARD --}}
+        <div class="bg-slate-900 rounded-[2.5rem] shadow-2xl p-8 md:p-10 relative overflow-hidden text-white" data-aos="fade-left">
+            <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none text-blue-500">
+                <i class="fas fa-bullseye text-8xl"></i>
+            </div>
+            
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 bg-cyan-500 text-slate-900 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                    <i class="fas fa-check-double text-xl"></i>
+                </div>
+                <h3 class="text-2xl font-black uppercase tracking-tighter">Tujuan Strategis</h3>
+            </div>
+
+            <div class="space-y-4 max-h-[500px] overflow-y-auto pr-4 custom-scrollbar-light">
+                @php
+                    $tujuan = [
+                        'Terwujudnya potensi kecerdasan spiritual, intelektual, emosional, sosial, dan seni sebagai life skill.',
+                        'Terwujudnya lingkungan belajar yang saling menghargai.',
+                        'Terwujudnya peserta didik yang bahagia dalam belajar.',
+                        'Terwujudnya peserta didik yang memiliki tanggung jawab tinggi.',
+                        'Terwujudnya lingkungan belajar yang kreatif dan dinamis.',
+                        'Terwujudnya pendidikan karakter yang kuat dalam diri peserta didik.',
+                        'Tercapainya standar profil pelajar Pancasila.',
+                        'Terwujudnya kemampuan bahasa asing dan teknologi menuju Indonesia Emas 2045.'
+                    ];
+                @endphp
+
+                @foreach($tujuan as $index => $item)
+                <div class="flex gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group">
+                    <div class="w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-cyan-500 group-hover:text-slate-900 transition-all">
+                        <span class="text-[10px] font-black">{{ $index + 1 }}</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed font-medium">{{ $item }}</p>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Scrollbar Matching colors */
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #2563eb; border-radius: 10px; }
+
+    .custom-scrollbar-light::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar-light::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 10px; }
+    .custom-scrollbar-light::-webkit-scrollbar-thumb { background: #06b6d4; border-radius: 10px; }
+</style>
+    </div>
+</section>
         </main>
 
     <button id="backToTop" class="fixed bottom-8 right-8 z-[90] w-14 h-14 bg-blue-700 text-white rounded-2xl shadow-2xl flex items-center justify-center hover:bg-blue-800 hover:-translate-y-2 transition-all active:scale-90 shadow-blue-900/30">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <footer class="bg-slate-950 pt-24 pb-12 text-white relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-600 via-emerald-500 to-yellow-400"></div>
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-600/10 rounded-full blur-[120px]"></div>
+<footer class="bg-slate-950 pt-24 pb-12 text-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-blue-600 via-emerald-500 to-yellow-400"></div>
+    <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]"></div>
+    <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-600/10 rounded-full blur-[120px]"></div>
 
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
-                <div class="lg:col-span-4 space-y-8">
-                    <div class="flex items-center gap-5">
-                        <img src="{{ asset('images/logo-gmk.png') }}" 
-                            alt="Logo GMK" 
-                            class="w-20 h-20 md:w-24 md:h-24 object-contain drop-shadow-xl transition-transform hover:scale-105 duration-300">
-                        
-                        <div class="h-12 w-[1.5px] bg-white/20 ml-1"></div>
-                        
-                        <div class="ml-1">
-                            <h3 class="font-black text-lg md:text-xl tracking-tight leading-none text-white">
-                                GLOBAL MAJU
-                            </h3>
-                            <p class="text-[8px] md:text-[9px] text-blue-400 font-bold tracking-[0.3em] mt-1.5 uppercase opacity-90">
-                                Khatulistiwa
-                            </p>
-                        </div>
-                    </div>
-                    <p class="text-slate-400 text-[15px] leading-relaxed max-w-sm font-medium">
-                        "Membangun generasi berkarakter luhur, cerdas, dan berintegritas melalui sistem pendidikan terpadu yang adaptif terhadap tantangan masa depan di Kota Pontianak."
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/globalmajukhatulistiwa" target="_blank" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-gradient-to-tr hover:from-purple-600 hover:to-pink-500 border border-white/10 transition-all duration-300 group shadow-lg">
-                            <i class="fab fa-instagram text-xl group-hover:scale-110"></i>
-                        </a>
-                        <a href="https://www.facebook.com/p/Sekolah-Global-Maju-Khatulistiwa-GMK-100057668282912/" target="_blank" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-blue-600 border border-white/10 transition-all duration-300 group shadow-lg">
-                            <i class="fab fa-facebook-f text-xl group-hover:scale-110"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@sekolahglobalmajukhatulistiwa" target="_blank" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-red-600 border border-white/10 transition-all duration-300 group shadow-lg">
-                            <i class="fab fa-youtube text-xl group-hover:scale-110"></i>
-                        </a>
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
+            <div class="lg:col-span-4 space-y-8">
+                <div class="flex items-center gap-5">
+                    <img src="{{ asset('images/logo-gmk.png') }}" 
+                        alt="Logo GMK" 
+                        class="w-20 h-20 md:w-24 md:h-24 object-contain drop-shadow-xl transition-transform hover:scale-105 duration-300">
+                    
+                    <div class="h-12 w-[1.5px] bg-white/20 ml-1"></div>
+                    
+                    <div class="ml-1">
+                        <h3 class="font-black text-lg md:text-xl tracking-tight leading-none text-white">
+                            GLOBAL MAJU
+                        </h3>
+                        <p class="text-[8px] md:text-[9px] text-blue-400 font-bold tracking-[0.3em] mt-1.5 uppercase opacity-90">
+                            Khatulistiwa
+                        </p>
                     </div>
                 </div>
-
-                <div class="lg:col-span-2">
-                    <h4 class="font-bold text-white mb-10 text-sm uppercase tracking-[0.2em] flex items-center gap-3">
-                        <span class="w-8 h-[2px] bg-blue-500 rounded-full"></span> Navigasi
-                    </h4>
-                    <ul class="space-y-5 text-slate-400 text-[15px] font-semibold">
-                        <li><a href="{{ route('home') }}" class="hover:text-white hover:translate-x-2 transition-all inline-block">Beranda</a></li>
-                        <li><a href="{{ route('about') }}" class="hover:text-white hover:translate-x-2 transition-all inline-block">Tentang Kami</a></li>
-                        <li><a href="{{ route('news') }}" class="hover:text-white hover:translate-x-2 transition-all inline-block">Berita & Artikel</a></li>
-                        <li><a href="{{ route('contact') }}" class="hover:text-white hover:translate-x-2 transition-all inline-block">Hubungi Kami</a></li>
-                        <li><a href="#" class="text-blue-400 font-bold hover:text-blue-300 transition-all inline-block">Pendaftaran 2026</a></li>
-                    </ul>
-                </div>
-
-                <div class="lg:col-span-6">
-                    <h4 class="font-bold text-white mb-10 text-sm uppercase tracking-[0.2em] flex items-center gap-3">
-                        <span class="w-8 h-[2px] bg-emerald-500 rounded-full"></span> Hubungi Kami
-                    </h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/[0.08] transition-all group">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all">
-                                    <i class="fab fa-whatsapp text-2xl"></i>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] font-bold text-emerald-500 uppercase tracking-widest mb-1">Admin PAUD / TK</p>
-                                    <a href="https://wa.me/6289694224226" target="_blank" class="text-white font-bold text-lg hover:text-emerald-400 transition-colors">0896 9422 4226</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-white/5 border border-white/10 p-6 rounded-[2rem] hover:bg-white/[0.08] transition-all group">
-                            <div class="flex items-start gap-4">
-                                <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all">
-                                    <i class="fab fa-whatsapp text-2xl"></i>
-                                </div>
-                                <div>
-                                    <p class="text-[10px] font-bold text-blue-500 uppercase tracking-widest mb-1">Admin SD / SMP</p>
-                                    <a href="https://wa.me/6282154199008" target="_blank" class="text-white font-bold text-lg hover:text-blue-400 transition-colors">0821 5419 9008</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <p class="text-slate-400 text-[15px] leading-relaxed max-w-sm font-medium">
+                    "Peserta didik yang memiliki semangat tinggi belajar dan tumbuh kembang sebagai insan yang cerdas ceria, mandiri, kreatif, berkarakter dan berwawasan global menuju persiapan generasi Indonesia Emas 2045."
+                </p>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/globalmajukhatulistiwa" target="_blank" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-gradient-to-tr hover:from-purple-600 hover:to-pink-500 border border-white/10 transition-all duration-300 group shadow-lg">
+                        <i class="fab fa-instagram text-xl group-hover:scale-110"></i>
+                    </a>
+                    <a href="https://www.facebook.com/p/Sekolah-Global-Maju-Khatulistiwa-GMK-100057668282912/" target="_blank" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-blue-600 border border-white/10 transition-all duration-300 group shadow-lg">
+                        <i class="fab fa-facebook-f text-xl group-hover:scale-110"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@sekolahglobalmajukhatulistiwa" target="_blank" class="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-red-600 border border-white/10 transition-all duration-300 group shadow-lg">
+                        <i class="fab fa-youtube text-xl group-hover:scale-110"></i>
+                    </a>
                 </div>
             </div>
 
-            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-slate-500 text-[13px] font-semibold">
-                    © 2026 <span class="text-slate-400">Global Maju Khatulistiwa</span>. All rights reserved.
-                </p>
-                <div class="flex gap-8 text-[13px] font-bold text-slate-500">
-                    <a href="#" class="hover:text-blue-500 transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-blue-500 transition-colors">Terms of Service</a>
+            <div class="lg:col-span-2">
+                <h4 class="font-bold text-white mb-10 text-sm uppercase tracking-[0.2em] flex items-center gap-3">
+                    <span class="w-8 h-[2px] bg-blue-500 rounded-full"></span> Navigasi
+                </h4>
+                <ul class="space-y-5 text-slate-400 text-[15px] font-semibold">
+                    <li><a href="{{ route('home') }}" class="hover:text-white hover:translate-x-2 transition-all inline-block">Beranda</a></li>
+                    <li><a href="{{ route('about') }}" class="hover:text-white hover:translate-x-2 transition-all inline-block">Tentang Kami</a></li>
+                    <li><a href="{{ route('news') }}" class="hover:text-white hover:translate-x-2 transition-all inline-block">Berita & Artikel</a></li>
+                    <li><a href="{{ route('contact') }}" class="hover:text-white hover:translate-x-2 transition-all inline-block">Hubungi Kami</a></li>
+                    <li>
+                    <a href="{{ route('spmb') }}" class="text-blue-400 font-bold hover:text-blue-300 transition-all inline-block">
+                        Pendaftaran 2026
+                    </a>
+                </li>
+                </ul>
+            </div>
+
+            <div class="lg:col-span-6">
+                <h4 class="font-bold text-white mb-10 text-sm uppercase tracking-[0.2em] flex items-center gap-3">
+                    <span class="w-8 h-[2px] bg-emerald-500 rounded-full"></span> Hubungi Kami
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+                    {{-- Admin PAUD --}}
+                    <div class="bg-white/5 border border-white/10 p-5 rounded-[2rem] hover:bg-white/[0.08] transition-all group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-[9px] font-bold text-emerald-500 uppercase tracking-widest mb-0.5">Pendaftaran PAUD (KB & TK)</p>
+                                <a href="https://wa.me/6289694224226" target="_blank" class="text-white font-bold text-base hover:text-emerald-400 transition-colors">0896 9422 4226</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Admin SD --}}
+                    <div class="bg-white/5 border border-white/10 p-5 rounded-[2rem] hover:bg-white/[0.08] transition-all group">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-[9px] font-bold text-blue-500 uppercase tracking-widest mb-0.5">Pendaftaran SD</p>
+                                <a href="https://wa.me/6282154199008" target="_blank" class="text-white font-bold text-base hover:text-blue-400 transition-colors">0821 5419 9008</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Admin SMP --}}
+                    <div class="bg-white/5 border border-white/10 p-5 rounded-[2rem] hover:bg-white/[0.08] transition-all group md:col-span-2 lg:col-span-1">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-yellow-500/20 text-yellow-400 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-all">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-[9px] font-bold text-yellow-500 uppercase tracking-widest mb-0.5">Pendaftaran SMP</p>
+                                <a href="https://wa.me/6289694224226" target="_blank" class="text-white font-bold text-base hover:text-yellow-400 transition-colors">0896 9422 4226</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+
+        <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-slate-500 text-[13px] font-semibold">
+                © 2026 <span class="text-slate-400">Global Maju Khatulistiwa</span>. All rights reserved.
+            </p>
+            <div class="flex gap-8 text-[13px] font-bold text-slate-500">
+                <a href="#" class="hover:text-blue-500 transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-500 transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <script>
     document.addEventListener('DOMContentLoaded', () => {

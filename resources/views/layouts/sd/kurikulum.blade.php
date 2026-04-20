@@ -30,17 +30,15 @@
             </div>
             <div class="relative">
                 <div class="aspect-square bg-blue-600 rounded-[4rem] rotate-3 absolute inset-0"></div>
-                {{-- Menggunakan asset gambar sesuai struktur folder Anda --}}
                 <img src="{{ asset('images/tentangkami-sd.PNG') }}" alt="Aktivitas Belajar" class="relative z-10 rounded-[4rem] aspect-square object-cover shadow-2xl -rotate-3 transition-transform hover:rotate-0 duration-700">
             </div>
         </div>
     </div>
 
-    {{-- Section 2: Struktur Organisasi (POSISI BARU: DI ATAS TIGA PILAR) --}}
+    {{-- Section 2: Struktur Organisasi --}}
     <div class="bg-slate-50 py-20 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="bg-white rounded-[3rem] shadow-xl overflow-hidden border border-slate-200">
-                {{-- Header Struktur (Ganti Merah ke Biru Tua) --}}
                 <div class="bg-blue-900 p-8 text-center">
                     <h3 class="text-white font-black text-2xl md:text-3xl uppercase tracking-widest">
                         Struktur Organisasi Sekolah Dasar<br>
@@ -49,9 +47,7 @@
                 </div>
 
                 <div class="p-10 overflow-x-auto">
-                    {{-- Container Utama Bagan --}}
                     <div class="min-w-[1100px] flex flex-col items-center py-10">
-                        
                         {{-- Kepala Sekolah --}}
                         <div class="flex flex-col items-center mb-10">
                             <div class="bg-sky-400 border-2 border-slate-800 rounded-xl shadow-[6px_6px_0px_0px_rgba(30,58,138,1)] w-64 p-4 text-center">
@@ -65,7 +61,6 @@
                         <div class="relative w-full flex justify-center mb-16">
                             <div class="absolute top-0 left-[22%] right-[22%] h-0.5 bg-slate-800"></div>
                             <div class="flex justify-around w-full">
-                                {{-- Unit Perpustakaan --}}
                                 <div class="flex flex-col items-center relative">
                                     <div class="w-0.5 h-8 bg-slate-800"></div>
                                     <div class="bg-sky-400 border-2 border-slate-800 rounded-xl shadow-[4px_4px_0px_0px_rgba(30,58,138,1)] w-48 p-3 text-center transition-transform hover:-translate-y-1">
@@ -73,7 +68,6 @@
                                         <p class="text-[9px] uppercase font-bold text-blue-900 bg-white/50 rounded mt-1">Unit Perpustakaan</p>
                                     </div>
                                 </div>
-                                {{-- Komite Sekolah --}}
                                 <div class="flex flex-col items-center relative">
                                     <div class="w-0.5 h-8 bg-slate-800"></div>
                                     <div class="bg-sky-400 border-2 border-slate-800 rounded-xl shadow-[4px_4px_0px_0px_rgba(30,58,138,1)] w-48 p-3 text-center transition-transform hover:-translate-y-1">
@@ -81,7 +75,6 @@
                                         <p class="text-[9px] uppercase font-bold text-blue-900 bg-white/50 rounded mt-1">Komite Sekolah</p>
                                     </div>
                                 </div>
-                                {{-- Administrasi --}}
                                 <div class="flex flex-col items-center relative">
                                     <div class="w-0.5 h-8 bg-slate-800"></div>
                                     <div class="bg-sky-400 border-2 border-slate-800 rounded-xl shadow-[4px_4px_0px_0px_rgba(30,58,138,1)] w-48 p-3 text-center transition-transform hover:-translate-y-1">
@@ -92,11 +85,10 @@
                             </div>
                         </div>
 
-                        {{-- Baris Ketiga (Wali Kelas) --}}
+                        {{-- Wali Kelas --}}
                         <div class="w-full relative px-4">
                             <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-0.5 h-16 bg-slate-800"></div>
                             <div class="grid grid-cols-6 gap-4">
-                                {{-- Wali Kelas Kolom 1 --}}
                                 <div class="space-y-4">
                                     <div class="bg-sky-400 border-2 border-slate-800 rounded-lg shadow-sm p-2 text-center">
                                         <h5 class="text-[10px] font-black">Mardini, S. Pd</h5>
@@ -107,7 +99,6 @@
                                         <p class="text-[8px] font-bold text-blue-900 uppercase">Wali Kelas 3</p>
                                     </div>
                                 </div>
-                                {{-- Wali Kelas Kolom 2 --}}
                                 <div class="space-y-4">
                                     <div class="bg-sky-400 border-2 border-slate-800 rounded-lg shadow-sm p-2 text-center">
                                         <h5 class="text-[10px] font-black">Mariska F Yani, S. Pd</h5>
@@ -118,7 +109,6 @@
                                         <p class="text-[8px] font-bold text-blue-900 uppercase">Wali Kelas 3</p>
                                     </div>
                                 </div>
-                                {{-- Wali Kelas Kolom 3 --}}
                                 <div class="space-y-4">
                                     <div class="bg-sky-400 border-2 border-slate-800 rounded-lg shadow-sm p-2 text-center">
                                         <h5 class="text-[10px] font-black">Jumarni, S. Pd</h5>
@@ -129,7 +119,6 @@
                                         <p class="text-[8px] font-bold text-blue-900 uppercase">Wali Kelas 4</p>
                                     </div>
                                 </div>
-                                {{-- Wali Kelas Kolom 4 --}}
                                 <div class="space-y-4">
                                     <div class="bg-sky-400 border-2 border-slate-800 rounded-lg shadow-sm p-2 text-center">
                                         <h5 class="text-[10px] font-black">Yulita Apra, S. Pd</h5>
@@ -140,7 +129,6 @@
                                         <p class="text-[8px] font-bold text-blue-900 uppercase">Wali Kelas 4</p>
                                     </div>
                                 </div>
-                                {{-- Wali Kelas Kolom 5 --}}
                                 <div class="space-y-4">
                                     <div class="bg-sky-400 border-2 border-slate-800 rounded-lg shadow-sm p-2 text-center">
                                         <h5 class="text-[10px] font-black">Nita Savitriani, S. Pd</h5>
@@ -151,7 +139,6 @@
                                         <p class="text-[8px] font-bold text-blue-900 uppercase">Wali Kelas 5</p>
                                     </div>
                                 </div>
-                                {{-- Wali Kelas Kolom 6 --}}
                                 <div class="space-y-4">
                                     <div class="bg-sky-400 border-2 border-slate-800 rounded-lg shadow-sm p-2 text-center">
                                         <h5 class="text-[10px] font-black">Fahmi Kartina, S. Pd</h5>
@@ -164,7 +151,7 @@
                                 </div>
                             </div>
 
-                            {{-- Daftar Guru Mata Pelajaran --}}
+                            {{-- Guru Mata Pelajaran --}}
                             <div class="mt-12 pt-8 border-t-2 border-dashed border-slate-300">
                                 <div class="grid grid-cols-4 gap-4">
                                     <div class="space-y-3">
@@ -225,22 +212,18 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {{-- Pilar 1 --}}
                 <div class="group p-10 bg-slate-50 rounded-[3rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
                     <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                         <i class="fas fa-book-open"></i>
                     </div>
                     <h3 class="text-2xl font-black text-slate-800 mb-4">Literasi Merdeka</h3>
-                    <p class="text-slate-600 leading-relaxed font-medium mb-6">
-                        Mengimplementasikan Kurikulum Merdeka dengan fokus pada literasi, numerasi, dan proyek penguatan profil pelajar Pancasila (P5).
-                    </p>
+                    <p class="text-slate-600 leading-relaxed font-medium mb-6">Mengimplementasikan Kurikulum Merdeka dengan fokus pada literasi, numerasi, dan proyek penguatan profil pelajar Pancasila (P5).</p>
                     <ul class="space-y-3 text-sm font-bold text-slate-500">
                         <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Critical Thinking</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Project Based Learning</li>
                     </ul>
                 </div>
 
-                {{-- Pilar 2 --}}
                 <div class="group p-10 bg-slate-50 rounded-[3rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
                     <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                         <i class="fas fa-users"></i>
@@ -253,15 +236,12 @@
                     </ul>
                 </div>
 
-                {{-- Pilar 3 --}}
                 <div class="group p-10 bg-slate-50 rounded-[3rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-slate-100">
                     <div class="w-16 h-16 bg-sky-100 text-sky-600 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:bg-sky-600 group-hover:text-white transition-colors">
                         <i class="fas fa-lightbulb"></i>
                     </div>
                     <h3 class="text-2xl font-black text-slate-800 mb-4">Critical Thinking</h3>
-                    <p class="text-slate-600 leading-relaxed font-medium mb-6">
-                        Mengasah kemampuan berpikir logis dan kreatif dalam memecahkan masalah sederhana serta menumbuhkan rasa ingin tahu yang tinggi.
-                    </p>
+                    <p class="text-slate-600 leading-relaxed font-medium mb-6">Mengasah kemampuan berpikir logis dan kreatif dalam memecahkan masalah sederhana serta menumbuhkan rasa ingin tahu yang tinggi.</p>
                     <ul class="space-y-3 text-sm font-bold text-slate-500">
                         <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Problem Solving Dasar</li>
                         <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Literasi Informasi</li>
@@ -269,7 +249,6 @@
                 </div>
             </div>
 
-            {{-- Card Gambar (Dua Card di bawah Pilar) --}}
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-16">
                 <div class="group bg-slate-50 rounded-[3.5rem] shadow-md overflow-hidden border border-slate-100 hover:shadow-2xl transition-all duration-500">
                     <div class="aspect-[4/3] overflow-hidden">
@@ -296,10 +275,11 @@
 
     {{-- Section 4: Jadwal Khas --}}
     <div class="max-w-7xl mx-auto px-6 py-24">
-        <div class="bg-blue-900 rounded-[4rem] p-12 md:p-20 text-white relative overflow-hidden">
+        <div class="bg-blue-900 rounded-[4rem] p-12 md:p-20 text-white relative overflow-hidden shadow-2xl">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-sky-500/10 rounded-full blur-[100px]"></div>
             <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-4xl font-black mb-6">Satu Hari di Global Maju</h2>
+                    <h2 class="text-4xl font-black mb-6 italic">Satu Hari di Global Maju</h2>
                     <p class="text-blue-100 mb-8 opacity-80">Kami mendesain waktu belajar yang seimbang antara akademik, kreativitas, dan pengembangan karakter.</p>
                     <div class="space-y-4">
                         <div class="flex items-center gap-4 bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/10">
@@ -323,6 +303,45 @@
                         <div class="h-48 bg-white/5 rounded-3xl flex items-center justify-center text-6xl opacity-20"><i class="fas fa-star"></i></div>
                         <div class="h-48 bg-white/5 rounded-3xl flex items-center justify-center text-6xl opacity-20"><i class="fas fa-cloud"></i></div>
                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- REVISI: Section Lihat Form PDF (Nuansa Biru SD) --}}
+    <div class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="group relative bg-white border-2 border-blue-50 rounded-[3.5rem] p-8 md:p-12 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border-slate-100">
+            {{-- Background Accent (Biru Muda) --}}
+            <div class="absolute top-0 right-0 w-80 h-80 bg-blue-50/50 rounded-full blur-3xl -mr-40 -mt-40 transition-transform group-hover:scale-110 duration-700"></div>
+            
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+                <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
+                    <div class="relative flex-shrink-0">
+                        <div class="w-24 h-24 bg-blue-600 text-white rounded-[2rem] flex items-center justify-center text-4xl shadow-xl shadow-blue-200 group-hover:rotate-12 transition-all duration-500">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        {{-- Mini Icon Decor --}}
+                        <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-sky-400 text-white rounded-full flex items-center justify-center text-xs border-4 border-white">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <h3 class="text-3xl font-black text-slate-900 tracking-tight">Formulir Pendaftaran <span class="text-blue-600">SD</span></h3>
+                        <p class="text-slate-500 font-medium max-w-md">Pratinjau formulir resmi pendaftaran untuk melihat kelengkapan data yang dibutuhkan secara detail.</p>
+                        <div class="flex items-center justify-center md:justify-start gap-3 mt-4">
+                            <span class="px-4 py-1.5 bg-blue-50 text-blue-700 text-[10px] font-bold uppercase rounded-xl tracking-widest border border-blue-100">
+                                <i class="fas fa-eye mr-1.5"></i> Interactive Preview
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0">
+                    <a href="{{ asset('pdf/form-sd.pdf') }}" target="_blank" class="inline-flex items-center gap-4 bg-blue-900 hover:bg-blue-600 text-white px-12 py-5 rounded-3xl font-black text-lg transition-all duration-300 shadow-xl shadow-blue-100 hover:shadow-blue-300 group/btn">
+                        Lihat Formulir
+                        <i class="fas fa-external-link-alt text-sm group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"></i>
+                    </a>
                 </div>
             </div>
         </div>

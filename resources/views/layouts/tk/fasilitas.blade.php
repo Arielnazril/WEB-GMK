@@ -25,7 +25,7 @@
                 <div class="w-8 h-8 md:w-10 md:h-10 bg-black rounded-lg md:rounded-xl flex items-center justify-center shadow-lg shadow-black/20">
                     <i class="fas fa-graduation-cap text-[#FFFF00] text-xs md:text-sm"></i>
                 </div>
-                <span class="text-[11px] md:text-[13px] font-black uppercase tracking-[0.1em] text-black whitespace-nowrap">Unit TK Global Maju</span>
+                <span class="text-[11px] md:text-[13px] font-black uppercase tracking-[0.1em] text-black whitespace-nowrap">Unit PAUD (KB & TK)</span>
             </div>
 
             <div class="flex items-center gap-4 md:gap-8">

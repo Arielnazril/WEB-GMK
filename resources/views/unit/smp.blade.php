@@ -22,9 +22,11 @@
             <p class="text-slate-400 text-lg md:text-xl leading-relaxed max-w-2xl mb-10 md:mb-12">Tempat lahirnya para pemimpin masa depan yang inovatif, berintegritas, dan menjunjung tinggi nilai keberagaman dalam lingkungan pendidikan yang inklusif.</p>
 
             <div class="flex flex-col sm:flex-row gap-4 mb-16 md:mb-20">
-                <a href="{{ url('unit/smp/ekskul') }}" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-xl shadow-emerald-900/40 hover:-translate-y-1 text-center">Program Unggulan</a>
+                            <a href="{{ url('unit/smp/ekskul') }}" class="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-xl shadow-emerald-900/40 hover:-translate-y-1 text-center">Program Unggulan</a>
+                        </div>
+
+            saya mau jika di tekan ke halaman berita 
             </div>
-        </div>
 
         <div class="relative group mt-8">
             <div class="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-[24px] md:rounded-[32px] blur opacity-20 transition duration-1000 group-hover:opacity-40"></div>
@@ -142,15 +144,42 @@
 </div>
 
 <div class="bg-white pb-20 md:pb-24 px-6">
-    <div class="max-w-5xl mx-auto bg-emerald-600 rounded-[32px] md:rounded-[48px] p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
+    <div class="max-w-6xl mx-auto bg-emerald-600 rounded-[32px] md:rounded-[48px] p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
         <div class="absolute inset-0 opacity-10" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
+        
         <div class="relative z-10">
             <h2 class="text-2xl md:text-5xl font-black text-white mb-6 uppercase tracking-wider leading-tight">Mulai Perjalanan Global Anda</h2>
-            <p class="text-emerald-100 mb-8 md:mb-10 font-medium text-base md:text-lg max-w-xl mx-auto">Kami mengundang putra-putri terbaik untuk bergabung dalam komunitas belajar yang beragam dan penuh prestasi.</p>
-            <a href="https://wa.me/628123456789" target="_blank" class="inline-flex items-center justify-center gap-4 bg-white text-emerald-700 w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 rounded-2xl md:rounded-3xl font-black uppercase tracking-widest hover:bg-emerald-50 transition-all shadow-xl active:scale-95">
-                <i class="fab fa-whatsapp text-2xl"></i>
-                <span>Hubungi Kami</span>
-            </a>
+            <p class="text-emerald-100 mb-8 md:mb-12 font-medium text-base md:text-lg max-w-xl mx-auto">Kami mengundang putra-putri terbaik untuk bergabung dalam komunitas belajar yang beragam dan penuh prestasi.</p>
+            
+            {{-- Group Tombol WA Unit --}}
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                <!-- {{-- Tombol PAUD --}}
+                <a href="https://wa.me/6289694224226" target="_blank" class="inline-flex flex-col items-center justify-center bg-white text-emerald-700 px-6 md:px-10 py-4 rounded-2xl md:rounded-3xl hover:bg-emerald-50 transition-all shadow-xl active:scale-95 group">
+                    <span class="text-[10px] font-black uppercase tracking-tighter opacity-60 mb-1">Unit PAUD (KB/TK)</span>
+                    <div class="flex items-center gap-3">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span class="font-black uppercase tracking-widest text-xs">Hubungi Admin</span>
+                    </div>
+                </a>
+
+                {{-- Tombol SD --}}
+                <a href="https://wa.me/6282154199008" target="_blank" class="inline-flex flex-col items-center justify-center bg-white text-emerald-700 px-6 md:px-10 py-4 rounded-2xl md:rounded-3xl hover:bg-emerald-50 transition-all shadow-xl active:scale-95 group border-2 border-emerald-400/20">
+                    <span class="text-[10px] font-black uppercase tracking-tighter opacity-60 mb-1">Unit SD</span>
+                    <div class="flex items-center gap-3">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span class="font-black uppercase tracking-widest text-xs">Hubungi Admin</span>
+                    </div>
+                </a> -->
+
+                {{-- Tombol SMP --}}
+                <a href="https://wa.me/6289694224226" target="_blank" class="inline-flex flex-col items-center justify-center bg-white text-emerald-700 px-6 md:px-10 py-4 rounded-2xl md:rounded-3xl hover:bg-emerald-50 transition-all shadow-xl active:scale-95 group">
+                    <span class="text-[10px] font-black uppercase tracking-tighter opacity-60 mb-1">Unit SMP</span>
+                    <div class="flex items-center gap-3">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span class="font-black uppercase tracking-widest text-xs">Hubungi Admin</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </div>

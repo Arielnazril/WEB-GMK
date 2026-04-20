@@ -58,14 +58,19 @@
     {{-- Hero Section --}}
     <section class="pt-24 pb-16 px-6">
         <div class="max-w-7xl mx-auto text-center">
+            {{-- Badge --}}
             <span class="inline-block px-4 py-2 mb-6 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 text-[11px] font-black tracking-[0.3em] uppercase rounded-full border border-blue-100 shadow-sm">
-                Pusat Informasi & Edukasi
+                Berita & Pembaruan Terkini
             </span>
+
+            {{-- Title --}}
             <h1 class="text-5xl md:text-8xl font-black text-slate-900 mb-8 tracking-tight">
-                Lensa <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-500 to-emerald-500">Global Maju</span>
+                Kabar <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-500 to-emerald-500">Global Maju</span>
             </h1>
-            <p class="text-slate-500 text-base md:text-xl max-w-3xl mx-auto font-medium leading-relaxed italic border-l-4 border-blue-500 pl-6 py-2 bg-slate-50/50 rounded-r-2xl">
-                "Membentuk generasi berkarakter luhur, cerdas, dan siap menghadapi tantangan global melalui informasi yang inspiratif dan edukatif bagi seluruh keluarga GMK."
+
+            {{-- Description --}}
+            <p class="text-slate-500 text-base md:text-xl max-w-3xl mx-auto font-medium leading-relaxed italic border-l-4 border-blue-600 pl-6 py-2 bg-slate-50/50 rounded-r-2xl">
+                "Jendela informasi resmi mengenai prestasi siswa, inovasi kurikulum, dan geliat aktivitas akademik di seluruh unit Sekolah Global Maju Khatulistiwa."
             </p>
         </div>
     </section>
@@ -181,10 +186,10 @@
         </div>
 
         <div class="flex-1">
-            <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors">Cyber Safety for Kids</h4>
-            <p class="text-sm text-slate-500 leading-relaxed mb-4">Panduan praktis menjaga keamanan identitas dan data anak di dunia maya.</p>
-            <span class="text-[10px] font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-4 py-1.5 rounded-full">
-                Web Guide
+            <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-amber-700 transition-colors">Eksplorasi Bakat & Kreativitas</h4>
+            <p class="text-sm text-slate-500 leading-relaxed mb-4">Wadah bagi siswa untuk mengekspresikan minat melalui proyek seni dan olahraga kolaboratif.</p>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-amber-600 bg-amber-50 px-4 py-1.5 rounded-full">
+                Kegiatan Siswa
             </span>
         </div>
     </div>

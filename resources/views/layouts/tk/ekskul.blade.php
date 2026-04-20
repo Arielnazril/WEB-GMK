@@ -7,9 +7,12 @@
         <span class="inline-block bg-black/5 text-black px-4 py-1.5 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-4 md:mb-6">
             Beyond Academic
         </span>
-        <h1 class="w-full text-4xl md:text-9xl font-black text-black leading-none tracking-tighter uppercase break-words">
+        
+        {{-- Menggunakan text-4xl untuk mobile dan text-5xl sampai 7xl untuk desktop agar tidak terputus --}}
+        <h1 class="w-full text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-black leading-none tracking-tighter uppercase whitespace-nowrap">
             EKSTRAKURIKULER
         </h1>
+
         <div class="flex items-center justify-center gap-3 md:gap-4 mt-6 md:mt-8">
             <div class="h-[2px] w-8 md:w-12 bg-black/20"></div>
             <p class="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-black/60 leading-none">Global Maju Education</p>
@@ -25,7 +28,7 @@
             <div class="w-8 h-8 md:w-10 md:h-10 bg-black rounded-lg md:rounded-xl flex items-center justify-center shadow-lg shadow-black/20">
                 <i class="fas fa-graduation-cap text-[#FFFF00] text-xs md:text-sm"></i>
             </div>
-            <span class="text-[11px] md:text-[13px] font-black uppercase tracking-[0.1em] text-black whitespace-nowrap">Unit TK Global Maju</span>
+            <span class="text-[11px] md:text-[13px] font-black uppercase tracking-[0.1em] text-black whitespace-nowrap">Unit PAUD (KB & TK)</span>
         </div>
 
         <div class="flex items-center gap-4 md:gap-8">

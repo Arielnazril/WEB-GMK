@@ -415,80 +415,98 @@
     </section>
 
     {{-- CTA Section --}}
-    <section class="py-24 px-6 relative overflow-hidden group">
-        <div class="absolute inset-0 z-0">
-            <img src="{{ asset('images/gedung-sekolah.png') }}" 
-                alt="Background Gedung GMK" 
-                class="w-full h-full object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-[5000ms] brightness-[0.6] contrast-110">
+<section class="py-24 px-6 relative overflow-hidden group">
+    <div class="absolute inset-0 z-0">
+        <img src="{{ asset('images/gedung-sekolah.png') }}" 
+            alt="Background Gedung GMK" 
+            class="w-full h-full object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-[5000ms] brightness-[0.6] contrast-110">
 
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-emerald-900/20"></div>
-        </div>
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="bg-white/5 backdrop-blur-xl rounded-[60px] md:rounded-[100px] border border-white/10 p-8 md:p-24 shadow-2xl overflow-hidden relative">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
-                <div class="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -ml-32 -mb-32"></div>
-                
-                <div class="relative z-10 text-center space-y-12">
-                    <div class="space-y-6">
-                        <div class="inline-flex items-center gap-3 px-6 py-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full animate-bounce">
-                            <span class="text-emerald-300 font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs">Join Our Family</span>
-                        </div>
-                        <h2 class="text-4xl md:text-7xl font-black text-white leading-tight tracking-tighter">
-                            Siap Bergabung Bersama <br> 
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-white to-emerald-300">Keluarga Besar GMK?</span>
-                        </h2>
-                        <p class="text-blue-100/70 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
-                            Pilih unit pendidikan yang sesuai untuk mendapatkan informasi pendaftaran lebih lanjut melalui admin WhatsApp kami.
-                        </p>
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-blue-800/50 to-emerald-900/20"></div>
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="bg-white/5 backdrop-blur-xl rounded-[60px] md:rounded-[100px] border border-white/10 p-8 md:p-20 shadow-2xl overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -ml-32 -mb-32"></div>
+            
+            <div class="relative z-10 text-center space-y-12">
+                <div class="space-y-6">
+                    <div class="inline-flex items-center gap-3 px-6 py-2 bg-emerald-500/20 border border-emerald-400/30 rounded-full animate-bounce">
+                        <span class="text-emerald-300 font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs">Join Our Family</span>
                     </div>
+                    <h2 class="text-4xl md:text-7xl font-black text-white leading-tight tracking-tighter">
+                        Siap Bergabung Bersama <br> 
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-white to-emerald-300">Keluarga Besar GMK?</span>
+                    </h2>
+                    <p class="text-blue-100/70 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
+                        Pilih unit pendidikan yang sesuai untuk mendapatkan informasi pendaftaran lebih lanjut melalui admin WhatsApp kami.
+                    </p>
+                </div>
 
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-5xl mx-auto pt-6">
-                        <div class="lg:col-span-3 mb-4">
-                            <a href="{{ route('tk.pendaftaran') }}" 
-                               class="group/main relative inline-flex items-center justify-center gap-4 px-16 py-7 bg-white text-blue-950 rounded-[30px] font-black text-xl shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-white/20 hover:-translate-y-2 transition-all duration-500 overflow-hidden w-full md:w-auto">
-                                <span class="relative z-10">DAFTAR SEKARANG</span>
-                                <i class="fas fa-paper-plane relative z-10 text-blue-600 group-hover/main:translate-x-2 group-hover/main:-translate-y-2 transition-transform duration-500"></i>
-                                <div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-white translate-y-full group-hover/main:translate-y-0 transition-transform duration-500"></div>
-                            </a>
+                {{-- Grid Kontak & Dokumen --}}
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 pt-6">
+                    
+                    {{-- Admin PAUD (KB & TK) --}}
+                    <a href="https://wa.me/6289694224226" target="_blank" 
+                       class="group/wa p-6 bg-white/5 border border-white/10 rounded-[40px] backdrop-blur-md hover:bg-white/10 hover:border-emerald-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center gap-4">
+                        <div class="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl group-hover/wa:scale-110 group-hover/wa:bg-emerald-500 group-hover/wa:text-white transition-all duration-500">
+                            <i class="fab fa-whatsapp"></i>
                         </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm md:text-base">Pendaftaran PAUD</h4>
+                            <p class="text-blue-100/50 text-xs">0896-9422-4226</p>
+                        </div>
+                    </a>
 
-                        <a href="https://wa.me/6289694224226" target="_blank" 
-                           class="group/wa p-8 bg-white/5 border border-white/10 rounded-[40px] backdrop-blur-md hover:bg-white/10 hover:border-emerald-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center gap-4">
-                            <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center text-3xl group-hover/wa:scale-110 group-hover/wa:bg-emerald-500 group-hover/wa:text-white transition-all duration-500">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-lg">Admin PAUD / TK</h4>
-                                <p class="text-blue-100/50 text-sm">0896-9422-4226</p>
-                            </div>
-                        </a>
+                    {{-- Admin SD --}}
+                    <a href="https://wa.me/6282154199008" target="_blank" 
+                       class="group/wa p-6 bg-white/5 border border-white/10 rounded-[40px] backdrop-blur-md hover:bg-white/10 hover:border-blue-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center gap-4">
+                        <div class="w-14 h-14 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center text-2xl group-hover/wa:scale-110 group-hover/wa:bg-blue-500 group-hover/wa:text-white transition-all duration-500">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm md:text-base">Pendaftaran SD</h4>
+                            <p class="text-blue-100/50 text-xs">0821-5419-9008</p>
+                        </div>
+                    </a>
 
-                        <a href="https://wa.me/6282154199008" target="_blank" 
-                           class="group/wa p-8 bg-white/5 border border-white/10 rounded-[40px] backdrop-blur-md hover:bg-white/10 hover:border-blue-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center gap-4">
-                            <div class="w-16 h-16 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center text-3xl group-hover/wa:scale-110 group-hover/wa:bg-blue-500 group-hover/wa:text-white transition-all duration-500">
-                                <i class="fab fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-lg">Admin SD / SMP</h4>
-                                <p class="text-blue-100/50 text-sm">0821-5419-9008</p>
-                            </div>
-                        </a>
+                    {{-- Admin SMP --}}
+                    <a href="https://wa.me/6289694224226" target="_blank" 
+                       class="group/wa p-6 bg-white/5 border border-white/10 rounded-[40px] backdrop-blur-md hover:bg-white/10 hover:border-yellow-400/50 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center gap-4">
+                        <div class="w-14 h-14 bg-yellow-500/20 text-yellow-400 rounded-2xl flex items-center justify-center text-2xl group-hover/wa:scale-110 group-hover/wa:bg-yellow-500 group-hover/wa:text-white transition-all duration-500">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm md:text-base">Pendaftaran SMP</h4>
+                            <p class="text-blue-100/50 text-xs">0896-9422-4226</p>
+                        </div>
+                    </a>
 
-                        <a href="{{ asset('pdf/brosur.pdf') }}" target="_blank"
-                        class="group/doc p-8 bg-white/5 border border-white/10 rounded-[40px] backdrop-blur-md hover:bg-white/10 hover:border-white/50 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center gap-4">
-                            <div class="w-16 h-16 bg-white/10 text-white rounded-2xl flex items-center justify-center text-3xl group-hover/doc:scale-110 group-hover/doc:bg-white group-hover/doc:text-blue-950 transition-all duration-500">
-                                <i class="fas fa-file-pdf"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-lg">E-Brochure</h4>
-                                <p class="text-blue-100/50 text-sm">Informasi Lengkap</p>
-                            </div>
-                        </a>
-                    </div>
+                    {{-- E-Brochure --}}
+                    <a href="{{ asset('pdf/brosur.pdf') }}" target="_blank"
+                       class="group/doc p-6 bg-white/5 border border-white/10 rounded-[40px] backdrop-blur-md hover:bg-white/10 hover:border-white/50 hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center gap-4">
+                        <div class="w-14 h-14 bg-white/10 text-white rounded-2xl flex items-center justify-center text-2xl group-hover/doc:scale-110 group-hover/doc:bg-white group-hover/doc:text-blue-950 transition-all duration-500">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm md:text-base">E-Brochure</h4>
+                            <p class="text-blue-100/50 text-xs">Info Lengkap</p>
+                        </div>
+                    </a>
+                </div>
+
+                {{-- Button Utama --}}
+                <div class="pt-8">
+                    <a href="{{ route('contact') }}" 
+                        class="group/main relative inline-flex items-center justify-center gap-4 px-12 py-6 bg-white text-blue-950 rounded-[30px] font-black text-xl shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-white/20 hover:-translate-y-2 transition-all duration-500 overflow-hidden w-full md:w-auto">
+                        <span class="relative z-10">DAFTAR SEKARANG</span>
+                        <i class="fas fa-paper-plane relative z-10 text-blue-600 group-hover/main:translate-x-2 group-hover/main:-translate-y-2 transition-transform duration-500"></i>
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-white translate-y-full group-hover/main:translate-y-0 transition-transform duration-500"></div>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 </main>
 
 <style>

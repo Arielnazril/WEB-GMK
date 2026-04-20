@@ -19,13 +19,13 @@
 </div>
 
 {{-- Unit Navbar - Sticky --}}
-<div class="bg-[#FFFF00] border-y border-black/10 sticky top-0 z-[40] shadow-md transition-all duration-300 overflow-x-auto">
+<div class="bg-[#FFFF00] border-y border-black/10 sticky top-0 z-[50] shadow-md transition-all duration-300 overflow-x-auto">
     <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 md:h-20 flex items-center justify-between min-w-max md:min-w-0">
         <div class="flex items-center gap-2 md:gap-3 mr-8 md:mr-0">
             <div class="w-8 h-8 md:w-10 md:h-10 bg-black rounded-lg md:rounded-xl flex items-center justify-center shadow-lg shadow-black/20">
                 <i class="fas fa-graduation-cap text-[#FFFF00] text-xs md:text-sm"></i>
             </div>
-            <span class="text-[11px] md:text-[13px] font-black uppercase tracking-[0.1em] text-black whitespace-nowrap">Unit TK Global Maju</span>
+            <span class="text-[11px] md:text-[13px] font-black uppercase tracking-[0.1em] text-black whitespace-nowrap">Unit PAUD (KB & TK)</span>
         </div>
 
         <div class="flex items-center gap-4 md:gap-8">
@@ -105,44 +105,22 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             @php
                 $steps = [
-                    [
-                        'no' => '01', 
-                        'title' => 'Pendaftaran Online', 
-                        'desc' => 'Isi data secara on-line untuk jadwal observasi dan wawancara.'
-                    ],
-                    [
-                        'no' => '02', 
-                        'title' => 'Observasi & Wawancara', 
-                        'desc' => 'Pelaksanaan sesi observasi dan wawancara bersama calon siswa dan orang tua.'
-                    ],
-                    [
-                        'no' => '03', 
-                        'title' => 'Status Penerimaan', 
-                        'desc' => 'Hasil observasi dan wawancara menentukan status diterima atau tidak diterima.'
-                    ],
-                    [
-                        'no' => '04', 
-                        'title' => 'Administrasi', 
-                        'desc' => 'Melengkapi administrasi keuangan dan dokumen pendukung lainnya.'
-                    ],
+                    ['no' => '01', 'title' => 'Pendaftaran Online', 'desc' => 'Isi data secara on-line untuk jadwal observasi dan wawancara.'],
+                    ['no' => '02', 'title' => 'Observasi & Wawancara', 'desc' => 'Pelaksanaan sesi observasi dan wawancara bersama calon siswa dan orang tua.'],
+                    ['no' => '03', 'title' => 'Status Penerimaan', 'desc' => 'Hasil observasi dan wawancara menentukan status diterima atau tidak diterima.'],
+                    ['no' => '04', 'title' => 'Administrasi', 'desc' => 'Melengkapi administrasi keuangan dan dokumen pendukung lainnya.'],
                 ];
             @endphp
 
             @foreach($steps as $step)
             <div class="group bg-white p-8 md:p-10 rounded-[35px] md:rounded-[50px] shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative overflow-hidden">
-                {{-- Background Number Decor --}}
                 <span class="absolute -top-2 -right-2 text-7xl md:text-8xl font-black text-slate-50 group-hover:text-yellow-400/10 transition-colors pointer-events-none">{{ $step['no'] }}</span>
-                
                 <div class="relative z-10 text-left">
                     <div class="w-12 h-12 md:w-14 md:h-14 bg-yellow-400 rounded-2xl flex items-center justify-center text-black shadow-lg shadow-yellow-200 mb-8 font-black text-lg transition-transform group-hover:rotate-12">
                         {{ $step['no'] }}
                     </div>
-                    <h4 class="font-black text-slate-900 text-lg md:text-xl mb-4 uppercase tracking-tight leading-tight">
-                        {{ $step['title'] }}
-                    </h4>
-                    <p class="text-slate-500 text-[12px] md:text-[13px] font-semibold leading-relaxed tracking-wide">
-                        {{ $step['desc'] }}
-                    </p>
+                    <h4 class="font-black text-slate-900 text-lg md:text-xl mb-4 uppercase tracking-tight leading-tight">{{ $step['title'] }}</h4>
+                    <p class="text-slate-500 text-[12px] md:text-[13px] font-semibold leading-relaxed tracking-wide">{{ $step['desc'] }}</p>
                 </div>
             </div>
             @endforeach
@@ -157,14 +135,21 @@
         <div class="space-y-8">
             <div class="p-8 md:p-12 bg-white rounded-[40px] md:rounded-[60px] border-3 md:border-4 border-dashed border-slate-200 group hover:border-yellow-400 transition-all duration-500 h-fit">
                 <h3 class="text-2xl md:text-3xl font-black text-slate-900 uppercase tracking-tighter mb-6 md:mb-8 flex items-center gap-3 md:gap-4 leading-none">
-                    <i class="fas fa-file-invoice text-yellow-500 text-xl md:text-2xl"></i>
-                    Persyaratan
+                    <i class="fas fa-file-invoice text-yellow-500 text-xl md:text-2xl"></i> Persyaratan
                 </h3>
                 <ul class="space-y-4 md:space-y-5">
-                    @foreach(['Fotocopy Akta Kelahiran', 'Fotocopy Kartu Keluarga (KK)', 'Foto Calon Siswa (3x4)', 'Melengkapi Administrasi Keuangan'] as $list)
+                    @php
+                        $persyaratan = [
+                            'Fotocopy KK 1 lembar',
+                            'Fotocopy Akte Kelahiran 1 lembar',
+                            'Fotocopy KTP kedua orangtua masing-masing 1 lembar',
+                            'Pas foto anak ukuran 3 x 4 sebanyak 1 lembar',
+                            'Pas foto kedua orangtua ukuran 3 x 4 masing-masing sebanyak 1 lembar'
+                        ];
+                    @endphp
+                    @foreach($persyaratan as $list)
                     <li class="flex items-start md:items-center gap-3 text-slate-600 font-bold uppercase tracking-widest text-[9px] md:text-[11px] leading-tight">
-                        <i class="fas fa-check-circle text-emerald-500 mt-0.5 md:mt-0"></i>
-                        {{ $list }}
+                        <i class="fas fa-check-circle text-emerald-500 mt-0.5 md:mt-0"></i> {{ $list }}
                     </li>
                     @endforeach
                 </ul>
@@ -175,8 +160,7 @@
                     <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-4 leading-none text-center md:text-left">Butuh Bantuan?</h3>
                     <p class="text-slate-400 text-sm md:text-base mb-8 text-center md:text-left">Tim pendaftaran kami siap membantu Anda setiap hari kerja pukul 08.00 - 15.00 WIB.</p>
                     <a href="https://wa.me/6289694224226" class="inline-flex items-center justify-center gap-3 bg-yellow-400 text-slate-900 px-6 md:px-8 py-4 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-[10px] md:text-[12px] hover:scale-105 transition-all shadow-xl shadow-yellow-400/20 w-full sm:w-auto">
-                        <i class="fab fa-whatsapp text-lg"></i>
-                        Chat WhatsApp
+                        <i class="fab fa-whatsapp text-lg"></i> Chat WhatsApp
                     </a>
                 </div>
                 <div class="absolute -top-10 -right-10 w-48 h-48 md:w-64 md:h-64 bg-yellow-400/10 blur-3xl rounded-full"></div>
@@ -190,20 +174,89 @@
                 <p class="text-slate-400 text-xs font-bold uppercase tracking-widest">Lengkapi data untuk proses penjadwalan</p>
             </div>
 
-            <form onsubmit="event.preventDefault(); kirimPendaftaranTK();" class="space-y-6">
+            <form onsubmit="event.preventDefault(); kirimPendaftaranTK();" id="formTK" class="space-y-6">
                 <div class="space-y-2">
-                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">Nama Lengkap Anak</label>
-                    <input type="text" id="nama_anak" required placeholder="Masukkan nama sesuai akta" class="w-full px-6 py-4 md:py-5 rounded-2xl md:rounded-3xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">1) Nama Lengkap Anak</label>
+                    <input type="text" id="nama_anak" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
                 </div>
 
                 <div class="space-y-2">
-                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">Usia Anak</label>
-                    <input type="text" id="usia_anak" required placeholder="Contoh: 5 Tahun 2 Bulan" class="w-full px-6 py-4 md:py-5 rounded-2xl md:rounded-3xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">2) Nama Panggilan</label>
+                    <input type="text" id="nama_panggilan" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
                 </div>
 
                 <div class="space-y-2">
-                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">WhatsApp Orang Tua</label>
-                    <input type="tel" id="wa_ortu" required placeholder="08xx-xxxx-xxxx" class="w-full px-6 py-4 md:py-5 rounded-2xl md:rounded-3xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">3) Tempat/Tanggal Lahir</label>
+                    <input type="text" id="ttl_anak" required placeholder="Contoh: Pontianak, 01 Jan 2021" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">4) Usia per Juli 2026</label>
+                    <input type="text" id="usia_juli" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">5) Jenis Kelamin</label>
+                        <select id="jk_anak" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">6) Agama</label>
+                        <input type="text" id="agama_anak" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">7) Asal Sekolah</label>
+                    <input type="text" id="asal_sekolah" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">8a) Nama Ayah</label>
+                        <input type="text" id="nama_ayah" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">8b) Nama Ibu</label>
+                        <input type="text" id="nama_ibu" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">9) No HP Orangtua</label>
+                    <input type="tel" id="wa_ortu" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">10a) Pekerjaan Ayah</label>
+                        <input type="text" id="kerja_ayah" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">10b) Pekerjaan Ibu</label>
+                        <input type="text" id="kerja_ibu" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">11) Alamat di Pontianak</label>
+                    <textarea id="alamat_ponti" required rows="2" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700"></textarea>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">12) Apakah Anak Berkebutuhan Khusus (ABK)?</label>
+                    <select id="is_abk" required class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
+                        <option value="Tidak">Tidak</option>
+                        <option value="Iya">Iya</option>
+                    </select>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-4">13) Jenis berkebutuhan (Jika Iya)</label>
+                    <input type="text" id="jenis_abk" placeholder="Isi - jika tidak ada" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-2 border-transparent focus:border-yellow-400 focus:bg-white outline-none transition-all font-bold text-slate-700">
                 </div>
 
                 <button type="submit" class="w-full bg-black text-white font-black py-5 md:py-6 rounded-2xl md:rounded-3xl shadow-xl shadow-black/10 hover:bg-slate-800 transition-all uppercase tracking-[0.2em] text-[10px] md:text-[12px] flex items-center justify-center gap-3 mt-4">
@@ -216,22 +269,33 @@
 
 <script>
     function kirimPendaftaranTK() {
-        const nama = document.getElementById('nama_anak').value;
-        const usia = document.getElementById('usia_anak').value;
-        const wa = document.getElementById('wa_ortu').value;
+        const val = (id) => document.getElementById(id).value;
         const nomorTujuan = "6289694224226";
 
-        const pesan = `*— INQUIRY PENERIMAAN SISWA BARU TK (GLOBAL MAJU) —*%0A%0A` +
-              `Yth. Bagian Admisi Global Maju Education,%0A%0A` +
-              `Saya bermaksud mendaftarkan putra/putri kami untuk Tahun Ajaran 2026/2027 dan memohon penjadwalan observasi/wawancara. Berikut data kami:%0A%0A` +
-              `✨ *PROFIL CALON SISWA* ✨%0A` +
-              `━━━━━━━━━━━━━━━━━━━━━━%0A` +
-              `👤 *Nama Lengkap:* ${nama}%0A` +
-              `🎂 *Usia:* ${usia}%0A` +
-              `📱 *WhatsApp Parent:* ${wa}%0A` +
-              `━━━━━━━━━━━━━━━━━━━━━━%0A%0A` +
-              `Terima kasih. Kami menantikan konfirmasi jadwal selanjutnya. 🙏✨`;
-        window.open(`https://wa.me/${nomorTujuan}?text=${pesan}`, '_blank');
+        // Menggunakan encodeURIComponent untuk memastikan karakter khusus (seperti & atau baris baru) terkirim sempurna
+        let pesan = "*— DATA OBSERVASI & WAWANCARA (GLOBAL MAJU) —*\n\n";
+        pesan += "Mohon informasinya mengenai anak untuk jadwal observasi dan wawancara:\n\n";
+        pesan += "1) *Nama Lengkap Anak:* " + val('nama_anak') + "\n";
+        pesan += "2) *Nama Panggilan:* " + val('nama_panggilan') + "\n";
+        pesan += "3) *Tempat/Tanggal Lahir:* " + val('ttl_anak') + "\n";
+        pesan += "4) *Usia per Juli 2026:* " + val('usia_juli') + "\n";
+        pesan += "5) *Jenis Kelamin:* " + val('jk_anak') + "\n";
+        pesan += "6) *Agama:* " + val('agama_anak') + "\n";
+        pesan += "7) *Asal Sekolah:* " + val('asal_sekolah') + "\n";
+        pesan += "8) *Nama Orangtua:*\n";
+        pesan += "   - Ayah: " + val('nama_ayah') + "\n";
+        pesan += "   - Ibu: " + val('nama_ibu') + "\n";
+        pesan += "9) *No HP Orangtua:* " + val('wa_ortu') + "\n";
+        pesan += "10) *Pekerjaan:*\n";
+        pesan += "    a) Ayah: " + val('kerja_ayah') + "\n";
+        pesan += "    b) Ibu: " + val('kerja_ibu') + "\n";
+        pesan += "11) *Alamat di Pontianak:* " + val('alamat_ponti') + "\n";
+        pesan += "12) *Apakah ABK?* " + val('is_abk') + "\n";
+        pesan += "13) *Jenis Berkebutuhan:* " + (val('jenis_abk') || "-") + "\n\n";
+        pesan += "Terima kasih. 🙏✨";
+
+        const url = "https://wa.me/" + nomorTujuan + "?text=" + encodeURIComponent(pesan);
+        window.open(url, '_blank');
     }
 </script>
 
