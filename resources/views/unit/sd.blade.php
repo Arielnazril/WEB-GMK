@@ -1,71 +1,76 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- Hero Section --}}
-<div class="relative bg-blue-700 pt-32 pb-48 overflow-hidden">
-    <div class="absolute inset-0">
-        <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-transparent opacity-90"></div>
-        <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-sky-400/20 rounded-full blur-2xl -ml-20 -mb-20"></div>
-    </div>
-    
-    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-        <span class="inline-block px-5 py-2 mb-6 bg-white/20 backdrop-blur-md text-white text-[11px] font-black tracking-[0.3em] uppercase rounded-xl border border-white/30">
+{{-- Hero Section (Versi SD - Seragam dengan Desain TK) --}}
+<div class="bg-rose-900 pt-16 md:pt-24 pb-10 md:pb-12 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
+        <span class="inline-block bg-white/10 text-white px-4 py-1.5 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-4 md:mb-6 animate-pulse">
             Elementary Level Methodology
         </span>
-        <h1 class="text-6xl md:text-8xl font-black text-white mb-6 tracking-tighter uppercase leading-none">
-            {{ $title ?? 'Unit SD' }}
+        
+        <h1 class="w-full text-2xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tighter uppercase break-words">
+            Selamat Datang di Halaman <br class="hidden md:block"> 
+            <span class="bg-white text-rose-900 px-4 py-1 inline-block mt-2">Unit Sekolah Dasar (SD)</span>
         </h1>
-        <div class="w-24 h-1.5 bg-sky-400 mx-auto rounded-full mb-8"></div>
-        <p class="text-blue-100 text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed italic">
-            Global Maju Education — Membangun Pondasi Masa Depan yang Kokoh.
-        </p>
-    </div>
-</div>
 
-{{-- Sub-Navigation --}}
-<div class="max-w-7xl mx-auto px-6 -mt-14 relative z-20">
-    <div class="bg-white rounded-[2.5rem] shadow-2xl shadow-blue-900/10 p-5 border border-slate-100">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-4 px-6 py-3 bg-blue-50 rounded-2xl text-blue-700">
-                <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
-                    <i class="fas fa-graduation-cap text-lg"></i>
-                </div>
-                <span class="font-black text-sm uppercase tracking-widest">Unit SD Global Maju</span>
-            </div>
-            
-            <nav class="flex flex-wrap items-center justify-center gap-4 md:gap-10">
-                {{-- Perubahan: Mengubah text-xs menjadi text-sm dan slate-400 menjadi slate-600 agar lebih kontras --}}
-                <a href="{{ route('sd.kurikulum') }}" class="text-sm font-black tracking-widest {{ request()->routeIs('sd.kurikulum') ? 'text-blue-700 border-b-2 border-blue-700' : 'text-slate-600 hover:text-blue-600' }} pb-1 transition-all uppercase">Kurikulum</a>
-                
-                <a href="{{ route('sd.fasilitas') }}" class="text-sm font-black tracking-widest {{ request()->routeIs('sd.fasilitas') ? 'text-blue-700 border-b-2 border-blue-700' : 'text-slate-600 hover:text-blue-600' }} pb-1 transition-all uppercase">Fasilitas</a>
-                
-                <a href="{{ route('sd.ekskul') }}" class="text-sm font-black tracking-widest {{ request()->routeIs('sd.ekskul') ? 'text-blue-700 border-b-2 border-blue-700' : 'text-slate-600 hover:text-blue-600' }} pb-1 transition-all uppercase">Ekstrakurikuler</a>
-                
-                <a href="{{ route('sd.pendaftaran') }}" class="text-sm font-black tracking-widest {{ request()->routeIs('sd.pendaftaran') ? 'text-blue-700 border-b-2 border-blue-700' : 'text-slate-600 hover:text-blue-600' }} pb-1 transition-all uppercase">Pendaftaran</a>
-                
-                {{-- Tombol Daftar Sekarang --}}
-                <a href="{{ route('sd.pendaftaran') }}" class="ml-4 px-8 py-4 bg-blue-600 text-white rounded-2xl text-xs font-black uppercase tracking-[0.2em] hover:bg-blue-700 transition-all shadow-xl shadow-blue-200">
-                    Daftar Sekarang
-                </a>
-            </nav>
+        <div class="flex items-center justify-center gap-3 md:gap-4 mt-6 md:mt-8">
+            <div class="h-[2px] w-8 md:w-12 bg-white/20"></div>
+            <p class="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-white/70 leading-none">Global Maju Khatulistiwa</p>
+            <div class="h-[2px] w-8 md:w-12 bg-white/20"></div>
         </div>
     </div>
 </div>
 
+{{-- Sticky Navigation (Dioptimalkan agar seragam dengan TK) --}}
+<div class="bg-white border-y border-slate-100 sticky top-0 z-[100] shadow-md transition-all duration-300 overflow-x-auto no-scrollbar">
+    <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between min-w-max md:min-w-0">
+        <div class="flex items-center gap-2 md:gap-3 mr-8 md:mr-0">
+            <div class="w-8 h-8 md:w-10 md:h-10 bg-rose-900 rounded-lg md:rounded-xl flex items-center justify-center shadow-lg shadow-rose-100">
+                <i class="fas fa-graduation-cap text-white text-xs md:text-sm"></i>
+            </div>
+            <span class="text-[11px] md:text-[13px] font-black uppercase tracking-[0.1em] text-slate-900 whitespace-nowrap">Unit SD Global Maju</span>
+        </div>
+
+        <div class="flex items-center gap-4 md:gap-8 pr-6 md:pr-0">
+            <div class="flex space-x-4 md:space-x-8 text-[10px] md:text-[12px] font-bold uppercase tracking-widest whitespace-nowrap">
+                <a href="{{ route('sd.kurikulum') }}" class="{{ request()->routeIs('sd.kurikulum') ? 'text-rose-900 border-b-[2px] md:border-b-[3px] border-rose-900' : 'text-slate-400 hover:text-rose-900' }} pb-1 transition-all">Metode Belajar</a>
+                <a href="{{ route('sd.fasilitas') }}" class="{{ request()->routeIs('sd.fasilitas') ? 'text-rose-900 border-b-[2px] md:border-b-[3px] border-rose-900' : 'text-slate-400 hover:text-rose-900' }} pb-1 transition-all">Fasilitas</a>
+                <a href="{{ route('sd.ekskul') }}" class="{{ request()->routeIs('sd.ekskul') ? 'text-rose-900 border-b-[2px] md:border-b-[3px] border-rose-900' : 'text-slate-400 hover:text-rose-900' }} pb-1 transition-all">Ekstrakurikuler</a>
+                <a href="{{ route('sd.pendaftaran') }}" class="{{ request()->routeIs('sd.pendaftaran') ? 'text-rose-900 border-b-[2px] md:border-b-[3px] border-rose-900' : 'text-slate-400 hover:text-rose-900' }} pb-1 transition-all hidden sm:inline">Pendaftaran</a>
+            </div>
+            
+            <a href="{{ route('sd.pendaftaran') }}" class="bg-rose-900 text-white px-4 md:px-7 py-2 md:py-2.5 rounded-full text-[9px] md:text-[11px] font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl shadow-rose-100 whitespace-nowrap">
+                Daftar
+            </a>
+        </div>
+    </div>
+</div>
+
+{{-- Content Area --}}
 <div class="min-h-screen">
     @yield('sd_content')
 </div>
 
+<!-- {{-- Quote Section --}}
 <section class="py-24 bg-slate-50">
     <div class="max-w-5xl mx-auto px-6 text-center">
-        <div class="bg-blue-900 rounded-[4rem] p-16 relative overflow-hidden shadow-2xl">
-            <i class="fas fa-quote-left text-sky-400 text-5xl mb-8 opacity-30"></i>
-            <h4 class="text-3xl md:text-4xl font-black text-white leading-tight italic mb-8 relative z-10">
-                "Adab dulu, baru Ilmu. Karakter kuat, masa depan hebat."
+        <div class="bg-rose-950 rounded-[4rem] p-12 md:p-16 relative overflow-hidden shadow-2xl">
+            <i class="fas fa-quote-left text-rose-300 text-5xl mb-8 opacity-30"></i>
+            <h4 class="text-2xl md:text-4xl font-black text-white leading-tight italic mb-8 relative z-10 uppercase tracking-tighter">
+                "semangat belajar, Rajin Berkarya, Senang Berbagi"
             </h4>
-            <div class="w-16 h-1 bg-sky-400 mx-auto rounded-full"></div>
+            <div class="w-16 h-1 bg-rose-400 mx-auto rounded-full"></div>
         </div>
     </div>
-</section>
+</section> -->
+
+<style>
+    /* Menghilangkan scrollbar di navigasi mobile namun tetap bisa di-scroll */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    .font-black { font-weight: 900; }
+</style>
 @endsection

@@ -1,18 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- Header Section --}}
+{{-- Hero Section --}}
 <div class="bg-[#FFFF00] pt-16 md:pt-24 pb-10 md:pb-12 border-b border-black/5">
     <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
-        <span class="inline-block bg-black/5 text-black px-4 py-1.5 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-4 md:mb-6">
-            Admissions 2026/2027
+        <span class="inline-block bg-black/5 text-black px-4 py-1.5 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-4 md:mb-6 animate-pulse">
+            Official Welcome
         </span>
-        <h1 class="w-full text-4xl md:text-9xl font-black text-black leading-none tracking-tighter uppercase break-words">
-            PENDAFTARAN
+        
+        <h1 class="w-full text-2xl md:text-5xl lg:text-6xl font-black text-black leading-tight tracking-tighter uppercase break-words">
+            Selamat Datang di<br class="hidden md:block"> 
+            <span class="bg-black text-[#FFFF00] px-4 py-1 inline-block mt-2">PAUD Global Maju Khatulistiwa</span>
         </h1>
+
         <div class="flex items-center justify-center gap-3 md:gap-4 mt-6 md:mt-8">
             <div class="h-[2px] w-8 md:w-12 bg-black/20"></div>
-            <p class="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-black/60 leading-none whitespace-nowrap">Global Maju Education</p>
+            <p class="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-black/60 leading-none">Kelompok Bermain & Taman Kanak Kanak</p>
             <div class="h-[2px] w-8 md:w-12 bg-black/20"></div>
         </div>
     </div>
@@ -30,7 +33,7 @@
 
         <div class="flex items-center gap-4 md:gap-8">
             <div class="flex space-x-4 md:space-x-8 text-[10px] md:text-[12px] font-bold uppercase tracking-widest whitespace-nowrap">
-                <a href="{{ route('tk.kurikulum') }}" class="text-black/50 hover:text-black transition-all">Kurikulum</a>
+                <a href="{{ route('tk.kurikulum') }}" class="text-black/50 hover:text-black transition-all">Metode Belajar</a>
                 <a href="{{ route('tk.fasilitas') }}" class="text-black/50 hover:text-black transition-all">Fasilitas</a>
                 <a href="{{ route('tk.ekskul') }}" class="text-black/50 hover:text-black transition-all">Ekstrakurikuler</a>
                 <a href="{{ route('tk.pendaftaran') }}" class="text-black border-b-[2px] md:border-b-[3px] border-black pb-1">Pendaftaran</a>
@@ -158,7 +161,7 @@
             <div class="p-8 md:p-12 bg-slate-900 rounded-[40px] md:rounded-[60px] text-white relative overflow-hidden group">
                 <div class="relative z-10">
                     <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tighter mb-4 leading-none text-center md:text-left">Butuh Bantuan?</h3>
-                    <p class="text-slate-400 text-sm md:text-base mb-8 text-center md:text-left">Tim pendaftaran kami siap membantu Anda setiap hari kerja pukul 08.00 - 15.00 WIB.</p>
+                    <p class="text-slate-400 text-sm md:text-base mb-8 text-center md:text-left">Tim pendaftaran kami siap membantu Anda setiap hari kerja pukul 07.00 - 14.00 WIB.</p>
                     <a href="https://wa.me/6289694224226" class="inline-flex items-center justify-center gap-3 bg-yellow-400 text-slate-900 px-6 md:px-8 py-4 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-[10px] md:text-[12px] hover:scale-105 transition-all shadow-xl shadow-yellow-400/20 w-full sm:w-auto">
                         <i class="fab fa-whatsapp text-lg"></i> Chat WhatsApp
                     </a>

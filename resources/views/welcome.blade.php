@@ -3,77 +3,60 @@
 @section('content')
 {{-- Hero Section --}}
 <section class="relative bg-blue-950 pt-24 pb-32 md:pt-48 md:pb-56 overflow-hidden">
-    {{-- Background Image Layer --}}
+    {{-- Background --}}
     <div class="absolute top-0 left-0 w-full h-full z-0">
-        {{-- Gambar Utama --}}
+        {{-- Menggunakan opacity-100 dan object-center agar gambar penuh dan kecerahan aslinya keluar maksimal --}}
         <img src="{{ asset('images/gedung-sekolah.png') }}" 
              alt="Gedung Sekolah GMK" 
-             class="absolute inset-0 w-full h-full object-cover object-center scale-100 animate-soft-zoom">
+             class="absolute inset-0 w-full h-full object-cover object-center transform scale-110 md:scale-100 opacity-100">
         
-        {{-- Overlay Layer untuk Keterbacaan --}}
-        {{-- 1. Gradien dari bawah ke atas --}}
-        <div class="absolute inset-0 bg-gradient-to-t from-blue-950 via-blue-950/40 to-blue-950/80"></div>
-        {{-- 2. Layer gelap tambahan khusus mobile agar teks tidak bentrok --}}
-        <div class="absolute inset-0 bg-black/30 md:bg-transparent"></div>
+        {{-- Lapisan overlay gradasi ditambahkan di bawah ini agar teks di atasnya terlihat sangat kontras dan jelas --}}
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-transparent mix-blend-multiply"></div>
     </div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="text-center max-w-5xl mx-auto">
-            {{-- Badge Pendaftaran --}}
-            <div class="inline-flex items-center gap-3 px-6 py-2.5 bg-white/10 border border-white/20 rounded-full mb-8 backdrop-blur-md">
-                <span class="relative flex h-2.5 w-2.5">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+
+            {{-- JUDUL UTAMA --}}
+            <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 tracking-tight drop-shadow-[0_4px_25px_rgba(0,0,0,0.95)]">
+                <span class="block md:inline whitespace-nowrap">
+                    Sekolah 
+                    <span class="bg-gradient-to-r from-blue-400 via-blue-100 to-emerald-400 bg-clip-text text-transparent italic filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+                        Global Maju Khatulistiwa
+                    </span>
                 </span>
-                <span class="text-white text-[10px] md:text-xs font-black uppercase tracking-[0.2em]">Pendaftaran SPMB 2026 Dibuka</span>
-            </div>
-            
-            {{-- Judul Utama - Fokus pada Kontras --}}
-            <h1 class="text-4xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] mb-8 tracking-tighter drop-shadow-[0_8px_30px_rgba(0,0,0,0.8)]">
-                Membangun Generasi <br>
-                <span class="bg-gradient-to-r from-blue-400 via-blue-100 to-emerald-400 bg-clip-text text-transparent italic pr-5">Berbasis Entrepreneur</span>
             </h1>
-            
-            {{-- Deskripsi --}}
-            <p class="text-white text-base md:text-xl leading-relaxed mb-12 max-w-3xl mx-auto font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
-                Global Maju Khatulistiwa menghadirkan kurikulum berbasis karakter dan lingkungan inovatif untuk masa depan terbaik anak Anda di <span class="text-blue-300 font-bold underline decoration-blue-400 underline-offset-4">Pontianak</span>.
+
+            {{-- YAYASAN --}}
+            <div class="inline-block mb-6">
+                {{-- Mengubah bg-white/20 menjadi bg-black/40 agar teks putih di dalamnya terlihat solid dan kontras --}}
+                <span class="px-5 py-2 text-white text-sm md:text-base font-bold bg-black/40 backdrop-blur-md rounded-full border border-white/30 shadow-lg shadow-black/50">
+                    Yayasan Global Cahaya Khatulistiwa
+                </span>
+            </div>
+
+            {{-- TAGLINE --}}
+            <p class="text-lg md:text-2xl lg:text-4xl font-black leading-relaxed mb-12 tracking-tight bg-gradient-to-r from-white via-blue-200 to-emerald-300 bg-clip-text text-transparent drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
+                Membangun Generasi <br class="md:hidden"> Berbasis Entrepreneurship
             </p>
 
-            {{-- Tombol Aksi - Mobile Friendly --}}
+            {{-- BUTTON --}}
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
                 <a href="#unit" class="group w-full sm:w-auto px-10 py-5 bg-white text-blue-950 rounded-2xl md:rounded-3xl font-black text-base md:text-lg hover:bg-blue-50 transition-all hover:scale-105 shadow-2xl flex items-center justify-center gap-3">
-                    Jelajahi Unit <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
+                    Jelajahi Unit 
+                    <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-2"></i>
                 </a>
-                <a href="#" class="w-full sm:w-auto px-10 py-5 bg-blue-600 text-white rounded-2xl md:rounded-3xl font-black text-base md:text-lg border border-blue-500/50 hover:bg-blue-700 transition-all hover:scale-105 shadow-lg shadow-blue-600/30">
+
+                <a href="#" class="w-full sm:w-auto px-10 py-5 bg-blue-600 text-white rounded-2xl md:rounded-3xl font-black text-base md:text-lg border border-blue-500/50 hover:bg-blue-700 transition-all hover:scale-105 shadow-lg shadow-blue-600/40">
                     Daftar Sekarang
                 </a>
             </div>
+
         </div>
     </div>
 </section>
 
-{{-- Stats Section --}}
-<section class="relative z-20 -mt-12 md:-mt-24 px-6">
-    <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 bg-white p-6 md:p-14 rounded-[2.5rem] md:rounded-[3.5rem] shadow-2xl border border-slate-100">
-        <div class="text-center md:border-r border-slate-100 p-2">
-            <h3 class="text-3xl md:text-5xl font-black text-blue-950 mb-1">500+</h3>
-            <p class="text-slate-400 text-[8px] md:text-[10px] font-black uppercase tracking-widest">Siswa Aktif</p>
-        </div>
-        <div class="text-center md:border-r border-slate-100 p-2">
-            <h3 class="text-3xl md:text-5xl font-black text-blue-950 mb-1">40+</h3>
-            <p class="text-slate-400 text-[8px] md:text-[10px] font-black uppercase tracking-widest">Pengajar Ahli</p>
-        </div>
-        <div class="text-center md:border-r border-slate-100 p-2">
-            <h3 class="text-3xl md:text-5xl font-black text-blue-950 mb-1">15+</h3>
-            <p class="text-slate-400 text-[8px] md:text-[10px] font-black uppercase tracking-widest">Ekstrakurikuler</p>
-        </div>
-        <div class="text-center p-2">
-            <h3 class="text-3xl md:text-5xl font-black text-blue-950 mb-1">100%</h3>
-            <p class="text-slate-400 text-[8px] md:text-[10px] font-black uppercase tracking-widest">Kurikulum</p>
-        </div>
-    </div>
-</section>
-
+{{-- Stats Section (Commented Out) --}}
 {{-- Keunggulan Section --}}
 <section class="py-24 md:py-48 px-6 bg-slate-50 relative overflow-hidden">
     <div class="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-blue-100/50 rounded-full blur-[100px] -mr-32 -mt-32"></div>
@@ -82,40 +65,150 @@
         <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 md:mb-24 gap-10 text-center md:text-left">
             <div class="max-w-2xl">
                 <span class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4 md:mb-6 block">Our Excellence</span>
-                <h2 class="text-3xl md:text-6xl font-black text-blue-950 leading-tight">Membentuk Karakter Unggul di Era Digital</h2>
+                <h2 class="text-3xl md:text-6xl font-black text-blue-950 leading-tight">Membentuk Karakter Entrepreneur Unggul</h2>
             </div>
             <p class="text-slate-500 font-medium max-w-sm text-base md:text-lg leading-relaxed">
                 "Kami percaya setiap anak unik. Dengan pendekatan personal dan penguatan karakter, kami menyiapkan mereka menjadi pemimpin masa depan yang berintegritas."
             </p>
         </div>
 
+        {{-- Grid Baris 1 (Poin 1-3) --}}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            <div class="group bg-white p-8 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] border border-slate-100 hover:border-blue-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
-                {{-- Ikon diganti dari mosque (masjid) menjadi user-check (karakter/integritas) --}}
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-blue-50 text-blue-600 rounded-2xl md:rounded-[2rem] flex items-center justify-center text-2xl md:text-3xl mb-6 md:mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
-                    <i class="fas fa-user-check"></i>
+            {{-- Card 1 --}}
+            <div class="group bg-white p-8 md:p-10 rounded-[3rem] border border-slate-100 hover:border-blue-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
+                <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-[2rem] flex items-center justify-center text-3xl mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                    <i class="fas fa-shield-alt"></i>
                 </div>
-                
-                {{-- Karakter Unggul atau Etika Global --}}
-                <h4 class="text-xl md:text-2xl font-black text-blue-950 mb-4 md:mb-5">Karakter Unggul</h4>
-                
-                {{-- Deskripsi sudah menggunakan versi etika/karakter luhur yang kita bahas sebelumnya --}}
-                <p class="text-slate-500 text-sm md:text-base leading-relaxed font-medium">Integrasi nilai-nilai etika dan moralitas luhur dalam setiap aspek pembelajaran.</p>
+                <h4 class="text-2xl font-black text-blue-950 mb-5">Tangguh dan Resilien</h4>
+                <p class="text-slate-500 leading-relaxed font-medium">
+                    Mampu menghadapi tekanan, kegagalan, and ketidakpastian dengan sikap tenang, positif, dan produktif.
+                </p>
             </div>
-            <div class="group bg-white p-8 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] border border-slate-100 hover:border-emerald-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-emerald-50 text-emerald-600 rounded-2xl md:rounded-[2rem] flex items-center justify-center text-2xl md:text-3xl mb-6 md:mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
+
+            {{-- Card 2 --}}
+            <div class="group bg-white p-8 md:p-10 rounded-[3rem] border border-slate-100 hover:border-emerald-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
+                <div class="w-20 h-20 bg-emerald-50 text-emerald-600 rounded-[2rem] flex items-center justify-center text-3xl mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
                     <i class="fas fa-lightbulb"></i>
                 </div>
-                <h4 class="text-xl md:text-2xl font-black text-blue-950 mb-4 md:mb-5">Inovasi Kreatif</h4>
-                <p class="text-slate-500 text-sm md:text-base leading-relaxed font-medium">Mengasah daya cipta dan kemampuan pemecahan masalah melalui proyek pembelajaran yang eksploratif.</p>
+                <h4 class="text-2xl font-black text-blue-950 mb-5">Cerdas Melihat Peluang</h4>
+                <p class="text-slate-500 leading-relaxed font-medium">
+                    Terlatih membaca tren dan melihat peluang menjadi nilai dengan kepekaan pasar yang kuat.
+                </p>
             </div>
-            <div class="group bg-white p-8 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] border border-slate-100 hover:border-orange-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-orange-50 text-orange-600 rounded-2xl md:rounded-[2rem] flex items-center justify-center text-2xl md:text-3xl mb-6 md:mb-8 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500">
-                    <i class="fas fa-users"></i>
+
+            {{-- Card 3 --}}
+            <div class="group bg-white p-8 md:p-10 rounded-[3rem] border border-slate-100 hover:border-orange-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
+                <div class="w-20 h-20 bg-orange-50 text-orange-600 rounded-[2rem] flex items-center justify-center text-3xl mb-8 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500">
+                    <i class="fas fa-chess"></i>
                 </div>
-                <h4 class="text-xl md:text-2xl font-black text-blue-950 mb-4 md:mb-5">Lingkungan Inklusif</h4>
-                <p class="text-slate-500 text-sm md:text-base leading-relaxed font-medium">Suasana sekolah yang nyaman, aman, dan mendukung kreativitas.</p>
+                <h4 class="text-2xl font-black text-blue-950 mb-5">Pemikir Strategis</h4>
+                <p class="text-slate-500 leading-relaxed font-medium">
+                    Menyusun rencana matang dan mengambil keputusan dengan analisis yang tepat.
+                </p>
             </div>
+        </div>
+
+        {{-- Grid Baris 2 (Poin 4-6) --}}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8">
+            {{-- Card 4 --}}
+            <div class="group bg-white p-8 md:p-10 rounded-[3rem] border border-slate-100 hover:border-blue-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
+                <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-[2rem] flex items-center justify-center text-3xl mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h4 class="text-2xl font-black text-blue-950 mb-5">Komunikatif dan Persuasif</h4>
+                <p class="text-slate-500 leading-relaxed font-medium">
+                    Mampu menyampaikan ide dengan jelas, membangun relasi, dan memengaruhi secara positif.
+                </p>
+            </div>
+
+            {{-- Card 5 --}}
+            <div class="group bg-white p-8 md:p-10 rounded-[3rem] border border-slate-100 hover:border-emerald-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
+                <div class="w-20 h-20 bg-emerald-50 text-emerald-600 rounded-[2rem] flex items-center justify-center text-3xl mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
+                    <i class="fas fa-arrows-rotate"></i>
+                </div>
+                <h4 class="text-2xl font-black text-blue-950 mb-5">Adaptif terhadap Perubahan</h4>
+                <p class="text-slate-500 leading-relaxed font-medium">
+                    Fleksibel dan cepat beradaptasi dengan perubahan zaman.
+                </p>
+            </div>
+
+            {{-- Card 6 --}}
+            <div class="group bg-white p-8 md:p-10 rounded-[3rem] border border-slate-100 hover:border-orange-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
+                <div class="w-20 h-20 bg-orange-50 text-orange-600 rounded-[2rem] flex items-center justify-center text-3xl mb-8 group-hover:bg-orange-600 group-hover:text-white transition-all duration-500">
+                    <i class="fas fa-scale-balanced"></i>
+                </div>
+                <h4 class="text-2xl font-black text-blue-950 mb-5">Bertanggung Jawab dan Berintegritas</h4>
+                <p class="text-slate-500 leading-relaxed font-medium">
+                    Menjunjung tinggi kejujuran dan tanggung jawab dalam setiap tindakan.
+                </p>
+            </div>
+        </div>
+
+        {{-- Grid Baris 3 (Poin 7-8) --}}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-8">
+            {{-- Card 7 --}}
+            <div class="group bg-white p-8 md:p-10 rounded-[3rem] border border-slate-100 hover:border-emerald-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
+                <div class="w-20 h-20 bg-emerald-50 text-emerald-600 rounded-[2rem] flex items-center justify-center text-3xl mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
+                    <i class="fas fa-heart-pulse"></i>
+                </div>
+                <h4 class="text-2xl font-black text-blue-950 mb-5">Sehat Secara Holistik</h4>
+                <p class="text-slate-500 leading-relaxed font-medium">
+                    Menjaga keseimbangan fisik, mental, dan emosional.
+                </p>
+            </div>
+
+            {{-- Card 8 --}}
+            <div class="group bg-white p-8 md:p-10 rounded-[3rem] border border-slate-100 hover:border-emerald-200 transition-all duration-500 hover:-translate-y-3 shadow-sm hover:shadow-xl">
+                <div class="w-20 h-20 bg-emerald-50 text-emerald-600 rounded-[2rem] flex items-center justify-center text-3xl mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h4 class="text-2xl font-black text-blue-950 mb-5">Berdampak bagi Masyarakat</h4>
+                <p class="text-slate-500 leading-relaxed font-medium">
+                    Berorientasi pada kontribusi sosial dan dampak positif bagi lingkungan.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{-- Section Tenaga Pendidik --}}
+<section class="py-24 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 mb-16">
+        <span class="text-blue-600 font-black text-xs uppercase tracking-[0.4em] mb-4 block text-center md:text-left">Our Educators</span>
+        <h2 class="text-3xl md:text-5xl font-black text-blue-950 text-center md:text-left">Mengenal Tenaga Pendidik Kami</h2>
+    </div>
+
+    <div class="relative flex overflow-hidden">
+        @php
+            $teachers = [
+                'tentang-kami-guru1.jpeg', 
+                'tentang-kami-guru2.jpeg', 
+                'tentang-kami-guru3.jpeg', 
+                'tentang-kami-guru4.jpeg', 
+                'guru - gabungan.jpeg', 
+                'guru - sd.jpeg', 
+                'guru - smp.jpeg'
+            ];
+        @endphp
+
+        <div class="flex animate-marquee gap-8 whitespace-nowrap">
+            @foreach($teachers as $teacher)
+            <div class="w-[400px] md:w-[700px] aspect-video flex-shrink-0 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border-8 border-slate-50 shadow-xl mx-2">
+                <img src="{{ asset('images/' . $teacher) }}" 
+                     class="w-full h-full object-cover hover:scale-105 transition-all duration-500" 
+                     alt="Guru GMK">
+            </div>
+            @endforeach
+        </div>
+
+        <div class="flex animate-marquee gap-8 whitespace-nowrap ml-8">
+            @foreach($teachers as $teacher)
+            <div class="w-[400px] md:w-[700px] aspect-video flex-shrink-0 rounded-[2.5rem] md:rounded-[3rem] overflow-hidden border-8 border-slate-50 shadow-xl mx-2">
+                <img src="{{ asset('images/' . $teacher) }}" 
+                     class="w-full h-full object-cover hover:scale-105 transition-all duration-500" 
+                     alt="Guru GMK">
+            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -129,42 +222,45 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-            {{-- TK / PAUD --}}
+            {{-- TK - BACKGROUND KUNING --}}
             <div class="relative group">
-                <div class="relative bg-white border border-slate-100 p-6 md:p-8 rounded-[2.5rem] md:rounded-[3.5rem] shadow-lg hover:shadow-xl transition-all">
+                <div class="relative bg-amber-400 border border-amber-300 p-6 md:p-8 rounded-[2.5rem] md:rounded-[3.5rem] shadow-lg hover:shadow-xl transition-all">
                     <div class="overflow-hidden rounded-3xl md:rounded-[2.5rem] mb-6 md:mb-8 h-48 md:h-64">
                         <img src="{{ asset('images/tentangkami-tk.PNG') }}" alt="TK Unit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <span class="px-4 py-1.5 bg-orange-100 text-orange-600 text-[10px] font-black uppercase rounded-full tracking-widest">PAUD & TK</span>
-                    <h3 class="text-xl md:text-2xl font-black text-blue-950 mt-4 mb-2">Early Years</h3>
-                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed mb-6 font-medium">Pendidikan Anak Usia Dini yang mencakup jenjang **Kelompok Bermain (KB/Playgroup)** dan **Taman Kanak-Kanak (TK)** dengan metode eksplorasi yang menyenangkan.</p>
-                    <a href="{{ route('unit.tk') }}" class="flex items-center justify-center w-full py-4 bg-slate-50 text-blue-950 font-black rounded-2xl hover:bg-yellow-400 hover:text-white transition-all">Lihat Detail</a>
+                    <span class="px-4 py-1.5 bg-white text-amber-700 text-[10px] font-black uppercase rounded-full tracking-widest shadow-sm">PAUD & TK</span>
+                    <h3 class="text-xl md:text-2xl font-black text-blue-950 mt-4 mb-2">Early Childhood Education</h3>
+                    <p class="text-blue-950/80 text-xs md:text-sm leading-relaxed mb-6 font-semibold">Pendidikan Anak Usia Dini (KB/TK) dengan metode eksplorasi yang menyenangkan.</p>
+                    {{-- HOVER BUTTON: KUNING (AMBER) --}}
+                    <a href="{{ route('unit.tk') }}" class="flex items-center justify-center w-full py-4 bg-white text-amber-600 font-black rounded-2xl hover:bg-amber-500 hover:text-white transition-all shadow-sm">Lihat Detail</a>
                 </div>
             </div>
 
-            {{-- SD --}}
+            {{-- SD - BACKGROUND MERAH --}}
             <div class="relative group">
-                <div class="relative bg-white border border-slate-100 p-6 md:p-8 rounded-[2.5rem] md:rounded-[3.5rem] shadow-lg hover:shadow-xl transition-all">
+                <div class="relative bg-rose-600 border border-rose-500 p-6 md:p-8 rounded-[2.5rem] md:rounded-[3.5rem] shadow-lg hover:shadow-xl transition-all">
                     <div class="overflow-hidden rounded-3xl md:rounded-[2.5rem] mb-6 md:mb-8 h-48 md:h-64">
-                        <img src="{{ asset('images/tentangkami-sd.PNG') }}" alt="SD Unit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <img src="{{ asset('images/kazebo-sd.jpeg') }}" alt="SD Unit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <span class="px-4 py-1.5 bg-blue-100 text-blue-600 text-[10px] font-black uppercase rounded-full tracking-widest">Sekolah Dasar</span>
-                    <h3 class="text-xl md:text-2xl font-black text-blue-950 mt-4 mb-2">Elementary School</h3>
-                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed mb-6 font-medium">Jenjang **Sekolah Dasar (SD)** yang fokus pada penguatan fondasi literasi, numerasi, serta pembentukan karakter dan kemandirian siswa sejak dini.</p>
-                    <a href="{{ route('unit.sd') }}" class="flex items-center justify-center w-full py-4 bg-slate-50 text-blue-950 font-black rounded-2xl hover:bg-blue-600 hover:text-white transition-all">Lihat Detail</a>
+                    <span class="px-4 py-1.5 bg-white text-rose-600 text-[10px] font-black uppercase rounded-full tracking-widest shadow-sm">Sekolah Dasar</span>
+                    <h3 class="text-xl md:text-2xl font-black text-white mt-4 mb-2">Elementary School</h3>
+                    <p class="text-rose-100 text-xs md:text-sm leading-relaxed mb-6 font-medium">Fokus pada literasi, numerasi, pembentukan karakter dan kemandirian siswa.</p>
+                    {{-- HOVER BUTTON: MERAH (ROSE) --}}
+                    <a href="{{ route('sd.kurikulum') }}" class="flex items-center justify-center w-full py-4 bg-white text-rose-600 font-black rounded-2xl hover:bg-rose-700 hover:text-white transition-all shadow-sm">Lihat Detail</a>
                 </div>
             </div>
 
-            {{-- SMP --}}
+            {{-- SMP - BACKGROUND BIRU --}}
             <div class="relative group">
-                <div class="relative bg-white border border-slate-100 p-6 md:p-8 rounded-[2.5rem] md:rounded-[3.5rem] shadow-lg hover:shadow-xl transition-all">
+                <div class="relative bg-blue-600 border border-blue-500 p-6 md:p-8 rounded-[2.5rem] md:rounded-[3.5rem] shadow-lg hover:shadow-xl transition-all">
                     <div class="overflow-hidden rounded-3xl md:rounded-[2.5rem] mb-6 md:mb-8 h-48 md:h-64">
-                        <img src="{{ asset('images/tentangkami-smp.PNG') }}" alt="SMP Unit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <img src="{{ asset('images/murid - smp.jpeg') }}" alt="SMP Unit" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <span class="px-4 py-1.5 bg-emerald-100 text-emerald-600 text-[10px] font-black uppercase rounded-full tracking-widest">Sekolah Menengah Pertama</span>
-                    <h3 class="text-xl md:text-2xl font-black text-blue-950 mt-4 mb-2">Junior High School</h3>
-                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed mb-6 font-medium">Jenjang **Sekolah Menengah Pertama (SMP)** yang mempersiapkan remaja menjadi pemimpin masa depan melalui riset, inovasi, dan wawasan global.</p>
-                    <a href="{{ route('unit.smp') }}" class="flex items-center justify-center w-full py-4 bg-slate-50 text-blue-950 font-black rounded-2xl hover:bg-emerald-600 hover:text-white transition-all">Lihat Detail</a>
+                    <span class="px-4 py-1.5 bg-white text-blue-600 text-[10px] font-black uppercase rounded-full tracking-widest shadow-sm">Sekolah Menengah Pertama</span>
+                    <h3 class="text-xl md:text-2xl font-black text-white mt-4 mb-2">Junior High School</h3>
+                    <p class="text-blue-100 text-xs md:text-sm leading-relaxed mb-6 font-medium">Mempersiapkan remaja menjadi pemimpin masa depan melalui riset dan inovasi.</p>
+                    {{-- HOVER BUTTON: BIRU (BLUE) --}}
+                    <a href="{{ route('unit.smp') }}" class="flex items-center justify-center w-full py-4 bg-white text-blue-600 font-black rounded-2xl hover:bg-blue-700 hover:text-white transition-all shadow-sm">Lihat Detail</a>
                 </div>
             </div>
         </div>
@@ -184,20 +280,20 @@
 
             <div class="flex flex-col gap-4 md:gap-8 items-center">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-3xl">
-                    <a href="https://wa.me/6289694224226" target="_blank" class="group px-6 py-4 bg-white text-blue-700 rounded-xl md:rounded-2xl font-black shadow-xl flex items-center justify-between gap-4">
+                    <a href="https://wa.me/6289694224226" target="_blank" class="group px-6 py-4 bg-white text-blue-700 rounded-xl md:rounded-2xl font-black shadow-xl flex items-center justify-between gap-4 transition-all hover:scale-[1.02]">
                         <div class="flex items-center gap-3">
                             <i class="fab fa-whatsapp text-xl text-emerald-500"></i>
                             <span class="text-sm md:text-base">WhatsApp KB/TK</span>
                         </div>
-                        <i class="fas fa-chevron-right text-[10px]"></i>
+                        <i class="fas fa-chevron-right text-[10px] transition-transform group-hover:translate-x-1"></i>
                     </a>
 
-                    <a href="https://wa.me/6282154199008" target="_blank" class="group px-6 py-4 bg-white text-blue-700 rounded-xl md:rounded-2xl font-black shadow-xl flex items-center justify-between gap-4">
+                    <a href="https://wa.me/6282154199008" target="_blank" class="group px-6 py-4 bg-white text-blue-700 rounded-xl md:rounded-2xl font-black shadow-xl flex items-center justify-between gap-4 transition-all hover:scale-[1.02]">
                         <div class="flex items-center gap-3">
                             <i class="fab fa-whatsapp text-xl text-emerald-500"></i>
                             <span class="text-sm md:text-base">WhatsApp SD/SMP</span>
                         </div>
-                        <i class="fas fa-chevron-right text-[10px]"></i>
+                        <i class="fas fa-chevron-right text-[10px] transition-transform group-hover:translate-x-1"></i>
                     </a>
                 </div>
             </div>
@@ -207,12 +303,19 @@
 
 <style>
     @keyframes soft-zoom {
-        0% { transform: scale(1); }
+        0%, 100% { transform: scale(1); }
         50% { transform: scale(1.1); }
-        100% { transform: scale(1); }
     }
     .animate-soft-zoom {
         animation: soft-zoom 40s infinite ease-in-out;
+    }
+
+    @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+        animation: marquee 40s linear infinite;
     }
 </style>
 @endsection

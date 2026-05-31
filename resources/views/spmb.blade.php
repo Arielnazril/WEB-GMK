@@ -79,7 +79,7 @@
                             <div class="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg mb-4">
                                 <i class="fas fa-comments text-xl"></i>
                             </div>
-                            <h4 class="text-blue-950 font-black text-sm uppercase tracking-tight mb-2">Observasi & Wawancara</h4>
+                            <h4 class="text-blue-950 font-black text-sm uppercase tracking-tight mb-2">Observasi & Wawancara Anak Dan Orang Tua </h4>
                             <p class="text-slate-500 text-xs font-bold leading-relaxed">Proses Observasi dan wawancara sesuai jadwal.</p>
                         </div>
 
@@ -305,35 +305,50 @@
 
                 {{-- Alur Ringkas --}}
                 <div class="bg-white rounded-[2.5rem] p-8 shadow-xl border border-slate-50">
-                    <h3 class="text-lg font-black text-blue-950 mb-8 flex items-center gap-2 uppercase italic">
-                        <i class="fas fa-list-check text-blue-600"></i> Alur Ringkas
-                    </h3>
-                    <div class="space-y-8">
-                        <div class="relative flex gap-6">
-                            <div class="absolute left-5 top-10 w-[2px] h-10 bg-slate-100"></div>
-                            <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-black flex-shrink-0 shadow-lg">1</div>
-                            <div>
-                                <h4 class="font-black text-[13px] text-blue-950 uppercase tracking-tight">Isi Formulir</h4>
-                                <p class="text-[12px] text-slate-500 mt-1 font-bold">Submit data via website ini.</p>
-                            </div>
-                        </div>
-                        <div class="relative flex gap-6">
-                            <div class="absolute left-5 top-10 w-[2px] h-10 bg-slate-100"></div>
-                            <div class="w-10 h-10 bg-emerald-500 text-white rounded-xl flex items-center justify-center font-black flex-shrink-0 shadow-lg">2</div>
-                            <div>
-                                <h4 class="font-black text-[13px] text-blue-950 uppercase tracking-tight">Observasi Siswa</h4>
-                                <p class="text-[12px] text-slate-500 mt-1 font-bold">Pemetaan potensi anak.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-6">
-                            <div class="w-10 h-10 bg-yellow-400 text-white rounded-xl flex items-center justify-center font-black flex-shrink-0 shadow-lg">3</div>
-                            <div>
-                                <h4 class="font-black text-[13px] text-blue-950 uppercase tracking-tight">Daftar Ulang</h4>
-                                <p class="text-[12px] text-slate-500 mt-1 font-bold">Administrasi dan seragam.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <h3 class="text-lg font-black text-blue-950 mb-8 flex items-center gap-2 uppercase italic">
+        <i class="fas fa-list-check text-blue-600"></i> Alur Ringkas
+    </h3>
+    <div class="space-y-8">
+        {{-- Step 1 --}}
+        <div class="relative flex gap-6">
+            <div class="absolute left-5 top-10 w-[2px] h-10 bg-slate-100"></div>
+            <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-black flex-shrink-0 shadow-lg">1</div>
+            <div>
+                <h4 class="font-black text-[13px] text-blue-950 uppercase tracking-tight">Isi Formulir</h4>
+                <p class="text-[12px] text-slate-500 mt-1 font-bold">Submit data via website ini.</p>
+            </div>
+        </div>
+
+        {{-- Step 2 --}}
+        <div class="relative flex gap-6">
+            <div class="absolute left-5 top-10 w-[2px] h-10 bg-slate-100"></div>
+            <div class="w-10 h-10 bg-emerald-500 text-white rounded-xl flex items-center justify-center font-black flex-shrink-0 shadow-lg">2</div>
+            <div>
+                <h4 class="font-black text-[13px] text-blue-950 uppercase tracking-tight">Observasi Siswa</h4>
+                <p class="text-[12px] text-slate-500 mt-1 font-bold">Pemetaan potensi anak.</p>
+            </div>
+        </div>
+
+        {{-- Step 3 (Baru: Pengumuman) --}}
+        <div class="relative flex gap-6">
+            <div class="absolute left-5 top-10 w-[2px] h-10 bg-slate-100"></div>
+            <div class="w-10 h-10 bg-amber-500 text-white rounded-xl flex items-center justify-center font-black flex-shrink-0 shadow-lg">3</div>
+            <div>
+                <h4 class="font-black text-[13px] text-blue-950 uppercase tracking-tight">Pengumuman</h4>
+                <p class="text-[12px] text-slate-500 mt-1 font-bold">Hasil observasi & penerimaan.</p>
+            </div>
+        </div>
+
+        {{-- Step 4 --}}
+        <div class="flex gap-6">
+            <div class="w-10 h-10 bg-yellow-400 text-white rounded-xl flex items-center justify-center font-black flex-shrink-0 shadow-lg">4</div>
+            <div>
+                <h4 class="font-black text-[13px] text-blue-950 uppercase tracking-tight">Daftar Ulang</h4>
+                <p class="text-[12px] text-slate-500 mt-1 font-bold">Administrasi dan seragam.</p>
+            </div>
+        </div>
+    </div>
+</div>
             </div>
         </div>
     </div>

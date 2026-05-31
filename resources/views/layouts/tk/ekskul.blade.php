@@ -1,21 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-{{-- Header Section --}}
+{{-- Hero Section --}}
 <div class="bg-[#FFFF00] pt-16 md:pt-24 pb-10 md:pb-12 border-b border-black/5">
     <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
-        <span class="inline-block bg-black/5 text-black px-4 py-1.5 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-4 md:mb-6">
-            Beyond Academic
+        <span class="inline-block bg-black/5 text-black px-4 py-1.5 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-4 md:mb-6 animate-pulse">
+            Official Welcome
         </span>
         
-        {{-- Menggunakan text-4xl untuk mobile dan text-5xl sampai 7xl untuk desktop agar tidak terputus --}}
-        <h1 class="w-full text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-black leading-none tracking-tighter uppercase whitespace-nowrap">
-            EKSTRAKURIKULER
+        <h1 class="w-full text-2xl md:text-5xl lg:text-6xl font-black text-black leading-tight tracking-tighter uppercase break-words">
+            Selamat Datang di<br class="hidden md:block"> 
+            <span class="bg-black text-[#FFFF00] px-4 py-1 inline-block mt-2">PAUD Global Maju Khatulistiwa</span>
         </h1>
 
         <div class="flex items-center justify-center gap-3 md:gap-4 mt-6 md:mt-8">
             <div class="h-[2px] w-8 md:w-12 bg-black/20"></div>
-            <p class="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-black/60 leading-none">Global Maju Education</p>
+            <p class="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-black/60 leading-none">Kelompok Bermain & Taman Kanak Kanak</p>
             <div class="h-[2px] w-8 md:w-12 bg-black/20"></div>
         </div>
     </div>
@@ -33,7 +33,7 @@
 
         <div class="flex items-center gap-4 md:gap-8">
             <div class="flex space-x-4 md:space-x-8 text-[10px] md:text-[12px] font-bold uppercase tracking-widest whitespace-nowrap">
-                <a href="{{ route('tk.kurikulum') }}" class="text-black/50 hover:text-black transition-all">Kurikulum</a>
+                <a href="{{ route('tk.kurikulum') }}" class="text-black/50 hover:text-black transition-all">Metode Belajar</a>
                 <a href="{{ route('tk.fasilitas') }}" class="text-black/50 hover:text-black transition-all">Fasilitas</a>
                 <a href="{{ route('tk.ekskul') }}" class="text-black border-b-[2px] md:border-b-[3px] border-black pb-1">Ekstrakurikuler</a>
                 <a href="{{ route('tk.pendaftaran') }}" class="text-black/50 hover:text-black transition-all hidden sm:inline">Pendaftaran</a>
@@ -84,7 +84,7 @@
                     <div class="relative bg-white p-4 md:p-6 rounded-[35px] md:rounded-[50px] shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
                         <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-[30px] md:rounded-[40px] aspect-[4/3] flex flex-col items-center justify-center border-2 md:border-4 border-dashed border-yellow-200 overflow-hidden relative">
                             {{-- Image tk1.PNG dimasukkan di sini --}}
-                            <img src="{{ asset('images/tk1.PNG') }}" alt="Kegiatan TK" class="w-full h-full object-cover transition-transform duration-900 group-hover:scale-110">
+                            <img src="{{ asset('images/kurikulum2.PNG') }}" alt="Kegiatan TK" class="w-full h-full object-cover transition-transform duration-900 group-hover:scale-110">
                             
                             <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent pt-12 pb-5 md:pb-8 text-center px-4">
                                 <p class="font-black text-white text-[8px] md:text-[10px] uppercase tracking-[0.3em]">Develop Your Interest</p>
@@ -104,13 +104,45 @@
         
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             @php
-                $ekskuls = [
-                    ['icon' => 'fa-palette', 'title' => 'Seni Lukis', 'color' => 'pink', 'desc' => 'Imajinasi & Warna'],
-                    ['icon' => 'fa-swimmer', 'title' => 'Berenang', 'color' => 'sky', 'desc' => 'Fisik & Berani'],
-                    ['icon' => 'fa-music', 'title' => 'Angklung', 'color' => 'purple', 'desc' => 'Harmoni & Tim'],
-                    ['icon' => 'fa-language', 'title' => 'English Fun', 'color' => 'blue', 'desc' => 'Kosa Kata Dasar'],
-                ];
-            @endphp
+    $ekskuls = [
+        [
+            'icon' => 'fa-book-reader', 
+            'title' => 'Bercerita', 
+            'color' => 'pink', 
+            'desc' => 'Melatih kemampuan bahasa, rasa percaya diri, dan daya imajinasi anak.'
+        ],
+        [
+            'icon' => 'fa-icons', 
+            'title' => 'Gerak Dan Lagu', 
+            'color' => 'amber', 
+            'desc' => 'Mengembangkan koordinasi tubuh dan keceriaan melalui irama musik.'
+        ],
+        [
+            'icon' => 'fa-microphone-alt', 
+            'title' => 'Bernyanyi', 
+            'color' => 'purple', 
+            'desc' => 'Mengasah bakat vokal, pendengaran nada, dan ekspresi emosi anak.'
+        ],
+        [
+            'icon' => 'fa-child', 
+            'title' => 'Senam', 
+            'color' => 'emerald', 
+            'desc' => 'Meningkatkan kebugaran fisik, kelenturan, dan kebiasaan hidup sehat.'
+        ],
+        [
+            'icon' => 'fa-paint-brush', 
+            'title' => 'Mewarnai', 
+            'color' => 'blue', 
+            'desc' => 'Melatih motorik halus, fokus, dan pengenalan komposisi warna.'
+        ], 
+        [
+            'icon' => 'fa-user-friends', 
+            'title' => 'Menari', 
+            'color' => 'rose', 
+            'desc' => 'Mengenalkan seni budaya dan melatih keseimbangan serta disiplin gerak.'
+        ],  
+    ];
+@endphp
 
             @foreach($ekskuls as $item)
             <div class="group bg-white p-6 md:p-8 rounded-[30px] md:rounded-[40px] shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-500 flex flex-col items-center">
@@ -126,7 +158,7 @@
 </div>
 
 {{-- Highlights Section --}}
-<div class="py-20 md:py-32 max-w-7xl mx-auto px-6">
+<!-- <div class="py-20 md:py-32 max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
         <div class="p-8 md:p-12 bg-emerald-50 rounded-[40px] md:rounded-[60px] border border-emerald-100 group hover:shadow-xl transition-all duration-500">
             <div class="w-12 h-12 md:w-16 md:h-16 bg-emerald-500 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg mb-6 md:mb-8">
@@ -146,7 +178,7 @@
             <span class="inline-block px-4 py-2 bg-white rounded-full text-[8px] md:text-[10px] font-black text-pink-600 uppercase tracking-widest shadow-sm">Cultural Heritage</span>
         </div>
     </div>
-</div>
+</div> -->
 
 <style>
     html { scroll-behavior: smooth; }

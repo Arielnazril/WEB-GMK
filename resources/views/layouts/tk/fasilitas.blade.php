@@ -1,22 +1,25 @@
 @extends('layouts.app')
 
     @section('content')
-    {{-- Header / Hero Section --}}
-    <div class="bg-[#FFFF00] pt-16 md:pt-24 pb-10 md:pb-12 border-b border-black/5">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
-            <span class="inline-block bg-black/5 text-black px-4 py-1.5 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-4 md:mb-6">
-                School Infrastructure
-            </span>
-            <h1 class="w-full text-5xl md:text-9xl font-black text-black leading-none tracking-tighter uppercase break-words">
-                Fasilitas
-            </h1>
-            <div class="flex items-center justify-center gap-3 md:gap-4 mt-6 md:mt-8">
-                <div class="h-[2px] w-8 md:w-12 bg-black/20"></div>
-                <p class="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-black/60 leading-none">Global Maju Education</p>
-                <div class="h-[2px] w-8 md:w-12 bg-black/20"></div>
-            </div>
+   {{-- Hero Section --}}
+<div class="bg-[#FFFF00] pt-16 md:pt-24 pb-10 md:pb-12 border-b border-black/5">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
+        <span class="inline-block bg-black/5 text-black px-4 py-1.5 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-4 md:mb-6 animate-pulse">
+            Official Welcome
+        </span>
+        
+        <h1 class="w-full text-2xl md:text-5xl lg:text-6xl font-black text-black leading-tight tracking-tighter uppercase break-words">
+            Selamat Datang di<br class="hidden md:block"> 
+            <span class="bg-black text-[#FFFF00] px-4 py-1 inline-block mt-2">PAUD Global Maju Khatulistiwa</span>
+        </h1>
+
+        <div class="flex items-center justify-center gap-3 md:gap-4 mt-6 md:mt-8">
+            <div class="h-[2px] w-8 md:w-12 bg-black/20"></div>
+            <p class="text-[10px] md:text-sm font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-black/60 leading-none">Kelompok Bermain & Taman Kanak Kanak</p>
+            <div class="h-[2px] w-8 md:w-12 bg-black/20"></div>
         </div>
     </div>
+</div>
 
     {{-- Sticky Navbar --}}
     <div class="bg-[#FFFF00] border-y border-black/10 sticky top-0 z-[100] shadow-md transition-all duration-300 overflow-x-auto">
@@ -30,7 +33,7 @@
 
             <div class="flex items-center gap-4 md:gap-8">
                 <div class="flex space-x-4 md:space-x-8 text-[10px] md:text-[12px] font-bold uppercase tracking-widest whitespace-nowrap">
-                    <a href="{{ route('tk.kurikulum') }}" class="text-black/50 hover:text-black transition-all">Kurikulum</a>
+                    <a href="{{ route('tk.kurikulum') }}" class="text-black/50 hover:text-black transition-all">Metode Belajar</a>
                     <a href="{{ route('tk.fasilitas') }}" class="text-black border-b-[2px] md:border-b-[3px] border-black pb-1">Fasilitas</a>
                     <a href="{{ route('tk.ekskul') }}" class="text-black/50 hover:text-black transition-all">Ekstrakurikuler</a>
                     <a href="{{ route('tk.pendaftaran') }}" class="text-black/50 hover:text-black transition-all hidden sm:inline">Pendaftaran</a>
@@ -118,8 +121,8 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
                 @php
                     $galleries = [
-                        ['img' => 'fasilitas-tk1.jpeg', 'title' => 'Ruang Kelas Nyaman', 'label' => 'Learning Space'],
-                        ['img' => 'fasilitas-tk2.jpeg', 'title' => 'Area Bermain Edukatif', 'label' => 'Playground'],
+                        ['img' => 'fasilitas-sd5.jpeg', 'title' => 'Interactive Flat Panel', 'label' => 'Learning Space'],
+                        ['img' => 'fasilitas-tk2.jpeg', 'title' => 'Ruang Kelas Nyaman', 'label' => 'Playground'],
                         ['img' => 'fasilitas-tk3.jpeg', 'title' => 'Fasilitas Kreativitas', 'label' => 'Creative Hub'],
                     ];
                 @endphp
@@ -160,15 +163,69 @@
             
             <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
                 @php
-                    $fasilitas = [
-                        ['icon' => 'fa-door-open', 'title' => 'Ruang Tematik', 'color' => 'emerald', 'desc' => 'Kelas AC Sentra'],
-                        ['icon' => 'fa-laugh-beam', 'title' => 'Playground', 'color' => 'blue', 'desc' => 'Area Ketangkasan'],
-                        ['icon' => 'fa-video', 'title' => 'CCTV 24 Jam', 'color' => 'purple', 'desc' => 'Sistem Keamanan'],
-                        ['icon' => 'fa-palette', 'title' => 'Pojok Karya', 'color' => 'orange', 'desc' => 'Eksplorasi Kreativitas'],
-                        ['icon' => 'fa-book-open', 'title' => 'Pustaka', 'color' => 'pink', 'desc' => 'Buku Edukatif'],
-                        ['icon' => 'fa-first-aid', 'title' => 'UKS', 'color' => 'yellow', 'desc' => 'Layanan Sehat'],
-                    ];
-                @endphp
+    $fasilitas = [
+        [
+            'icon' => 'fa-shapes',
+            'title' => 'Ruang Serba Guna', 
+            'color' => 'rose', 
+            'desc' => 'Area bermain dalam ruangan yang aman, nyaman, dan ber-AC untuk eksplorasi anak.'
+        ],
+        [
+            'icon' => 'fa-child',
+            'title' => 'Ruang Bermain Outdoor', 
+            'color' => 'emerald', 
+            'desc' => 'Area bermain luar ruangan yang luas untuk melatih motorik kasar dan ketangkasan.'
+        ],
+        [
+            'icon' => 'fa-swimming-pool',
+            'title' => 'Kolam Renang', 
+            'color' => 'blue', 
+            'desc' => 'Fasilitas kolam renang khusus anak dengan pengawasan instruktur berpengalaman.'
+        ],
+        [
+            'icon' => 'fa-shopping-cart',
+            'title' => 'Minimarket', 
+            'color' => 'purple', 
+            'desc' => 'Laboratorium simulasi jual-beli untuk melatih kemandirian dan numerasi dasar.'
+        ],
+        [
+            'icon' => 'fa-book-reader',
+            'title' => 'Perpustakaan', 
+            'color' => 'pink', 
+            'desc' => 'Koleksi buku cerita edukatif untuk menumbuhkan minat baca dan literasi sejak dini.'
+        ],
+        [
+            'icon' => 'fa-heartbeat',
+            'title' => 'UKS', 
+            'color' => 'yellow', 
+            'desc' => 'Ruang kesehatan sekolah untuk penanganan medis pertama yang bersih dan nyaman.'
+        ],
+        [
+            'icon' => 'fa-restroom',
+            'title' => 'Toilet Bersih', 
+            'color' => 'indigo', 
+            'desc' => 'Fasilitas saniter higienis yang dirancang khusus agar mudah digunakan anak-anak.'
+        ],
+        [
+            'icon' => 'fa-hands-wash',
+            'title' => 'Tempat Cuci Tangan', 
+            'color' => 'cyan', 
+            'desc' => 'Wastafel di area strategis untuk membiasakan pola hidup bersih dan sehat (PHBS).'
+        ],
+        [
+        'icon' => 'fa-landmark', // Ikon yang menyerupai struktur paviliun/gazebo
+        'title' => 'Gazebo', 
+        'color' => 'teal', // Mengganti cyan ke teal agar lebih terasa nuansa taman/outdoor
+        'desc' => 'Area terbuka yang nyaman untuk kegiatan belajar santai dan interaksi sosial di luar kelas.'
+        ],
+        [
+            'icon' => 'fa-leaf', // Ikon daun yang mewakili area hijau/alam
+            'title' => 'Halaman Rumput', 
+            'color' => 'lime', // Warna hijau cerah yang identik dengan rumput segar
+            'desc' => 'Area terbuka hijau yang asri untuk aktivitas fisik, upacara, dan eksplorasi alam bagi anak.'
+        ],
+    ];
+@endphp
 
                 @foreach($fasilitas as $item)
                 <div class="group bg-white p-8 md:p-12 rounded-[40px] md:rounded-[55px] shadow-sm border border-slate-100 hover:shadow-2xl hover:border-yellow-200 transition-all duration-500 flex flex-col items-center">
@@ -184,7 +241,7 @@
     </div>
 
     {{-- Section 3: Extra Features --}}
-    <div class="py-24 md:py-32 max-w-7xl mx-auto px-6">
+    <!-- <div class="py-24 md:py-32 max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             <div class="p-10 md:p-14 bg-yellow-50 rounded-[50px] md:rounded-[70px] border border-yellow-100 group hover:shadow-2xl hover:shadow-yellow-200/50 transition-all duration-700 relative overflow-hidden">
                 <div class="absolute -right-10 -top-10 w-40 h-40 bg-yellow-400/10 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
@@ -210,7 +267,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800;900&display=swap');

@@ -227,15 +227,15 @@
         </h4>
         <div class="space-y-4 text-sm font-bold">
             <div class="flex justify-between items-center py-2 border-b border-slate-50">
-                <span class="text-slate-400 text-[10px] uppercase tracking-widest">Senin - Jumat</span>
-                <span class="text-slate-700 font-black">07:30 — 15:30 WIB</span>
+                <span class="text-slate-400 text-[10px] uppercase tracking-widest">Senin - Kamis</span>
+                <span class="text-slate-700 font-black">06:00 — 13:00 WIB</span>
             </div>
             <div class="flex justify-between items-center py-2 border-b border-slate-50">
-                <span class="text-slate-400 text-[10px] uppercase tracking-widest">Sabtu</span>
-                <span class="text-slate-700 font-black">08:00 — 12:00 WIB</span>
+                <span class="text-slate-400 text-[10px] uppercase tracking-widest">Jumat</span>
+                <span class="text-slate-700 font-black">06:00 — 11:00 WIB</span>
             </div>
             <div class="flex justify-between items-center py-2">
-                <span class="text-slate-400 text-[10px] uppercase tracking-widest">Minggu</span>
+                <span class="text-slate-400 text-[10px] uppercase tracking-widest">Sabtu - Minggu</span>
                 <span class="text-red-500 font-black uppercase italic">OFF / Libur</span>
             </div>
         </div>
