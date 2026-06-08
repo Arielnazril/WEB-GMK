@@ -2,6 +2,10 @@
 @extends('unit.sd', ['title' => 'Informasi Pendaftaran SD'])
 
 @section('sd_content')
+{{-- Audio Autoplay Kontrol --}}
+<audio id="paudAudio" loop>
+    <source src="{{ asset('audio/audio_SD.mpeg') }}" type="audio/mpeg">
+</audio>
 {{-- 
     INFO: Hero Section (Judul Biru) otomatis dipanggil oleh layout @extends('unit.sd').
     Kita memberikan container utama dengan z-index agar tidak menutupi navbar.
@@ -355,5 +359,26 @@
 
         window.open(`https://wa.me/${nomorAdmin}?text=${pesan}`, '_blank');
     }
+</script>
+
+{{-- JavaScript untuk Trigger Audio Berbunyi Langsung --}}
+<script>
+    function playPaudAudio() {
+        const audio = document.getElementById('paudAudio');
+        
+        audio.play().then(() => {
+            // Hapus event listener begitu audio sukses terputar bersuara agar tidak ketrigger ulang
+            document.removeEventListener('click', playPaudAudio);
+            document.removeEventListener('scroll', playPaudAudio);
+            document.removeEventListener('touchstart', playPaudAudio);
+        }).catch(error => {
+            console.log("Autoplay ditahan browser, menunggu interaksi sentuhan pertama pengguna...");
+        });
+    }
+
+    // Daftarkan event listener untuk mendeteksi interaksi awal pengguna di halaman
+    document.addEventListener('click', playPaudAudio);
+    document.addEventListener('scroll', playPaudAudio);
+    document.addEventListener('touchstart', playPaudAudio);
 </script>
 @endsection

@@ -243,16 +243,14 @@
 
     {{-- Maps --}}
     <div class="h-64 rounded-[2.5rem] overflow-hidden shadow-xl border-4 border-white relative group">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8181665487737!2d109.34005!3d-0.035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMDInMDYuMCJTIDEwOcKwMjAnMjQuMiJF!5e0!3m2!1sid!2sid!4v1700000000000" 
-            class="w-full h-full border-0 grayscale group-hover:grayscale-0 transition-all duration-700" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
-    </div>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.258658848536!2d109.34011249999999!3d-0.0775608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e1d5b961acbc413%3A0x6187c10dfba1fef2!2sSD%20Global%20Maju%20Khatulistiwa!5e0!3m2!1sid!2sid!4v1780544646377!5m2!1sid!2sid" 
+        class="w-full h-full border-0 grayscale group-hover:grayscale-0 transition-all duration-700" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
 </div>
-        </div>
-    </div>
 </div>
 
 <script>

@@ -1,6 +1,10 @@
 @extends('unit.sd')
 
 @section('sd_content')
+{{-- Audio Autoplay Kontrol --}}
+<audio id="paudAudio" loop>
+    <source src="{{ asset('audio/audio_SD.mpeg') }}" type="audio/mpeg">
+</audio>
 {{-- Tambahkan script Alpine.js jika belum ada di layout utama --}}
 <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
@@ -77,7 +81,7 @@
                 {{-- Painting --}}
                 <div x-show="category === 'semua' || category === 'seni'" class="group bg-white rounded-[3rem] p-8 shadow-sm border border-slate-100 hover:shadow-2xl transition-all">
                     <div class="pb-2">
-                        <h4 class="text-xl font-black text-slate-900 mb-2">MEWARNAI</h4>
+                        <h4 class="text-xl font-black text-slate-900 mb-2">MENGGAMBAR</h4>
                         <p class="text-slate-500 text-xs leading-relaxed mb-6">Mengekspresikan imajinasi melalui kuas dan warna di atas kanvas.</p>
                         <div class="w-full h-px bg-slate-100 mb-6"></div>
                         <div class="flex items-center justify-between text-[10px] font-black uppercase text-emerald-600">
@@ -135,4 +139,25 @@
 
     {{-- CTA Section --}}
     </div>
+
+    {{-- JavaScript untuk Trigger Audio Berbunyi Langsung --}}
+<script>
+    function playPaudAudio() {
+        const audio = document.getElementById('paudAudio');
+        
+        audio.play().then(() => {
+            // Hapus event listener begitu audio sukses terputar bersuara agar tidak ketrigger ulang
+            document.removeEventListener('click', playPaudAudio);
+            document.removeEventListener('scroll', playPaudAudio);
+            document.removeEventListener('touchstart', playPaudAudio);
+        }).catch(error => {
+            console.log("Autoplay ditahan browser, menunggu interaksi sentuhan pertama pengguna...");
+        });
+    }
+
+    // Daftarkan event listener untuk mendeteksi interaksi awal pengguna di halaman
+    document.addEventListener('click', playPaudAudio);
+    document.addEventListener('scroll', playPaudAudio);
+    document.addEventListener('touchstart', playPaudAudio);
+</script>
 @endsection

@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+{{-- Audio Autoplay Kontrol --}}
+<audio id="paudAudio" loop>
+    <source src="{{ asset('audio/audio_SD.mpeg') }}" type="audio/mpeg">
+</audio>
 {{-- Hero Section (Versi SD - Seragam dengan Desain TK) --}}
 <div class="bg-rose-900 pt-16 md:pt-24 pb-10 md:pb-12 border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
@@ -73,4 +77,24 @@
     body { font-family: 'Inter', sans-serif; }
     .font-black { font-weight: 900; }
 </style>
+{{-- JavaScript untuk Trigger Audio Berbunyi Langsung --}}
+<script>
+    function playPaudAudio() {
+        const audio = document.getElementById('paudAudio');
+        
+        audio.play().then(() => {
+            // Hapus event listener begitu audio sukses terputar bersuara agar tidak ketrigger ulang
+            document.removeEventListener('click', playPaudAudio);
+            document.removeEventListener('scroll', playPaudAudio);
+            document.removeEventListener('touchstart', playPaudAudio);
+        }).catch(error => {
+            console.log("Autoplay ditahan browser, menunggu interaksi sentuhan pertama pengguna...");
+        });
+    }
+
+    // Daftarkan event listener untuk mendeteksi interaksi awal pengguna di halaman
+    document.addEventListener('click', playPaudAudio);
+    document.addEventListener('scroll', playPaudAudio);
+    document.addEventListener('touchstart', playPaudAudio);
+</script>
 @endsection

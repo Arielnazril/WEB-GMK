@@ -10,7 +10,7 @@
                     School Infrastructure
                 </span>
                 <h2 class="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight mb-6 leading-none">
-                    Eksplorasi <span class="text-yellow-400 underline decoration-yellow-400/30">Sarana</span> Terbaik Kami
+                    Eksplorasi <span class="text-yellow-400 underline decoration-yellow-400/30">Sarana</span> Terbaik 
                 </h2>
                 <p class="text-white/80 max-w-2xl mx-auto text-base md:text-xl font-medium leading-relaxed">
                     Kami mendesain setiap sudut sekolah untuk menumbuhkan rasa ingin tahu, menjaga kesehatan, dan mengasah kreativitas tanpa batas bagi setiap siswa SD Global Maju.
@@ -114,7 +114,7 @@
                         <div class="w-16 h-16 bg-yellow-400 text-black rounded-2xl flex items-center justify-center mb-8 shadow-md">
                             <i class="fas fa-chalkboard text-2xl"></i>
                         </div>
-                        <h3 class="text-3xl md:text-4xl font-black mb-6 uppercase tracking-tight">Interactive Smart Class</h3>
+                        <h3 class="text-3xl md:text-4xl font-black mb-6 uppercase tracking-tight">IFP CLASS </h3>
                         <p class="text-white/80 text-base md:text-lg leading-relaxed font-medium mb-8">
                             Setiap kelas didukung teknologi visual layar lebar dan papan interaktif, memungkinkan visualisasi materi pelajaran menjadi lebih nyata, interaktif, dan menyenangkan bagi anak-anak.
                         </p>
@@ -125,6 +125,66 @@
                     </div>
                 </div>
             </div>
+
+            {{-- Gambar 5: Kolam Renang (Full Width Layout) --}}
+            <div class="md:col-span-6 group relative bg-white/5 rounded-[3.5rem] overflow-hidden border border-white/10 min-h-[450px] shadow-xl hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)] transition-all duration-700">
+                <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+                    <div class="relative overflow-hidden min-h-[250px] md:min-h-full">
+                        {{-- PERBAIKAN: Mengubah source gambar agar mengarah ke fasilitas kolam renang yang sesuai --}}
+                        <img src="{{ asset('images/berenang_sd.PNG') }}" alt="Kolam Renang" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000">
+                    </div>
+                    <div class="p-10 md:p-16 flex flex-col justify-center bg-white/10 backdrop-blur-md border-t md:border-t-0 md:border-l border-white/10 text-white">
+                        {{-- PERBAIKAN: Mengubah ikon papan tulis (fa-chalkboard) menjadi ikon kolam renang (fa-swimming-pool) --}}
+                        <div class="w-16 h-16 bg-yellow-400 text-black rounded-2xl flex items-center justify-center mb-8 shadow-md">
+                            <i class="fas fa-swimming-pool text-2xl"></i>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-black mb-6 uppercase tracking-tight">KOLAM RENANG</h3>
+                        {{-- PERBAIKAN: Mengubah deskripsi teks agar menjelaskan tentang fasilitas kolam renang anak --}}
+                        <p class="text-white/80 text-base md:text-lg leading-relaxed font-medium mb-8">
+                            Fasilitas kolam renang khusus yang dirancang aman untuk anak-anak, berfungsi melatih motorik kasar, keberanian, serta kebugaran fisik dengan pengawasan penuh dari instruktur berpengalaman.
+                        </p>
+                        <div class="flex gap-4">
+                            {{-- PERBAIKAN: Mengubah rumpun label (badge) bawah agar relevan dengan aktivitas olahraga/berenang --}}
+                            <span class="px-4 py-2 bg-white/10 border border-white/10 rounded-full text-xs font-bold uppercase tracking-widest text-yellow-400">Sports & Fun</span>
+                            <span class="px-4 py-2 bg-white/10 border border-white/10 rounded-full text-xs font-bold uppercase tracking-widest text-yellow-400">Motoric Skills</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Gambar 5: laboratorium (Full Width Layout) --}}
+            <div class="md:col-span-6 group relative bg-rose-950 rounded-[3.5rem] overflow-hidden border border-white/5 min-h-[450px] shadow-2xl hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.6)] transition-all duration-700">
+                <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+                    <div class="relative overflow-hidden min-h-[250px] md:min-h-full">
+                        {{-- Gambar dengan efek gelap sedikit (brightness-90) agar menyatu dengan tema gelap --}}
+                        <img src="{{ asset('images/lab_sd.PNG') }}" alt="Laboratorium" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 brightness-90 group-hover:brightness-100">
+                    </div>
+                    
+                    {{-- PERBAIKAN: Mengubah bg-white/10 backdrop-blur-md menjadi bg-rose-950 agar warnanya merah marun gelap pekat --}}
+                    <div class="p-10 md:p-16 flex flex-col justify-center bg-rose-950 border-t md:border-t-0 md:border-l border-white/5 text-white">
+                        
+                        {{-- Ikon Box Laptop/Komputer --}}
+                        <div class="w-16 h-16 bg-yellow-400 text-black rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-yellow-400/10">
+                            <i class="fas fa-laptop text-2xl"></i>
+                        </div>
+                        
+                        <h3 class="text-3xl md:text-4xl font-black mb-6 uppercase tracking-tight text-white">Laboratorium</h3>
+                        
+                        {{-- Deskripsi Teks dengan opacity putih agar nyaman dibaca di background gelap --}}
+                        <p class="text-white/80 text-base md:text-lg leading-relaxed font-medium mb-8">
+                            Fasilitas laboratorium komputer modern yang dirancang untuk mengenalkan teknologi digital sejak dini, melatih kemampuan literasi digital, serta mendukung pembelajaran berbasis multimedia secara interaktif.
+                        </p>
+                        
+                        <div class="flex gap-4">
+                            {{-- Badge kuning menyala di atas background gelap pekat --}}
+                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-bold uppercase tracking-widest text-yellow-400 shadow-sm">Digital Literacy</span>
+                            <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs font-bold uppercase tracking-widest text-yellow-400 shadow-sm">Tech & Skills</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 

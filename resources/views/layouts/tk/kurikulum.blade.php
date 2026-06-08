@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+{{-- Audio Autoplay Kontrol --}}
+<audio id="paudAudio" loop>
+    <source src="{{ asset('audio/audio_TK.mpeg') }}" type="audio/mpeg">
+</audio>
+
 {{-- Hero Section --}}
 <div class="bg-[#FFFF00] pt-16 md:pt-24 pb-10 md:pb-12 border-b border-black/5">
     <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
@@ -22,7 +27,6 @@
 </div>
 
 {{-- Sticky Navigation --}}
-{{-- Dioptimalkan: Scrollbar disembunyikan dan padding disesuaikan agar tidak mepet layar --}}
 <div class="bg-[#FFFF00] border-y border-black/10 sticky top-0 z-[100] shadow-md transition-all duration-300 overflow-x-auto no-scrollbar">
     <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between min-w-max md:min-w-0">
         <div class="flex items-center gap-2 md:gap-3 mr-8 md:mr-0">
@@ -67,16 +71,11 @@
                     Di <strong class="text-slate-900">Global Maju</strong>, kami menerapkan Kurikulum Nasional yang dipadukan dengan kurikulum unggulan Sekolah Global Maju Khatulistiwa yaitu Entrepreneurship (Kewirausahaan)
                 </p>
 
-                {{-- Dioptimalkan: justify-center di mobile agar lebih rapi --}}
                 <div class="flex flex-row justify-center lg:justify-start gap-2 md:gap-4 pt-4">
                     <div class="flex items-center gap-2 md:gap-3 px-4 py-3 md:px-6 md:py-4 bg-white shadow-xl shadow-slate-100 rounded-2xl border border-slate-50">
                         <i class="fas fa-check-circle text-emerald-500 text-base md:text-xl"></i>
                         <span class="font-bold text-slate-700 text-[10px] md:text-sm tracking-tight uppercase">Kurikulum Nasional</span>
                     </div>
-                    <!-- <div class="flex items-center gap-2 md:gap-3 px-4 py-3 md:px-6 md:py-4 bg-white shadow-xl shadow-slate-100 rounded-2xl border border-slate-50">
-                        <i class="fas fa-check-circle text-blue-500 text-base md:text-xl"></i>
-                        <span class="font-bold text-slate-700 text-[10px] md:text-sm tracking-tight uppercase">Metode Sentra</span>
-                    </div> -->
                 </div>
             </div>
 
@@ -106,10 +105,8 @@
             
             {{-- KOLOM PROGRAM UNGGULAN (8 CARDS) --}}
             <div class="lg:col-span-7 relative">
-                {{-- Background Deco --}}
                 <div class="absolute -top-16 -left-16 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-60"></div>
                 
-                {{-- Grid Container --}}
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 relative z-10">
                     
                     {{-- Card 1: Mini Market Kecilku --}}
@@ -269,11 +266,11 @@
                         'desc' => 'Kegagalan dipandang sebagai guru terbaik. Anak-anak diajarkan untuk bangkit, berefleksi, dan mencoba kembali dengan strategi yang lebih matang.'
                     ],
                     [
-    'icon' => 'fa-hands-praying', 
-    'title' => 'Lead by Example',
-    'color' => 'amber',
-    'desc' => 'Pendidik bukan sekadar pengajar, melainkan model nyata dari karakter entrepreneur yang ingin kami bangun pada peserta didik.'
-],  
+                        'icon' => 'fa-hands-praying', 
+                        'title' => 'Lead by Example',
+                        'color' => 'amber',
+                        'desc' => 'Pendidik bukan sekadar pengajar, melainkan model nyata dari karakter entrepreneur yang ingin kami bangun pada peserta didik.'
+                    ],  
                 ];
             @endphp
 
@@ -319,7 +316,6 @@
     <div class="max-w-5xl mx-auto px-6">
         <div class="relative group">
             <div class="absolute -inset-2 bg-gradient-to-r from-yellow-400 to-black rounded-[3rem] blur opacity-10 group-hover:opacity-20 transition duration-500"></div>
-            {{-- Dioptimalkan: Padding di mobile dikurangi agar konten teks lebih luas --}}
             <div class="relative bg-slate-50 border border-slate-100 rounded-[3rem] p-8 md:p-16 overflow-hidden flex flex-col md:flex-row items-center justify-between gap-10">
                 
                 <div class="absolute -top-10 -right-10 w-40 h-40 bg-yellow-400/10 rounded-full blur-3xl"></div>
@@ -354,11 +350,9 @@
     body { font-family: 'Inter', sans-serif; background-color: #ffffff; -webkit-tap-highlight-color: transparent; }
     .font-black { font-weight: 900; }
     
-    /* Menghilangkan scrollbar tapi fungsi scroll tetap ada */
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* Animasi Floating */
     @keyframes floating {
         0%, 100% { transform: translateY(0px); }
         50% { transform: translateY(-15px); }
@@ -390,4 +384,25 @@
         }
     }
 </style>
+
+{{-- JavaScript untuk Trigger Audio Berbunyi Langsung --}}
+<script>
+    function playPaudAudio() {
+        const audio = document.getElementById('paudAudio');
+        
+        audio.play().then(() => {
+            // Hapus event listener begitu audio sukses terputar bersuara agar tidak ketrigger ulang
+            document.removeEventListener('click', playPaudAudio);
+            document.removeEventListener('scroll', playPaudAudio);
+            document.removeEventListener('touchstart', playPaudAudio);
+        }).catch(error => {
+            console.log("Autoplay ditahan browser, menunggu interaksi sentuhan pertama pengguna...");
+        });
+    }
+
+    // Daftarkan event listener untuk mendeteksi interaksi awal pengguna di halaman
+    document.addEventListener('click', playPaudAudio);
+    document.addEventListener('scroll', playPaudAudio);
+    document.addEventListener('touchstart', playPaudAudio);
+</script>
 @endsection

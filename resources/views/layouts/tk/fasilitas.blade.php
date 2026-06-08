@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
     @section('content')
+    {{-- Audio Autoplay Kontrol --}}
+<audio id="paudAudio" loop>
+    <source src="{{ asset('audio/audio_TK.mpeg') }}" type="audio/mpeg">
+</audio>
    {{-- Hero Section --}}
 <div class="bg-[#FFFF00] pt-16 md:pt-24 pb-10 md:pb-12 border-b border-black/5">
     <div class="max-w-7xl mx-auto px-6 flex flex-col items-center justify-center text-center">
@@ -46,12 +50,12 @@
         </div>
     </div>
 
-    {{-- Section 1: Intro Fasilitas --}}
     <div class="relative bg-white py-16 md:py-24 overflow-hidden">
         <div class="absolute top-0 right-0 w-full md:w-1/2 h-full bg-slate-50 md:-skew-x-12 md:translate-x-20 z-0"></div>
         
         <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+            {{-- MODIFIKASI: Memberikan porsi kolom yang sedikit lebih lebar untuk area gambar pada layar besar --}}
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 md:gap-16 items-center">
                 <div class="space-y-6 md:space-y-8 text-center lg:text-left">
                     <div>
                         <span class="inline-block px-4 py-1.5 bg-yellow-100 text-yellow-700 rounded-lg text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] mb-4">
@@ -78,24 +82,56 @@
                     </div>
                 </div>
 
-                <div class="relative flex justify-center mt-10 lg:mt-0">
-                    <div class="relative w-full max-w-xs md:max-w-lg group">
+                {{-- SISI KANAN: max-w ditingkatkan menjadi max-w-5xl agar gambar tampil jauh lebih besar --}}
+                <div class="relative flex justify-center mt-10 lg:mt-0 w-full">
+                    <div class="relative w-full max-w-md md:max-w-5xl group">
                         {{-- Decorative Layer --}}
-                        <div class="absolute -inset-4 bg-yellow-400/20 rounded-[40px] md:rounded-[60px] rotate-3 transition-transform group-hover:rotate-6 duration-500"></div>
+                        <div class="absolute -inset-4 bg-yellow-400/20 rounded-[40px] md:rounded-[60px] rotate-1 transition-transform group-hover:rotate-2 duration-500"></div>
                         
                         {{-- Main Card Frame --}}
-                        <div class="relative bg-white p-3 md:p-5 rounded-[35px] md:rounded-[50px] shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
-                            <div class="overflow-hidden rounded-[30px] md:rounded-[40px] aspect-[4/3] relative">
-                                {{-- Integrated Image kurikulum1.PNG --}}
-                                <img src="{{ asset('images/kurikulum1.PNG') }}" alt="Visual Fasilitas" class="w-full h-full object-cover">
+                        <div class="relative bg-white p-4 md:p-6 rounded-[35px] md:rounded-[50px] shadow-2xl transition-all duration-500 group-hover:-translate-y-2">
+                            
+                            {{-- MODIFIKASI: Menggunakan susunan grid mosaic 2 kolom utama --}}
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                                 
-                                {{-- Badge Overlay --}}
-                                <div class="absolute bottom-4 left-0 right-0 text-center px-4">
-                                    <div class="inline-block bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow-lg">
-                                        <p class="font-black text-slate-800 text-[8px] md:text-[10px] uppercase tracking-[0.3em]">Premium Infrastructure</p>
+                                {{-- GAMBAR 1 (KIRI / UTAMA): Kurikulum (Tampil penuh & besar secara vertikal) --}}
+                                <div class="overflow-hidden rounded-[24px] md:rounded-[36px] aspect-[4/3] md:aspect-auto md:h-[420px] md:row-span-2 relative shadow-md">
+                                    <img src="{{ asset('images/kurikulum1.PNG') }}" alt="Visual Fasilitas" class="w-full h-full object-cover">
+                                    
+                                    {{-- Badge Overlay Gambar 1 --}}
+                                    <div class="absolute bottom-4 left-0 right-0 text-center px-2">
+                                        <div class="inline-block bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow-md">
+                                            <p class="font-black text-slate-800 text-[8px] md:text-[10px] uppercase tracking-[0.2em]">Premium Infrastructure</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+
+                                {{-- GAMBAR 2 (KANAN ATAS): Laboratorium TK --}}
+                                <div class="overflow-hidden rounded-[24px] md:rounded-[32px] aspect-[4/3] md:h-[200px] relative shadow-md">
+                                    <img src="{{ asset('images/lab_tk.jpeg') }}" alt="Laboratorium TK" class="w-full h-full object-cover">
+                                    
+                                    {{-- Badge Overlay Gambar 2 --}}
+                                    <div class="absolute bottom-4 left-0 right-0 text-center px-2">
+                                        <div class="inline-block bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow-md">
+                                            <p class="font-black text-slate-800 text-[8px] md:text-[10px] uppercase tracking-[0.2em]">Laboratorium TK</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- GAMBAR 3 (KANAN BAWAH): Pentas Seni --}}
+                                <div class="overflow-hidden rounded-[24px] md:rounded-[32px] aspect-[4/3] md:h-[200px] relative shadow-md">
+                                    <img src="{{ asset('images/pentas_seni.jpeg') }}" alt="Pentas Seni" class="w-full h-full object-cover">
+                                    
+                                    {{-- Badge Overlay Gambar 3 --}}
+                                    <div class="absolute bottom-4 left-0 right-0 text-center px-2">
+                                        <div class="inline-block bg-white/90 backdrop-blur px-4 py-2 rounded-full shadow-md">
+                                            <p class="font-black text-slate-800 text-[8px] md:text-[10px] uppercase tracking-[0.2em]">Pentas Seni</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>{{-- End Grid Gambar --}}
+
                         </div>
                     </div>
                 </div>
@@ -284,4 +320,26 @@
         ::-webkit-scrollbar { height: 0px; width: 6px; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
     </style>
+
+    {{-- JavaScript untuk Trigger Audio Berbunyi Langsung --}}
+<script>
+    function playPaudAudio() {
+        const audio = document.getElementById('paudAudio');
+        
+        audio.play().then(() => {
+            // Hapus event listener begitu audio sukses terputar bersuara agar tidak ketrigger ulang
+            document.removeEventListener('click', playPaudAudio);
+            document.removeEventListener('scroll', playPaudAudio);
+            document.removeEventListener('touchstart', playPaudAudio);
+        }).catch(error => {
+            console.log("Autoplay ditahan browser, menunggu interaksi sentuhan pertama pengguna...");
+        });
+    }
+
+    // Daftarkan event listener untuk mendeteksi interaksi awal pengguna di halaman
+    document.addEventListener('click', playPaudAudio);
+    document.addEventListener('scroll', playPaudAudio);
+    document.addEventListener('touchstart', playPaudAudio);
+</script>
+
     @endsection

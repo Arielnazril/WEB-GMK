@@ -105,6 +105,8 @@
                     </div>
                 </div>
 
+                
+
                 {{-- Persyaratan Card --}}
                 <div class="bg-white rounded-[2.5rem] md:rounded-[3.5rem] p-8 md:p-12 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] border border-white">
                     <div class="flex items-center gap-3 mb-10">
@@ -353,6 +355,118 @@
         </div>
     </div>
 </section>
+
+{{-- ==========================================
+     SECTION: HEADLINE & JENJANG UNIT PENDIDIKAN (SPMB)
+     ========================================== --}}
+<div class="max-w-7xl mx-auto px-6">
+    
+    {{-- PERBAIKAN: Penambahan Judul Halaman / Section Header SPMB --}}
+    <div class="text-center max-w-3xl mx-auto mb-16 md:mb-20">
+        {{-- Badge Kecil di Atas Judul --}}
+        <div class="inline-block bg-blue-500/10 border border-blue-500/30 text-blue-600 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.2em] mb-4">
+            Registration 2026/2027
+        </div>
+        {{-- Judul Utama --}}
+        <h2 class="text-3xl md:text-5xl font-black text-blue-950 mb-6 uppercase tracking-tight leading-none">
+            Sistem Penerimaan <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Murid Baru (SPMB)</span>
+        </h2>
+        {{-- Deskripsi Singkat --}}
+        <p class="text-slate-500 text-sm md:text-base max-w-xl mx-auto font-medium">
+            Selamat datang di gerbang pendaftaran Sekolah Global Maju Khatulistiwa. Silakan pilih jenjang pendidikan di bawah ini untuk memulai proses pendaftaran putra-putri Anda.
+        </p>
+    </div>
+
+    {{-- Grid Tiga Unit Card --}}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+        @php
+            // 1. INISIALISASI DATA DINAMIS (CONTENT MANAGEMENT)
+            $units = [
+                [
+                    'number' => '01',
+                    'title' => 'KB & TK', 
+                    'sub' => 'Early Childhood Education', 
+                    'img' => 'tentangkami-tk.PNG', 
+                    'accent' => 'from-yellow-400 to-yellow-500',
+                    'text_accent' => 'text-yellow-700',
+                    'desc' => 'Fokus pada pengembangan motorik, sosial, dan kreativitas dini melalui metode pembelajaran berbasis eksplorasi yang menyenangkan.', 
+                    'link' => '/paud-tk'
+                ],
+                [
+                    'number' => '02',
+                    'title' => 'Sekolah Dasar', 
+                    'sub' => 'Elementary', 
+                    'img' => 'tentangkami-sd.PNG', 
+                    'accent' => 'from-blue-600 to-indigo-700',
+                    'text_accent' => 'text-blue-600',
+                    'desc' => 'Penguatan literasi dan numerasi dasar dengan integrasi kurikulum Nasional untuk mengasah kemandirian serta logika berpikir siswa.', 
+                    'link' => '/sd'
+                ],
+                [
+                    'number' => '03',
+                    'title' => 'Sekolah Menengah Pertama', 
+                    'sub' => 'Junior High', 
+                    'img' => 'murid - smp.jpeg', 
+                    'accent' => 'from-emerald-500 to-teal-700',
+                    'text_accent' => 'text-emerald-600',
+                    'desc' => 'Pengembangan kepemimpinan strategis dan penguasaan teknologi mutakhir untuk mempersiapkan siswa menjadi inovator masa depan.', 
+                    'link' => '/smp'
+                ]
+            ];
+        @endphp
+
+        @foreach($units as $u)
+        {{-- 2. MAIN CARD CONTAINER --}}
+        <div class="group relative bg-white rounded-[60px] p-8 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)] hover:shadow-[0_50px_120px_-20px_rgba(30,58,138,0.2)] transition-all duration-700 hover:-translate-y-6 flex flex-col min-h-[650px] overflow-hidden">
+            
+            {{-- 3. BACKGROUND NUMBER INDICATOR --}}
+            <span class="absolute top-6 right-6 text-9xl font-black text-slate-100/50 group-hover:text-slate-100 transition-colors duration-700 select-none z-0 pointer-events-none">
+                {{ $u['number'] }}
+            </span>
+
+            {{-- 4. IMAGE WRAPPER --}}
+            <div class="relative z-10 w-full aspect-[4/3] rounded-[45px] overflow-hidden shadow-xl mb-8 flex-shrink-0">
+                <img src="{{ asset('images/'.$u['img']) }}" alt="{{ $u['title'] }}" 
+                     class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-8">
+                    <span class="text-white font-bold tracking-widest text-xs uppercase">{{ $u['sub'] }} PROGRAM</span>
+                </div>
+            </div>
+
+            {{-- 5. TEXT CONTENT BLOCK --}}
+            <div class="relative z-10 flex-grow flex flex-col px-2">
+                {{-- Kategori & Aksen Garis Dinamis --}}
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-1 bg-gradient-to-r {{ $u['accent'] }} rounded-full"></div>
+                    <span class="font-bold {{ $u['text_accent'] }} tracking-[0.2em] text-[11px] uppercase">{{ $u['sub'] }}</span>
+                </div>
+
+                {{-- Judul Jenjang Pendidikan --}}
+                <h3 class="text-3xl font-black text-blue-950 mb-4 tracking-tighter leading-tight group-hover:translate-x-2 transition-transform duration-500 min-h-[72px] flex items-center">
+                    {{ $u['title'] }}
+                </h3>
+
+                {{-- Deskripsi Program --}}
+                <p class="text-slate-500 font-medium text-base leading-relaxed mb-6 flex-grow">
+                    {{ $u['desc'] }}
+                </p>
+            </div>
+
+            {{-- 6. BUTTON CALL TO ACTION (RATA BAWAH SEMPURNA) --}}
+            <div class="relative z-10 mt-auto px-2 pb-2 flex-shrink-0">
+                <a href="{{ $u['link'] }}" 
+                   class="flex items-center justify-between w-full group/btn bg-slate-950 text-white p-2 rounded-[30px] hover:bg-blue-700 transition-all duration-500 shadow-xl">
+                    <span class="ml-6 font-extrabold tracking-wide text-sm">PELAJARI PROGRAM</span>
+                    <div class="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center group-hover/btn:bg-white group-hover/btn:text-blue-700 transition-all duration-500 flex-shrink-0">
+                        <i class="fas fa-arrow-right text-lg"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+        @endforeach
+    </div>
+</div>
 
 <script>
     function toggleABKField() {

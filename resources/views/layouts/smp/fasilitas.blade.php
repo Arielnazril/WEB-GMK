@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+{{-- Audio Autoplay Kontrol --}}
+<audio id="paudAudio" loop>
+    <source src="{{ asset('audio/audio_SMP.mpeg') }}" type="audio/mpeg">
+</audio>
 {{-- HERO SECTION --}}
 <div class="relative bg-slate-900 pt-24 pb-20 md:pt-32 md:pb-40 overflow-hidden">
     <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#3b82f6 0.5px, transparent 0.5px); background-size: 24px 24px;"></div>
@@ -122,7 +126,7 @@
                         [
                             'tag' => 'Literasi',
                             'tag_bg' => 'bg-emerald-600',
-                            'title' => 'Digital Library',
+                            'title' => 'Class',
                             'desc' => 'Ruang perpustakaan yang nyaman dengan koleksi buku lengkap, area baca komunal, serta akses literasi digital bagi siswa.',
                             'img' => asset('images/fasilitas-sd2.jpeg'),
                             'gradient' => 'from-emerald-950/90 via-emerald-900/30 to-transparent'
@@ -130,7 +134,7 @@
                         [
                             'tag' => 'Kreativitas',
                             'tag_bg' => 'bg-purple-600',
-                            'title' => 'Art & Music Studio',
+                            'title' => 'Smart Library',
                             'desc' => 'Ruang ekspresi seni dan musik yang dilengkapi dengan berbagai instrumen keyboard modern untuk mengasah bakat musikal siswa.',
                             'img' => asset('images/fasilitas-sd3.jpeg'),
                             'gradient' => 'from-purple-950/90 via-purple-900/30 to-transparent'
@@ -138,7 +142,7 @@
                         [
                             'tag' => 'Teknologi',
                             'tag_bg' => 'bg-blue-600',
-                            'title' => 'Smart Classroom',
+                            'title' => 'Music Room',
                             'desc' => 'Ruang kelas futuristik yang mendukung metode Blended Learning, dilengkapi dengan papan tulis interaktif dan Smart TV digital.',
                             'img' => asset('images/fasilitas-sd4.jpeg'),
                             'gradient' => 'from-slate-950/90 via-slate-900/30 to-transparent'
@@ -291,4 +295,25 @@
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     html { scroll-behavior: smooth; }
 </style>
+
+{{-- JavaScript untuk Trigger Audio Berbunyi Langsung --}}
+<script>
+    function playPaudAudio() {
+        const audio = document.getElementById('paudAudio');
+        
+        audio.play().then(() => {
+            // Hapus event listener begitu audio sukses terputar bersuara agar tidak ketrigger ulang
+            document.removeEventListener('click', playPaudAudio);
+            document.removeEventListener('scroll', playPaudAudio);
+            document.removeEventListener('touchstart', playPaudAudio);
+        }).catch(error => {
+            console.log("Autoplay ditahan browser, menunggu interaksi sentuhan pertama pengguna...");
+        });
+    }
+
+    // Daftarkan event listener untuk mendeteksi interaksi awal pengguna di halaman
+    document.addEventListener('click', playPaudAudio);
+    document.addEventListener('scroll', playPaudAudio);
+    document.addEventListener('touchstart', playPaudAudio);
+</script>
 @endsection

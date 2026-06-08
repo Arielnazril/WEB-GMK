@@ -149,7 +149,7 @@
                 
                 <div class="group relative py-8">
                     <button class="text-[13px] font-bold {{ request()->routeIs('unit.*') || request()->routeIs('sd.*') || request()->segment(1) == 'sd' ? 'text-blue-700' : 'text-slate-600' }} group-hover:text-blue-700 flex items-center gap-2 outline-none transition-colors">
-                        Unit Pendidikan 
+                        Jenjang Pendidikan 
                         <i class="fas fa-chevron-down text-[9px] transition-transform duration-500 group-hover:rotate-180"></i>
                     </button>
                     
@@ -369,7 +369,7 @@
                                 @if(request()->is('unit/tk*')) text-amber-600
                                 @elseif(request()->is('unit/sd*')) text-rose-600
                                 @else text-blue-600 @endif">Our Vision</span>
-                            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tighter">Visi Sekolah</h2>
+                            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tighter">Visi</h2>
                             <p class="text-slate-600 text-lg md:text-xl leading-relaxed font-medium italic">
                                 "Menjadikan peserta didik yang tangguh dalam menghadapi tantangan, cerdas dalam membaca peluang, dan berdampak nyata bagi kemajuan bangsa menyongsong 
                                 <span class="font-bold @if(request()->is('unit/tk*')) text-amber-600 @elseif(request()->is('unit/sd*')) text-rose-600 @else text-blue-700 @endif">Indonesia Emas 2045</span>."
@@ -391,7 +391,7 @@
                             @else bg-blue-600 text-white shadow-blue-600/20 @endif">
                             <i class="fas fa-rocket text-xl"></i>
                         </div>
-                        <h3 class="text-2xl font-black text-slate-900 uppercase tracking-tighter">Misi Kami</h3>
+                        <h3 class="text-2xl font-black text-slate-900 uppercase tracking-tighter">Misi</h3>
                     </div>
                     
                     <div class="space-y-4 max-h-[500px] overflow-y-auto pr-4 custom-scrollbar">
@@ -434,9 +434,12 @@
                     </div>
                 </div>
 
+            
                 {{-- TUJUAN CARD --}}
                 {{-- Background Utama Card Tujuan Dinamis --}}
-                <div class="rounded-[2.5rem] shadow-2xl p-8 md:p-10 relative overflow-hidden text-white data-aos="fade-left"
+                {{-- TUJUAN CARD --}}
+                {{-- Background Utama Card Tujuan Dinamis --}}
+                <div data-aos="fade-left" class="rounded-[2.5rem] shadow-2xl p-8 md:p-10 relative overflow-hidden text-white
                     @if(request()->is('unit/tk*')) bg-amber-950
                     @elseif(request()->is('unit/sd*')) bg-rose-950
                     @else bg-slate-900 @endif">
@@ -456,7 +459,8 @@
                             @else bg-cyan-500 text-slate-900 shadow-cyan-500/20 @endif">
                             <i class="fas fa-check-double text-xl"></i>
                         </div>
-                        <h3 class="text-2xl font-black uppercase tracking-tighter">Tujuan</h3>
+                        {{-- PERBAIKAN: Mengubah text-slate-800 menjadi text-white agar berwarna putih --}}
+                        <h3 class="text-2xl font-light uppercase tracking-tighter text-white">Tujuan</h3>
                     </div>
 
                     <div class="space-y-4 max-h-[500px] overflow-y-auto pr-4 custom-scrollbar-light">
@@ -472,15 +476,16 @@
                         @endphp
 
                         @foreach($tujuan as $index => $item)
-                        <div class="flex gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all group">
+                        <div class="flex gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-slate-100 transition-all group">
                             {{-- Badge Angka Indikator Dinamis --}}
                             <div class="w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 transition-all
-                                @if(request()->is('unit/tk*')) bg-amber-400/20 text-amber-300 group-hover:bg-amber-400 group-hover:text-amber-950
-                                @elseif(request()->is('unit/sd*')) bg-rose-400/20 text-rose-300 group-hover:bg-rose-500 group-hover:text-white
-                                @else bg-cyan-500/20 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-900 @endif">
+                                @if(request()->is('unit/tk*')) bg-amber-400/20 text-amber-600 group-hover:bg-amber-400 group-hover:text-amber-950
+                                @elseif(request()->is('unit/sd*')) bg-rose-400/20 text-rose-600 group-hover:bg-rose-500 group-hover:text-white
+                                @else bg-cyan-500/20 text-cyan-600 group-hover:bg-cyan-500 group-hover:text-slate-900 @endif">
                                 <span class="text-[10px] font-black">{{ $index + 1 }}</span>
                             </div>
-                            <p class="text-slate-300 text-sm leading-relaxed font-medium">{{ $item }}</p>
+                            {{-- PERBAIKAN: Mengubah text-slate-300 menjadi text-slate-800 dan font-bold agar teks terlihat sangat kontras & tebal --}}
+                            <p class="text-slate-800 text-sm leading-relaxed font-bold">{{ $item }}</p>
                         </div>
                         @endforeach
                     </div>

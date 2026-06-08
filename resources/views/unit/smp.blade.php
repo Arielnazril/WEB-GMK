@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<audio id="paudAudio" loop>
+    <source src="{{ asset('audio/audio_SMP.mpeg') }}" type="audio/mpeg">
+</audio>
 {{-- Section 1: Hero Banner --}}
 <div class="relative bg-slate-900 pt-28 pb-24 md:pt-40 md:pb-44 overflow-hidden">
     {{-- Blue Blueprint Grid Pattern --}}
@@ -59,27 +62,27 @@
 
             {{-- Right Section: Interactive Card Display --}}
             <div class="hidden lg:block w-1/3 relative">
-                {{-- Dynamic Blue Gradient Background Glow --}}
-                <div class="absolute -inset-4 bg-gradient-to-tr from-blue-500/20 via-indigo-500/10 to-transparent blur-[80px] rounded-full animate-pulse duration-4000"></div>
-                
-                {{-- Main Glassmorphism Card Frame --}}
-                <div class="relative bg-slate-900/40 border border-white/10 p-5 rounded-[2.5rem] backdrop-blur-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] transform rotate-3 hover:rotate-0 hover:scale-[1.02] transition-all duration-700 ease-out group/card">
-                    
-                    {{-- Image Wrapper with Interactive Overlay --}}
-                    <div class="relative aspect-[4/3] rounded-[1.75rem] overflow-hidden bg-slate-800 flex items-center justify-center shadow-inner">
-                        <img src="{{ asset('images/smp.jpeg') }}" alt="SMP Global Maju" class="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover/card:scale-110">
-                        
-                        {{-- Sleek Dark Gradient Overlay on Hover --}}
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
-                    </div>
+    {{-- Dynamic Blue Gradient Background Glow --}}
+    <div class="absolute -inset-4 bg-gradient-to-tr from-blue-500/20 via-indigo-500/10 to-transparent blur-[80px] rounded-full animate-pulse duration-4000"></div>
+    
+    {{-- Main Glassmorphism Card Frame (FOKUS PERBAIKAN: Menghapus transform rotate-3 dan hover:rotate-0) --}}
+    <div class="relative bg-slate-900/40 border border-white/10 p-5 rounded-[2.5rem] backdrop-blur-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.4)] hover:scale-[1.02] transition-all duration-700 ease-out group/card">
+        
+        {{-- Image Wrapper with Interactive Overlay --}}
+        <div class="relative aspect-[4/3] rounded-[1.75rem] overflow-hidden bg-slate-800 flex items-center justify-center shadow-inner">
+            <img src="{{ asset('images/smp.jpeg') }}" alt="SMP Global Maju" class="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover/card:scale-110">
+            
+            {{-- Sleek Dark Gradient Overlay on Hover --}}
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500"></div>
+        </div>
 
-                    {{-- Floating Micro-Badge Element --}}
-                    <div class="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-md border border-slate-100 py-2.5 px-4 rounded-2xl shadow-xl shadow-slate-900/10 transform -rotate-6 group-hover/card:rotate-0 group-hover/card:-translate-y-1 transition-all duration-500 flex items-center gap-2.5">
-                        <div class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></div>
-                        <span class="text-[10px] font-black tracking-wider text-slate-800 uppercase">Kurikulum Nasional</span>
-                    </div>
-                </div>
-            </div>
+        {{-- Floating Micro-Badge Element (FOKUS PERBAIKAN: Menghapus transform -rotate-6 dan group-hover/card:rotate-0) --}}
+        <div class="absolute -bottom-4 -left-4 bg-white/90 backdrop-blur-md border border-slate-100 py-2.5 px-4 rounded-2xl shadow-xl shadow-slate-900/10 group-hover/card:-translate-y-1 transition-all duration-500 flex items-center gap-2.5">
+            <div class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></div>
+            <span class="text-[10px] font-black tracking-wider text-slate-800 uppercase">Kurikulum Nasional</span>
+        </div>
+    </div>
+</div>
         </div>
 
         {{-- Navigation Floating Menu Panel --}}
@@ -112,7 +115,7 @@
                             $navItems = [
                                 ['url' => 'unit/smp', 'label' => 'Metode Belajar', 'icon' => 'fa-book-open'],      
                                 ['url' => 'unit/smp/fasilitas', 'label' => 'Fasilitas', 'icon' => 'fa-school'],
-                                ['url' => 'unit/smp/ekskul', 'label' => 'Ekskul', 'icon' => 'fa-users'],
+                                ['url' => 'unit/smp/ekskul', 'label' => 'Ekstrakulikuler', 'icon' => 'fa-users'],
                                 ['url' => 'unit/smp/pendaftaran', 'label' => 'Pendaftaran', 'icon' => 'fa-edit'],
                             ];
                         @endphp
@@ -308,4 +311,25 @@
         scrollbar-width: none;
     }
 </style>
+
+{{-- JavaScript untuk Trigger Audio Berbunyi Langsung --}}
+<script>
+    function playPaudAudio() {
+        const audio = document.getElementById('paudAudio');
+        
+        audio.play().then(() => {
+            // Hapus event listener begitu audio sukses terputar bersuara agar tidak ketrigger ulang
+            document.removeEventListener('click', playPaudAudio);
+            document.removeEventListener('scroll', playPaudAudio);
+            document.removeEventListener('touchstart', playPaudAudio);
+        }).catch(error => {
+            console.log("Autoplay ditahan browser, menunggu interaksi sentuhan pertama pengguna...");
+        });
+    }
+
+    // Daftarkan event listener untuk mendeteksi interaksi awal pengguna di halaman
+    document.addEventListener('click', playPaudAudio);
+    document.addEventListener('scroll', playPaudAudio);
+    document.addEventListener('touchstart', playPaudAudio);
+</script>
 @endsection
