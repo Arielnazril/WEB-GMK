@@ -312,17 +312,21 @@
     <div class="bg-white rounded-[3rem] p-8 md:p-12 shadow-xl border border-slate-100">
         
         {{-- Judul Dinamis --}}
-        <h1 class="text-3xl md:text-5xl font-black text-blue-950 mb-6 uppercase tracking-tighter">
-            @if(request()->is('unit/tk*'))
-                Selamat Datang di <span style="color: #EAB308;" class="font-black">PAUD Global Maju Khatulistiwa</span>
-            @elseif(request()->is('unit/sd*'))
-                Selamat Datang di <span class="text-[#7A122E]">SD Global Maju Khatulistiwa</span>
-            @elseif(request()->is('unit/smp*'))
-                Selamat Datang di <span class="text-blue-600">SMP Global Maju Khatulistiwa</span>
-            @else
-                Selamat Datang di Sekolah <span class="text-blue-600">Global Maju Khatulistiwa</span>
-            @endif  
-        </h1>
+        <h1 class="text-xl md:text-3xl font-extrabold text-blue-950 mb-6 uppercase tracking-tight leading-tight">
+    @if(request()->is('unit/tk*'))
+        <span class="block text-slate-500 text-xs md:text-sm font-semibold tracking-widest mb-1">Selamat Datang di</span>
+        <span style="color: #EAB308;">PAUD Global Maju Khatulistiwa</span>
+    @elseif(request()->is('unit/sd*'))
+        <span class="block text-slate-500 text-xs md:text-sm font-semibold tracking-widest mb-1">Selamat Datang di</span>
+        <span class="text-[#7A122E]">SD Global Maju Khatulistiwa</span>
+    @elseif(request()->is('unit/smp*'))
+        <span class="block text-slate-500 text-xs md:text-sm font-semibold tracking-widest mb-1">Selamat Datang di</span>
+        <span class="text-blue-600">SMP Global Maju Khatulistiwa</span>
+    @else
+        <span class="block text-slate-500 text-xs md:text-sm font-semibold tracking-widest mb-1">Selamat Datang di</span>
+        <span>Sekolah <span class="text-blue-600">Global Maju Khatulistiwa</span></span>
+    @endif  
+</h1>
 
         {{-- Deskripsi Dinamis --}}
         <p class="text-slate-600 text-lg leading-relaxed max-w-4xl">

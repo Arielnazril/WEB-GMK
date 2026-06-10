@@ -79,13 +79,19 @@
                 <template x-for="(item, index) in paginatedNews" :key="index">
                     <a :href="item.link" target="_blank" class="group bg-white rounded-[2.5rem] border border-slate-100 shadow-xl shadow-slate-200/50 overflow-hidden hover:-translate-y-3 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-200/40 flex flex-col justify-between">
                         <div>
-                            {{-- Image Thumbnail --}}
-                            <div class="relative h-72 overflow-hidden bg-slate-50">
-                                <img :src="item.img" :alt="item.title" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            {{-- LOGIKA KONDISIONAL: 
+                                 Hanya kategori 'Pendaftaran' yang tingginya otomatis (h-auto).
+                                 Kategori lainnya seperti 'Kegiatan Sekolah' tetap dikunci di h-72 dengan overflow-hidden asli bawaan Anda. --}}
+                            <div :class="item.cat === 'Pendaftaran' ? 'relative h-auto bg-slate-100' : 'relative h-72 overflow-hidden bg-slate-50'">
+                                <img :src="item.img" 
+                                     :alt="item.title" 
+                                     :class="item.cat === 'Pendaftaran' ? 'w-full h-full object-contain p-2 transition-transform duration-700 group-hover:scale-102' : 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-105'">
                                 
                                 {{-- Badges overlay --}}
-                                <div class="absolute top-5 left-5 flex flex-col gap-2">
-                                    <span class="w-fit px-4 py-1.5 bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-black uppercase tracking-wider rounded-xl shadow-sm" x-text="item.unit"></span>
+                                <div class="absolute top-5 left-5 flex flex-col gap-2 z-10">
+                                    <template x-if="item.unit">
+                                        <span class="w-fit px-4 py-1.5 bg-white/95 backdrop-blur-md text-slate-900 text-[10px] font-black uppercase tracking-wider rounded-xl shadow-sm" x-text="item.unit"></span>
+                                    </template>
                                     <span class="w-fit px-4 py-1.5 bg-blue-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-wider rounded-xl shadow-sm" x-text="item.cat"></span>
                                 </div>
                             </div>
@@ -115,85 +121,6 @@
         </div>
     </section>
 
-    <!-- {{-- Parent Resources Section --}}
-    <section class="px-6 py-20 bg-gradient-to-b from-slate-50 to-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-                <div class="max-w-2xl">
-                    <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight">Edukasi Parenting & <br>Panduan Orang Tua</h2>
-                    <p class="text-slate-600 font-medium text-base">Dapatkan wawasan mendalam dari para ahli pendidikan untuk mendukung perkembangan buah hati Anda di era digital.</p>
-                </div>
-                <a href="#" class="px-8 py-4 bg-white border border-slate-200 text-slate-900 rounded-2xl font-black text-xs uppercase tracking-widest hover:shadow-md hover:-translate-y-0.5 transition-all flex items-center gap-3 whitespace-nowrap">
-                    Lihat Semua <i class="fas fa-th-large text-blue-600"></i>
-                </a>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {{-- Resource Card 1 --}}
-                <div class="flex items-start gap-5 p-6 bg-white rounded-2xl shadow-sm border border-slate-100 group hover:border-blue-200 transition-all">
-                    <div class="flex-shrink-0 w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="text-lg font-bold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">E-Book: Literasi 10 Menit</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed mb-3">Strategi menumbuhkan minat baca anak sejak dini dengan cara yang sangat seru.</p>
-                        <button class="text-[9px] font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1.5 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">
-                            PDF Download
-                        </button>
-                    </div>
-                </div>
-
-                {{-- Resource Card 2 --}}
-                <div class="flex items-start gap-5 p-6 bg-white rounded-2xl shadow-sm border border-slate-100 group hover:border-emerald-200 transition-all">
-                    <div class="flex-shrink-0 w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center group-hover:bg-emerald-600 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-emerald-600 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                    </div>
-                    <div class="flex-1">
-                        <h4 class="text-lg font-bold text-slate-900 mb-1 group-hover:text-emerald-600 transition-colors">Eksplorasi Bakat & Kreativitas</h4>
-                        <p class="text-sm text-slate-500 leading-relaxed mb-3">Wadah bagi siswa untuk mengekspresikan minat melalui proyek seni dan olahraga kolaboratif.</p>
-                        <span class="text-[9px] font-black uppercase tracking-widest text-amber-600 bg-amber-50 px-3 py-1.5 rounded-lg">
-                            Kegiatan Siswa
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- {{-- Newsletter Section --}}
-    <section class="px-6 pb-20">
-        <div class="max-w-7xl mx-auto">
-            <div class="relative bg-slate-900 rounded-[2.5rem] p-8 md:p-12 lg:p-16 overflow-hidden shadow-xl shadow-blue-900/10">
-                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"></div>
-                <div class="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-[80px]"></div>
-
-                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <span class="text-blue-400 font-black text-[10px] tracking-[0.3em] uppercase mb-3 block">Stay Connected</span>
-                        <h2 class="text-3xl md:text-5xl font-black text-white mb-4 leading-tight">Dapatkan Kabar <br>Edukasi Terbaru</h2>
-                        <p class="text-slate-400 font-medium text-base max-w-md">Bergabunglah dengan 1.000+ orang tua lainnya untuk mendapatkan tips parenting dan info eksklusif pendaftaran GMK.</p>
-                    </div>
-
-                    <form class="flex flex-col gap-4 w-full max-w-lg lg:ml-auto">
-                        <div class="relative group">
-                            <input type="email" placeholder="Alamat email aktif" 
-                                class="w-full pl-6 pr-12 py-5 bg-white/5 border border-white/10 rounded-2xl text-white outline-none focus:ring-4 focus:ring-blue-500/30 focus:bg-white/10 transition-all text-base font-semibold placeholder:text-slate-500">
-                            <div class="absolute right-5 top-1/2 -translate-y-1/2 flex items-center justify-center">
-                                <i class="far fa-envelope text-slate-500 text-lg group-focus-within:text-blue-400 transition-colors"></i>
-                            </div>
-                        </div>
-                        <button class="w-full py-5 bg-blue-600 text-white rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-blue-500 transition-all shadow-lg shadow-blue-600/30 active:scale-[0.98]">
-                            JOIN NOW
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section> -->
 </div>
 
 <style>

@@ -328,7 +328,7 @@
                 {{-- Bagian Kiri: Judul dan Daftar Poin Kurikulum --}}
                 <div>
                     <h2 class="text-3xl md:text-5xl font-black text-blue-950 mb-6 md:mb-8 tracking-tight leading-tight">
-                        Profil karakter <span class="text-blue-600">Lulusan</span>
+                        Profil karakter <span class="text-blue-600">Lulusan Basis Entrepreneurship</span>
                     </h2>
                     
                     <div class="space-y-6 md:space-y-8 max-h-[700px] overflow-y-auto pr-2 custom-scrollbar-light">

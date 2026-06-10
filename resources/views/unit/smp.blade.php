@@ -178,7 +178,7 @@
                 Graduate Profile
             </div>
             <h2 class="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tight leading-none">
-                Profil Karakter <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Lulusan</span>
+                Profil Karakter <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Lulusan </span>
             </h2>
             <p class="text-slate-400 text-sm md:text-base max-w-xl mx-auto font-medium">
                 Membentuk generasi masa depan yang siap memimpin, berinovasi, dan membawa dampak positif bagi masyarakat global.
