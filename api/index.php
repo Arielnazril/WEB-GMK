@@ -1,29 +1,31 @@
 <?php
-// Panggil file pemaksa agar Vercel membawa folder views
+
+// Memanggil file pemaksa agar Vercel membaca folder views
 require __DIR__ . '/vercel_preload.php';
 
 use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
 
-// Cek apakah server sedang dalam status maintenance
+// Cek status maintenance
 if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
     require $maintenance;
 }
 
-// Load autoloader Composer
+// Load Composer autoloader
 require __DIR__.'/../vendor/autoload.php';
 
-// Load aplikasi Laravel
+// Instantiate Aplikasi Laravel
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 // =========================================================
-// HACK VERCEL: PAKSA STORAGE DAN VIEW COMPILER KE /tmp
+// INTERVENSI VERCEL SERVERLESS FILE SYSTEM
 // =========================================================
-// 1. Ubah storage path utama
+
+// 1. Ubah direktori utama ke RAM sementara (/tmp)
 $app->useStoragePath('/tmp/storage');
 
-// 2. Buat struktur folder secara paksa di memori sementara (RAM) Vercel
+// 2. Bangun struktur kerangka folder di dalam RAM
 $dirs = [
     '/tmp/storage/app',
     '/tmp/storage/framework/views',
@@ -31,19 +33,25 @@ $dirs = [
     '/tmp/storage/framework/sessions',
     '/tmp/storage/logs'
 ];
+
 foreach ($dirs as $dir) {
     if (!is_dir($dir)) {
         mkdir($dir, 0777, true);
     }
 }
 
-// 3. Blokade sistem cache view bawaan Laravel secara agresif
-putenv('VIEW_COMPILED_PATH=/tmp/storage/framework/views');
-$_ENV['VIEW_COMPILED_PATH'] = '/tmp/storage/framework/views';
-$_SERVER['VIEW_COMPILED_PATH'] = '/tmp/storage/framework/views';
+// 3. INTERVENSI MUTLAK (DI SINI KUNCI PENYELESAIANNYA)
+// Cegat sistem konfigurasi dan timpa value secara paksa di memori
+$app->afterResolving('config', function ($config) {
+    $config->set('view.compiled', '/tmp/storage/framework/views');
+    $config->set('session.files', '/tmp/storage/framework/sessions');
+    $config->set('cache.stores.file.path', '/tmp/storage/framework/cache/data');
+    $config->set('logging.channels.single.path', '/tmp/storage/logs/laravel.log');
+    $config->set('logging.channels.daily.path', '/tmp/storage/logs/laravel.log');
+});
 // =========================================================
 
-// Eksekusi request
+// Eksekusi HTTP Request
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(
