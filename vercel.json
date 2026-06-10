@@ -8,13 +8,25 @@
     "functions": {
         "api/index.php": {
             "runtime": "vercel-php@0.6.2",
-            "excludeFiles": "{node_modules/**,tests/**,storage/framework/**,storage/logs/**,.git/**}"
+            "excludeFiles": "{node_modules/**,tests/**,storage/framework/**,storage/logs/**,.git/**,public/images/**,public/audio/**,public/pdf/**}"
         }
     },
     "routes": [
         {
             "src": "/build/(.*)",
             "dest": "/public/build/$1"
+        },
+        {
+            "src": "/audio/(.*)",
+            "dest": "/public/audio/$1"
+        },
+        {
+            "src": "/images/(.*)",
+            "dest": "/public/images/$1"
+        },
+        {
+            "src": "/pdf/(.*)",
+            "dest": "/public/pdf/$1"
         },
         {
             "src": "/(.*)",
