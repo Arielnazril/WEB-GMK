@@ -1,5 +1,4 @@
 <?php
-
 // Panggil file pemaksa agar Vercel membawa folder views
 require __DIR__ . '/vercel_preload.php';
 
@@ -19,17 +18,29 @@ require __DIR__.'/../vendor/autoload.php';
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 // =========================================================
-// HACK VERCEL: Belokkan semua folder storage ke /tmp
+// HACK VERCEL: PAKSA STORAGE DAN VIEW COMPILER KE /tmp
 // =========================================================
-$app->useStoragePath($_ENV['APP_STORAGE'] ?? '/tmp/storage');
+// 1. Ubah storage path utama
+$app->useStoragePath('/tmp/storage');
 
-$storagePath = $app->storagePath();
-foreach (['app', 'framework/views', 'framework/cache/data', 'framework/sessions', 'logs'] as $dir) {
-    $path = $storagePath . '/' . $dir;
-    if (!is_dir($path)) {
-        mkdir($path, 0777, true);
+// 2. Buat struktur folder secara paksa di memori sementara (RAM) Vercel
+$dirs = [
+    '/tmp/storage/app',
+    '/tmp/storage/framework/views',
+    '/tmp/storage/framework/cache/data',
+    '/tmp/storage/framework/sessions',
+    '/tmp/storage/logs'
+];
+foreach ($dirs as $dir) {
+    if (!is_dir($dir)) {
+        mkdir($dir, 0777, true);
     }
 }
+
+// 3. Blokade sistem cache view bawaan Laravel secara agresif
+putenv('VIEW_COMPILED_PATH=/tmp/storage/framework/views');
+$_ENV['VIEW_COMPILED_PATH'] = '/tmp/storage/framework/views';
+$_SERVER['VIEW_COMPILED_PATH'] = '/tmp/storage/framework/views';
 // =========================================================
 
 // Eksekusi request
