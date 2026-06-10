@@ -1,5 +1,8 @@
 <?php
 
+// Panggil file pemaksa agar Vercel membawa folder views
+require __DIR__ . '/vercel_preload.php';
+
 use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
